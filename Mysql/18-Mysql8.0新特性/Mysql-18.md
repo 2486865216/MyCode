@@ -73,7 +73,7 @@ Subquery代表子查询，子查询前使用WITH语句将结果集命名为cte_n
 
 MySQL8开始支持窗口函数。在之前的版本中已存在大部分聚合函数在MySQL8中也可以作为窗口函数来使用。
 
-![image-20220226154523204](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220226154523204.png)
+![image-20220226154523204](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220226154523204.png)
 
 **13.正则表达式支持**
 
@@ -303,7 +303,7 @@ MySQL从8.0版本开始支持窗口函数。窗口函数的作用类似于在查
 
 窗口函数总体上可以分为序号函数、分布函数、前后函数、首尾函数和其他函数，如下表：
 
-![image-20220226163331227](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220226163331227.png)
+![image-20220226163331227](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220226163331227.png)
 
 ### 2.3语法结构
 

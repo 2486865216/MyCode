@@ -14,7 +14,7 @@ InnoDB将数据划分为若干个页，InnoDB中页的大小默认为16KB。
 
 > 记录是按照行来存储的，但是数据库的读取并不以行为单位，否则一次读取（也就是一次I/O操作）只能处理一行数据，效率会非常低。
 
-![image-20220303142955956](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220303142955956.png)
+![image-20220303142955956](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220303142955956.png)
 
 ### 1.2页结构概述
 
@@ -40,7 +40,7 @@ SQL Server中页的大小为8KB,而在Oracle中我们用术语“块”(Block)�
 
 另外在数据库中，还存在着区(Extent)、段(Segment)和表空间(Tablespace)的概念。行、页、区、段、表空间的关系如下图所示：
 
-![image-20220303143743123](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220303143743123.png)
+![image-20220303143743123](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220303143743123.png)
 
 区(Extent)是比页大一级的存储结构，在InnoDB存储引擎中，**一个区会分配64个连续的页**。因为InnoDB中的页大小默认是16KB,所以一个区的大小是**64*16KB=1MB。**
 
@@ -55,11 +55,11 @@ SQL Server中页的大小为8KB,而在Oracle中我们用术语“块”(Block)�
 数据页的**16KB**大小的存储空间被划分为七个部分，分别是文件头(File Header)、页头(Page Header)、最大最小记录(Infimum+supremum)、用户记录(User Records)、空闲空间(Free Space)、页目录(Page Directory）和文件尾(File Tailer)。
 页结构的示意图如下所示：
 
-![image-20220303144240406](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220303144240406.png)
+![image-20220303144240406](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220303144240406.png)
 
 这7个部分作用分别如下，我们简单梳理如下表所示：
 
-![image-20220303144357283](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220303144357283.png)
+![image-20220303144357283](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220303144357283.png)
 
 我们可以把这7个结构分成3个部分。
 
@@ -114,9 +114,9 @@ SQL Server中页的大小为8KB,而在Oracle中我们用术语“块”(Block)�
 
 InnoDB都是以页为单位存放数据的，如果数据分散到多个不连续的页中存储的话需要把这些页关联起来**FIL_PAGE_PREV**和**FIL_PAGE_NEXT**就分别代表本页的上一个和下一个页的页号。这样通过建立一个双向链表把许许多多的页就都串联起来了，保证这些页之间不需要是**物理上的连续，而是逻辑上的连续**。
 
-![image-20220304101150127](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304101150127.png)
+![image-20220304101150127](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304101150127.png)
 
-![image-20220304101205795](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304101205795.png)
+![image-20220304101205795](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304101205795.png)
 
 **③校验和FIL_PAGE_SPACE_OR_CHKSUM**
 
@@ -144,13 +144,13 @@ InnoDB存储引擎以页为单位把数据加载到内存中处理，如果该�
 
 第二个部分是记录部分，页的主要作用是存储记录，所以“最大和最小记录”和“用户记录”部分占了页结构的主要空间。
 
-![image-20220304102007810](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304102007810.png)
+![image-20220304102007810](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304102007810.png)
 
 **Free Space(空闲空间)**
 
 我们自己存储的记录会按照指定的**行格式**存储到**User Records**部分。但是在一开始生成页的时候，其实并没有User Records:这个部分，**每当我们插入一条记录，都会从Free Space部分，也就是尚未使用的存储空间中申请一个记录大小的空间划分到User Records部分**，当Free Space部分的空间全部被User Records部分替代掉之后，也就意味着这个页使用完了，如果还有新的记录插入的话，就需要去**申请新的页**了。
 
-![image-20220304102155688](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304102155688.png)
+![image-20220304102155688](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304102155688.png)
 
 **User Records(用户记录)**
 
@@ -168,11 +168,11 @@ User Records中的这些记录按照**指定的行格式**一条一条摆在User
 
 InnoDB规定的最小记录与最大记录这两条记录的构造十分简单，都是由**5字节大小的记录头信息和8字节大小的一个固定的部分**组成的，如图所示：
 
-![image-20220304103603925](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304103603925.png)
+![image-20220304103603925](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304103603925.png)
 
 这两条记录**不是我们自己定义的记录**，所以它们并不存放在页的User Records部分，他们被单独放在一个称为Infimum+Supremum的部分，如图所示：
 
-![image-20220304103651867](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304103651867.png)
+![image-20220304103651867](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304103651867.png)
 
 
 
@@ -209,11 +209,11 @@ SELECT FROM page_demo WHERE c1 =3;
 
 举例一:
 
-![image-20220304104951673](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304104951673.png)
+![image-20220304104951673](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304104951673.png)
 
 现在的page_demo表中正常的记录共有6条，InnoDB会把它们分成两组，第一组中只有一个最小记录，第二组中是剩余的5条记录。如下图：
 
-![image-20220304105032713](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304105032713.png)
+![image-20220304105032713](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304105032713.png)
 
 从这个图中我们需要注意这么几点：
 
@@ -224,7 +224,7 @@ SELECT FROM page_demo WHERE c1 =3;
 
 用箭头指向的方式替代数字，这样更易于我们理解，修改后如下：
 
-![image-20220304105155561](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304105155561.png)
+![image-20220304105155561](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304105155561.png)
 
 **页目录结构下如何快速查找记录？**
 
@@ -249,7 +249,7 @@ VALUES
 
 添加了12条记录，现在页里一共有18条记录了（包插最小和最大记录），这些记录被分成了5个组，如图所示：
 
-![image-20220304105459763](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304105459763.png)
+![image-20220304105459763](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304105459763.png)
 
 这里只保留了16条记录的记录头信息中的n_owned和next_record属性，省略了各个记录之间的箭头。
 
@@ -288,7 +288,7 @@ VALUES
 1. 叶子节点，B+树最底层的节点，节点的高度为0，存储行记录。
 2. 非叶子节点，节点的高度大于0，存储索引键和页面指针，并不存储行记录本身。
 
-![image-20220304123127937](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304123127937.png)
+![image-20220304123127937](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304123127937.png)
 
 当我们从页结构来理解B+树的结构的时候，可以帮我们理解一些通过索引进行检索的原理：
 
@@ -363,7 +363,7 @@ ALTER TABLE 表名 ROW_FORMAT=行格式名称
 
 在**MySQL5.1版本中**，默认设置为Compact行格式。一条完整的记录其实可以被分为记录的额外信息和记录的真实数据两大部分。
 
-![image-20220304124030605](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304124030605.png)
+![image-20220304124030605](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304124030605.png)
 
 #### 1.变长字段长度列表
 
@@ -371,16 +371,16 @@ MySQL支持一些变长的数据类型，比如VARCHAR(M)、VARBINARY(M)、TEXT�
 
 注意：这里面存储的变长长度和字段**顺序是反过来**的。比如两个varchar字段在表结构的顺序是ā(10)，b(15)。那么在变长字段长度列表中存储的长度顺序就是15,10，是反过来的。
 
-![image-20220304124421993](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304124421993.png)
+![image-20220304124421993](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304124421993.png)
 
-![image-20220304124412327](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304124412327.png)
+![image-20220304124412327](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304124412327.png)
 
 又因为这些长度值需要按照列的逆序存放，所以最后变长字段长度列表的字节串用十六进制表示的效果就是（各个字节之间实际上没有空格，用空格隔开只是方便理解）：
 06 04 08(060408)
 
 把这个字节串组成的变长字段长度列表填入上边的示意图中的效果就是：
 
-![image-20220304124440944](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304124440944.png)
+![image-20220304124440944](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304124440944.png)
 
 #### 2. NULL值列表
 
@@ -398,7 +398,7 @@ Compact行格式会把可以为NULL的列统一管理起来，存在一个标记
 
 record_test table的两条记录的NULL值列表就如下：
 
-![image-20220304124811306](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304124811306.png)
+![image-20220304124811306](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304124811306.png)
 
 #### 3.记录头信息
 
@@ -413,7 +413,7 @@ mysql>CREATE TABLE page_demo(
 
 这个表中记录的行格式示意图：
 
-![image-20220304102505867](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304102505867.png)
+![image-20220304102505867](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304102505867.png)
 
 这些记录头信息中各个属性如下：
 
@@ -430,7 +430,7 @@ mysql>CREATE TABLE page_demo(
 
 简化后的行格式示意图：
 
-![image-20220304102916778](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304102916778.png)
+![image-20220304102916778](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304102916778.png)
 
 插入数据：
 
@@ -445,7 +445,7 @@ VALUES
 
 图示如下：
 
-![image-20220304103017348](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304103017348.png)
+![image-20220304103017348](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304103017348.png)
 
 **delete mask**
 
@@ -493,7 +493,7 @@ MySQL会自动给每个页里加了两个记录，由于这两个记录并不是
 
 注意，**下一条记录指得并不是按照我们插入顺序的下一条记录，而是按照主键值由小到大的顺序的下一条记录**。而且规定Infimum记录（也就是最小记录）的下一条记录就是本页中主键值最小的用户记录，而本页中主键值最大的用户记录的下一条记录就是Supremum记录（也就是最大记录）。下图用箭头代替偏移量表示next record。
 
-![image-20220304103912714](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304103912714.png)
+![image-20220304103912714](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304103912714.png)
 
 演示：删除操作
 删除操作：从表中删除掉一条记录，这个链表也是会跟着变化：
@@ -505,7 +505,7 @@ Query OK,1 row affected(0.02 sec)
 
 删掉第2条记录后的示意图就是：
 
-![image-20220304104058527](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304104058527.png)
+![image-20220304104058527](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304104058527.png)
 
 从图中可以看出来，删除第2条记录前后主要发生了这些变化：
 
@@ -527,7 +527,7 @@ Query OK,1 row affected (0.00 sec)
 
 我们看一下记录的存储情况：
 
-![image-20220304104306572](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304104306572.png)
+![image-20220304104306572](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304104306572.png)
 
 直接复用了原来被删除记录的存储空间
 
@@ -538,7 +538,7 @@ Query OK,1 row affected (0.00 sec)
 
 记录的真实数据除了我们自己定义的列的数据以外，还会有三个隐藏列：
 
-![image-20220304124924740](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304124924740.png)
+![image-20220304124924740](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304124924740.png)
 
 实际上这几个列的真正名称其实是：DB_ROW_ID、DB_TRX_ID、DB_ROLL_PTR。
 
@@ -576,7 +576,7 @@ ERROR 1118 (42000): Row size too large. The maximum row size for the used table 
 在Compact和Reduntant行格式中，对于占用存储空间非常大的列，在记录的真实数据处只会存储该列的一部分数据，把剩余的数据分散存储在几个其他的页中进行分页存储，然后记录的真实数据处用20个字节存储指向这些页的地址（当然这20个字节中还包括这
 些分散在其他页面中的数据的占用的字节数)，从而可以找到剩余数据所在的页。这称为页的扩展，举例如下：
 
-![image-20220304130836070](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304130836070.png)
+![image-20220304130836070](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304130836070.png)
 
 #### 2. Dynamic和Compressed行格式
 
@@ -584,7 +584,7 @@ ERROR 1118 (42000): Row size too large. The maximum row size for the used table 
 
 - Compressed和Dynamic两种记录格式对于存放在BLOB中的数据采用了完全的行溢出的方式。如图，在数据页中只存放20个字节的指针（溢出页的地址），实际的数据都存放在Off Page(溢出页)中。
 
-	![image-20220304131026740](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304131026740.png)
+	![image-20220304131026740](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304131026740.png)
 
 - Compact和Redundant两种格式会在记录的真实数据处存储一部分数据（存放768个前缀字节)
 
@@ -594,7 +594,7 @@ Compressed行记录格式的另一个功能就是，存储在其中的行数据�
 
 Redundant是MySQL5.0版本之前InnoDB的行记录存储方式，MySQL5.0支持Redundant是为了兼容之前版本的页格式。
 
-![image-20220304133255113](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304133255113.png)
+![image-20220304133255113](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304133255113.png)
 
 从上图可以看到，不同于Compact行记录格式，Redundant行格式的首部是一个字段长度偏移列表，同样是按照列的顺序逆序放置的。
 
@@ -819,7 +819,7 @@ InnoDB从磁盘中读取数据的最小单位是数据页。而你想得到的id
 
 如果该数据存在于内存中，基本上执行时间在1ms左右，效率还是很高的。
 
-![image-20220304134507109](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304134507109.png)
+![image-20220304134507109](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304134507109.png)
 
 **2.随机读取**
 
@@ -827,7 +827,7 @@ InnoDB从磁盘中读取数据的最小单位是数据页。而你想得到的id
 
 传输时间，将页从磁盘服务器缓冲区传输到数据库缓冲区中。这10ms看起来很快，但实际上对于数据库来说消耗的时间已经非常长了，因为这还只是一个页的读取时间。
 
-![image-20220304134621150](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304134621150.png)
+![image-20220304134621150](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304134621150.png)
 
 **3.顺序读取**
 

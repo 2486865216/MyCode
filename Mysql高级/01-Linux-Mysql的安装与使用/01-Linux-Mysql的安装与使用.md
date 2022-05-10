@@ -12,7 +12,7 @@
 
   - 主机名
 
-  - ![image-20220227134444785](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220227134444785.png)
+  - ![image-20220227134444785](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220227134444785.png)
 
   - ip地址
 
@@ -52,7 +52,7 @@ rpm -qa | grep -i mysql # -i忽略大小写
 systemctl status mysqld.service
 ```
 
-![image-20220227135014270](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220227135014270.png)
+![image-20220227135014270](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220227135014270.png)
 
 ### 1.3 MySQL的卸载
 
@@ -109,7 +109,7 @@ yum remove mysq1-xxx mysq1-xxx mysq1-xxx mysql-xxxx
 
 然后，点击MySQL Community(GPL) Dowrloads
 
-![image-20220227140830677](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220227140830677.png)
+![image-20220227140830677](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220227140830677.png)
 
 **4,在General Availability(GA)Releasest中选择适合的版本**
 
@@ -128,7 +128,7 @@ yum remove mysq1-xxx mysq1-xxx mysq1-xxx mysql-xxxx
 
 rpm包的一般格式：
 
-![image-20220227141116415](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220227141116415.png)
+![image-20220227141116415](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220227141116415.png)
 
 **方式2：yum命令**
 
@@ -163,11 +163,11 @@ rpm -qa | grep libaio
 
 - 如果存在libaio包如下：
 
-  ![image-20220227142622613](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220227142622613.png)
+  ![image-20220227142622613](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220227142622613.png)
 
 - 如果存在net-tools包如下：
 
-  ![image-20220227142702686](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220227142702686.png)
+  ![image-20220227142702686](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220227142702686.png)
 
 - 如果不存在需要到centos:安装盘里进行rpm安装。安装linux如果带图形化界面，这些都是安装好的。
 
@@ -195,11 +195,11 @@ rpm -ivh mysql-community-server-8.0.28-1.el7.x86_64.rpm
 - -v,-verbose提供更多的详细信息输出
 - -h,--hash软件包安装的时候列出哈希标记（和-V一起使用效果更好），展示进度条
 
-![image-20220227144212617](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220227144212617.png)
+![image-20220227144212617](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220227144212617.png)
 
 #### 2.安装过程截图
 
-![image-20220227143407478](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220227143407478.png)
+![image-20220227143407478](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220227143407478.png)
 
 >  一个命令：yum remove mysql-libs解决，清除之前安装过的依赖即可
 
@@ -215,7 +215,7 @@ mysqladmin  Ver 8.0.28 for Linux on x86_64 (MySQL Community Server - GPL)
 [root@localhost opt]# 
 ```
 
-![image-20220227144339335](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220227144339335.png)
+![image-20220227144339335](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220227144339335.png)
 
 #### 4.服务的初始化
 
@@ -235,7 +235,7 @@ cat /var/log/mysqld.log
 
 
 
-![image-20220227144537329](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220227144537329.png)
+![image-20220227144537329](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220227144537329.png)
 
 #### 5.启动MySQL,查看状态
 
@@ -249,7 +249,7 @@ cat /var/log/mysqld.log
 # mysq1d这个可执行文件就代表着MySQL服务器程序，运行这个可执行文件就可以直接启动一个服务器进程。
 ```
 
-![image-20220227144828268](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220227144828268.png)
+![image-20220227144828268](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220227144828268.png)
 
 #### 6.查看MySQL服务是否自启动
 
@@ -257,7 +257,7 @@ cat /var/log/mysqld.log
 systemctl list-unit-files | grep mysqld.service
 ```
 
-![image-20220227144938063](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220227144938063.png)
+![image-20220227144938063](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220227144938063.png)
 
 默认是enabled,
 
@@ -289,7 +289,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY '123456'
 
 在用SQLyog或Navicat中配置远程连接Mysql数据库时遇到如下报错信息，这是由于Mysql配置了不支持远程连接起的。
 
-![image-20220227145927992](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220227145927992.png)
+![image-20220227145927992](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220227145927992.png)
 
 #### 2.确认网络
 
@@ -301,7 +301,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY '123456'
 telnet ip地址 端口号
 ```
 
-![image-20220227151119691](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220227151119691.png)
+![image-20220227151119691](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220227151119691.png)
 
 #### 3.关闭防火墙或开放端口
 
@@ -313,7 +313,7 @@ service iptables stop
 
 
 
-![image-20220227151141441](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220227151141441.png)
+![image-20220227151141441](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220227151141441.png)
 
 **开放端口**
 
@@ -711,7 +711,7 @@ ALTER TABLE emp1 DEFAULT CHARACTER SET 'utf8'COLLATE 'utf8_general_ci';
 | character_set_connection | 服务器处理请求时会把请求字符串从character_set_client转为character_set_connection |
 | character_set_results    | 服务器向客户端返回数据时使用的字符集                         |
 
-![image-20220228144602153](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220228144602153.png)
+![image-20220228144602153](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220228144602153.png)
 
 经验：
 开发中通常把character_set_client、character_.set_connection、character_.set_results这三个系统变量设置成和客户端使用的字符集一致的情况，这样减少了很多无谓的字符集转换。为了方便我们设置，MySQL提供了一条非常简便的语句：

@@ -60,7 +60,7 @@
 
 # 二、vi与vim
 
-![image-20220218120459221](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220218120459221.png)
+![image-20220218120459221](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220218120459221.png)
 
 ## vi和vim快捷键
 
@@ -103,7 +103,7 @@
 
 # 四、用户管理
 
-![image-20220218123613029](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220218123613029.png)
+![image-20220218123613029](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220218123613029.png)
 
 ## 添加用户
 
@@ -155,7 +155,7 @@ passwd：所有的身份验证令牌已经成功更新。
 ​	应用案例
 ​	1)删除用户 XIaomIng,但是要保留家目录
 
-![image-20220218124718258](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220218124718258.png)	
+![image-20220218124718258](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220218124718258.png)	
 
 ```
 [root@hadoop1 ~]# userdel xm
@@ -426,9 +426,9 @@ pwd(功能描述:显示当前工作目录的绝对路径
 应用实例
 案例查看当前目录的所有内容信息
 
-![image-20220218141116759](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220218141116759.png)
+![image-20220218141116759](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220218141116759.png)
 
-![image-20220218141206276](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220218141206276.png)
+![image-20220218141206276](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220218141206276.png)
 
 ### cd指令
 
@@ -829,7 +829,7 @@ tail 用于输出文件中尾部的内容,默认情况下tail指令显示文件�
 2)tail -n 5 文件(功能描述:查看文件后5行內容,5可以是任意行数
 3)tail -f 文件(功能描述:实时追踪该文档的所有更新
 
-![image-20220219122318093](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220219122318093.png)
+![image-20220219122318093](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220219122318093.png)
 
 ### ln指令
 
@@ -1299,14 +1299,14 @@ uid=1001(tom) gid=1004(bandit) 组=1004(bandit)
 
 ## 权限管理
 
-![image-20220219135411211](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220219135411211.png)
+![image-20220219135411211](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220219135411211.png)
 
 ```
 -rw-r--r--. 1 root police    0 2月  19 13:40 orange.txt
 文件类型：文件所有者权限：文件所在组用户权限：文件的软链接个数或子目录数量：文件所有者：文件所在组：文件大小：最后修改时间：文件名
 ```
 
-![image-20220219141340381](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220219141340381.png)
+![image-20220219141340381](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220219141340381.png)
 
 
 
@@ -1340,7 +1340,7 @@ orange.txt        文件名
 
 ### 修改权限- chmod
 
-![image-20220219140650891](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220219140650891.png)
+![image-20220219140650891](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220219140650891.png)
 
 通过 chmod指令,可以修改文件或者目录的权限。
 第一种方式:+、-、=变更权限
@@ -1469,7 +1469,7 @@ crontab [选项]
 - -i : 查询 crontab任务
 - -r : 删除当前用户所有的 crontab任务
 
-![image-20220220114200709](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220114200709.png)
+![image-20220220114200709](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220114200709.png)
 
 任务的要求
 	设置任务调度文件:/ etc/crontab
@@ -1516,7 +1516,7 @@ drwxr-xr-x.  3 root root       65 12月 24 14:25 alsa
 " */n ""代表每隔多久执行一次。比如“ */10 * * * *命令”,代表每隔
 10分钟就执行一遍命令
 
-![image-20220220115713372](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220115713372.png)
+![image-20220220115713372](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220115713372.png)
 
 ### 应用实例
 
@@ -1588,7 +1588,7 @@ rond相关指令:
 
 ### windows下的磁盘分区
 
-![image-20220220123725023](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220123725023.png)
+![image-20220220123725023](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220123725023.png)
 
 ### Linux分区
 
@@ -1614,9 +1614,9 @@ sda
 sr0 
 ```
 
-![image-20220220124719875](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220124719875.png)
+![image-20220220124719875](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220124719875.png)
 
-![image-20220220124748095](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220124748095.png)
+![image-20220220124748095](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220124748095.png)
 
 ## 挂载的经典案例
 
@@ -1624,7 +1624,7 @@ sr0
 
    在【虛拟机】菜单中,选择【设置】,然后设备列表里添加硬盘,然后一路【下一步】,中间只有选择磁盘大小的地方需要修改,至到完成。然后重启系统(才能识别)
 
-   ![image-20220220125921507](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220125921507.png)
+   ![image-20220220125921507](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220125921507.png)
 
 2. 分区
 
@@ -1659,7 +1659,7 @@ sr0
    永久挂载:通过修改/etc/fstab实现挂载
    添加完成后执行 mount -a即刻生效
 
-   ![image-20220220131541731](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220131541731.png)
+   ![image-20220220131541731](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220131541731.png)
 
 ## 磁盘情况查询
 
@@ -1669,7 +1669,7 @@ df -h
 ·应用实例
 查询系统整体磁盘使用情况
 
-![image-20220220131856697](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220131856697.png)
+![image-20220220131856697](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220131856697.png)
 
 du -h 目录
 查询指定目录的磁盘占用情况,默认为当前目录
@@ -1815,22 +1815,22 @@ yum install tree
 
 ## 查看 windows环境的中VMnet8网络配置( ipconfig指令)
 
-![image-20220220135528351](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220135528351.png)
+![image-20220220135528351](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220135528351.png)
 
 
 
-![image-20220220135458140](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220135458140.png)
+![image-20220220135458140](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220135458140.png)
 
 ## ping目的主机(功能描述:测试当前服务器是否可以连接目的主机)
 
-![image-20220220135707237](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220135707237.png)
+![image-20220220135707237](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220135707237.png)
 
 ## linux网络环境配置
 
 第一种方法(自动获取):
 说明:登陆后,通过界面的来设置自动获取ip
 
-![image-20220220135850319](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220135850319.png)
+![image-20220220135850319](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220135850319.png)
 
 缺点:linux启动后会自动获取IP缺点是每次自动获取的地址可能不一样,不适合做服务器
 
@@ -1885,15 +1885,15 @@ TTY 终端机号
 TIME 此进程所消CPU时间
 CMD 正在执行的命令或进程名
 
-![image-20220220204315185](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220204315185.png)
+![image-20220220204315185](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220204315185.png)
 
 ps -a:显示当前终端的所有进程信息
 ps -u:以用户的格式显示进程信息
 ps -x:展示后台进程运行的参数
 
-![image-20220220205502163](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220205502163.png)
+![image-20220220205502163](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220205502163.png)
 
-![image-20220220204559740](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220204559740.png)
+![image-20220220204559740](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220204559740.png)
 
 ### 详解
 
@@ -1941,13 +1941,13 @@ killall 进程名称(功能描述:通过进程名称杀死进程,也支持通配
   最佳实践:
   案例1:踢掉某个非法登录用户
 
-- ![image-20220220212336921](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220212336921.png)
+- ![image-20220220212336921](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220212336921.png)
 
   
 
 - 案例4:强制杀掉一个终端
 
-- ![image-20220220213217824](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220213217824.png)
+- ![image-20220220213217824](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220213217824.png)
 
 ## 查看进程树 pstree
 
@@ -1959,9 +1959,9 @@ pstree [选项],可以更加直观的来看进程信息
 应用实例:
 案例1:请你树状的形式显示进程的pid
 
-![image-20220220213316623](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220213316623.png)案例2:请你树状的形式进程的用户id
+![image-20220220213316623](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220213316623.png)案例2:请你树状的形式进程的用户id
 
-![image-20220220213338870](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220213338870.png)
+![image-20220220213338870](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220213338870.png)
 
 ## 服务 (service)管理
 
@@ -1976,9 +1976,9 @@ centOS7.systemctl
 1)查看当前防火墙的状况,关闭防火墙和重启防火墙。
 细节讨论:
 
-![image-20220220214012654](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220214012654.png)
+![image-20220220214012654](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220214012654.png)
 
-![image-20220220215329719](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220215329719.png)
+![image-20220220215329719](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220215329719.png)
 
 1)关闭或者启用防火墙后,立即生效。[ telnet测试某个端囗即可
 2)这种方式只是临时生效,当重启系统后,还是回归以前对服务的设置。
@@ -2001,7 +2001,7 @@ centOS7.systemctl
 
 2) chkconfig 服务名 --list
 3) chkconfig --level 5 服务名 on/off
-4) ![image-20220220220431322](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220220220431322.png)
+4) ![image-20220220220431322](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220220220431322.png)
 
 ## 动态监控进程
 
@@ -2010,9 +2010,9 @@ top与ps命令很相似。它们都用来显示正在执行的进程。top与ps�
 基本语法:
 top  [选项]
 
-![image-20220221123941194](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221123941194.png)
+![image-20220221123941194](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221123941194.png)
 
-![image-20220221123953007](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221123953007.png)
+![image-20220221123953007](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221123953007.png)
 
 选项说明:
 
@@ -2023,12 +2023,12 @@ top  [选项]
 - 监视特定用户
   - top:输入此命令,按回车键,查看执行的进程。
   - u:然后输入“u”回车,再输入用户名,即可
-  - ![image-20220221124210925](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221124210925.png)
+  - ![image-20220221124210925](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221124210925.png)
 
 - 终止指定的进程。
   - top:输入此命令,按回车键,査看执行的进程。
   - k:然后输入“k”回车,再输入要结束的进程ID号
-  - ![image-20220221124236728](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221124236728.png)
+  - ![image-20220221124236728](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221124236728.png)
 
 ### 交互操作说明:
 
@@ -2049,10 +2049,10 @@ netstat[选项]
 
 - -an  按一定顺序排列输出
 - -p 显示哪个进程在调用
-- ![image-20220221124716818](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221124716818.png)
+- ![image-20220221124716818](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221124716818.png)
 - 应用案例
   请查看服务名为sshd的服务的信息。
-  - ![image-20220221124749990](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221124749990.png)
+  - ![image-20220221124749990](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221124749990.png)
 - 检测主机连接命令ping
   是一种网络检测检测工具,它主要是用检测远程主机是否正常,或是两部主机间的介质是否为断、网线是否脱落或网卡故障
   如:ping 对方ip地址
@@ -2083,7 +2083,7 @@ rpm包的其它查询指令:
 - rpm -qa | grep x [rpm -qa grep firefox]
 - rpm -qf 文件全路径名:查询文件所属的软件包
 - rpm -qf /etc/passwd
-- ![image-20220221130322057](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221130322057.png)
+- ![image-20220221130322057](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221130322057.png)
 - rpm -qf /root/install.log
 - rpm -q 软件包名:查询软件包是否安装
 - rpm -q firefox
@@ -2112,11 +2112,11 @@ i=install安装
 v=verbose提示
 h=hash进度条
 
-![image-20220221132434274](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221132434274.png)
+![image-20220221132434274](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221132434274.png)
 
-![image-20220221132417007](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221132417007.png)
+![image-20220221132417007](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221132417007.png)
 
-![image-20220221132633258](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221132633258.png)
+![image-20220221132633258](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221132633258.png)
 
 ## yum
 
@@ -2132,27 +2132,27 @@ yum list | grep xx 软件列表
 安装指定的yum包
 yum install xxx下载安装
 
-![image-20220221133446105](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221133446105.png)
+![image-20220221133446105](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221133446105.png)
 
 # 十二、javaEE
 
 ## JDK
 
-1. 上传软件![image-20220221141200616](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221141200616.png)
+1. 上传软件![image-20220221141200616](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221141200616.png)
 
 2. 解压
 
-   ![image-20220221141354932](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221141354932.png)
+   ![image-20220221141354932](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221141354932.png)
 
 3. 配置环境变量 vim /etc/profile   source/etc/profile
 
-   ![image-20220221141709817](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221141709817.png)
+   ![image-20220221141709817](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221141709817.png)
 
-   ![image-20220221142251918](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221142251918.png)
+   ![image-20220221142251918](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221142251918.png)
 
 ## Tomcat
 
-![image-20220221143053991](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221143053991.png)
+![image-20220221143053991](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221143053991.png)
 
 ## [Centos7开放及查看端口](https://www.cnblogs.com/heqiuyong/p/10460150.html)
 
@@ -2174,15 +2174,15 @@ yum install xxx下载安装
 
 **systemctl stop firewalld.service**
 
-![image-20220221143501823](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221143501823.png)
+![image-20220221143501823](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221143501823.png)
 
-![image-20220221143849217](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221143849217.png)
+![image-20220221143849217](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221143849217.png)
 
-![image-20220221143833798](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221143833798.png)
+![image-20220221143833798](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221143833798.png)
 
 ## IDEA
 
-![image-20220221144504791](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220221144504791.png)
+![image-20220221144504791](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220221144504791.png)
 
 ## MYSQL
 
@@ -2205,7 +2205,7 @@ Shell是命令行解释器,它为用户提供了一个向 Linux内核发送请�
    需求说明
    创建一个Shell脚本,输出 hello world!
 
-4. ![image-20220222124558860](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222124558860.png)脚本的常用执行方式
+4. ![image-20220222124558860](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222124558860.png)脚本的常用执行方式
 
    1. 方式1(输入脚本的绝对路径或相对路径)
       (1)首先要赋予helloword.sh脚本的+x权限
@@ -2214,30 +2214,30 @@ Shell是命令行解释器,它为用户提供了一个向 Linux内核发送请�
    2. 方式2(sh+脚本)
       说明:不用赋予脚本+x权限,直接执行即可
 
-5. ![image-20220222125130541](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222125130541.png)
+5. ![image-20220222125130541](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222125130541.png)
 
 ## shell 的变量
 
 1) Linux Shell中的变量分为,系统变量和用户自定义变量。
 2) 系统变量: $HOME、$PWD、 $SHELL、 $USER等等
     比如: echo $HOME等等
-  1) ![image-20220222125553889](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222125553889.png)
-  2) ![image-20220222125536840](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222125536840.png)
+  1) ![image-20220222125553889](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222125553889.png)
+  2) ![image-20220222125536840](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222125536840.png)
 3) 显示当前shell中所有变量:set
-  1) ![image-20220222125658976](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222125658976.png)
+  1) ![image-20220222125658976](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222125658976.png)
 4) shell变量的定义
     基本语法
     1)定义变量:变量=值
     2)撤销变量: unset 变量
     3)声明静态变量: readonly 变量,注意:不能 unset
 
-![image-20220222125916041](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222125916041.png)
+![image-20220222125916041](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222125916041.png)
 
-![image-20220222125923375](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222125923375.png)
+![image-20220222125923375](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222125923375.png)
 
-![image-20220222130059115](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222130059115.png)
+![image-20220222130059115](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222130059115.png)
 
-![image-20220222130111211](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222130111211.png)
+![image-20220222130111211](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222130111211.png)
 
 ## 定义变量的规则
 
@@ -2247,8 +2247,8 @@ Shell是命令行解释器,它为用户提供了一个向 Linux内核发送请�
 4. 将命令的返回值赋给变量(重点)
    1)A=`ls -a`反引号,运行里面的命令,并把结果返回给变量A
    2)A=$(ls -a)等价于反引号
-5. ![image-20220222130724537](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222130724537.png)|![image-20220222130733253](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222130733253.png)
-6. ![image-20220222130906407](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222130906407.png)![image-20220222130912323](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222130912323.png)
+5. ![image-20220222130724537](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222130724537.png)|![image-20220222130733253](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222130733253.png)
+6. ![image-20220222130906407](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222130906407.png)![image-20220222130912323](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222130912323.png)
 
 ## 设置环境变量
 
@@ -2257,11 +2257,11 @@ Shell是命令行解释器,它为用户提供了一个向 Linux内核发送请�
 2) source 配置文件(功能描述:让修改后的配置信息立即生效 )
 3) echo $变量名(功能描述:查询环境变量的值)
 
-![image-20220222131819116](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222131819116.png)
+![image-20220222131819116](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222131819116.png)
 
-![image-20220222132204793](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222132204793.png)
+![image-20220222132204793](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222132204793.png)
 
-![image-20220222132211100](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222132211100.png)
+![image-20220222132211100](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222132211100.png)
 
 ## 位置参数变量
 
@@ -2274,9 +2274,9 @@ Shell是命令行解释器,它为用户提供了一个向 Linux内核发送请�
 - $@(功能描述:这个变量也代表命令行中所有的参数,不过$@把每个参数区分对待)
 - $#(功能描述:这个变量代表命令行中所有参数的个数)
 
-![image-20220222132823936](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222132823936.png)
+![image-20220222132823936](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222132823936.png)
 
-![image-20220222132805688](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222132805688.png)
+![image-20220222132805688](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222132805688.png)
 
 ## 预定义变量
 
@@ -2287,9 +2287,9 @@ Shell是命令行解释器,它为用户提供了一个向 Linux内核发送请�
 - $! (功能描述:后台运行的最后一个进程的进程号(PID))
 - $? (功能描述:最后一次执行的命令的返回状态。如果这个变量的值为0,证明上一个命令正确执行;如果这个变量的值为非0(具体是哪个数,由命令自己来决定),则证明上一个命令执行不正确了。)
 
-![image-20220222133358707](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222133358707.png)
+![image-20220222133358707](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222133358707.png)
 
-![image-20220222133403557](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222133403557.png)
+![image-20220222133403557](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222133403557.png)
 
 ## 运算符
 
@@ -2299,9 +2299,9 @@ Shell是命令行解释器,它为用户提供了一个向 Linux内核发送请�
 3. expr m - n
 4. expr \ *, /, %乘,除,取余
 
-![image-20220222134424741](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222134424741.png)
+![image-20220222134424741](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222134424741.png)
 
-![image-20220222134429466](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222134429466.png)条件判断
+![image-20220222134429466](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222134429466.png)条件判断
 
 ## 判断语句
 
@@ -2333,9 +2333,9 @@ Shell是命令行解释器,它为用户提供了一个向 Linux内核发送请�
    - -e文件存在
    - -d文件存在并是一个目录
 
-![image-20220222135633048](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222135633048.png)
+![image-20220222135633048](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222135633048.png)
 
-![image-20220222135636708](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222135636708.png)
+![image-20220222135636708](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222135636708.png)
 
 ## 流程控制
 
@@ -2361,9 +2361,9 @@ then
 
 fi
 
-![image-20220222140155079](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222140155079.png)
+![image-20220222140155079](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222140155079.png)
 
-![image-20220222140202167](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222140202167.png)
+![image-20220222140202167](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222140202167.png)
 
 ### case语句
 
@@ -2389,9 +2389,9 @@ case $变量名 in
 
 esac
 
-![image-20220222140943958](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222140943958.png)
+![image-20220222140943958](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222140943958.png)
 
-![image-20220222140948634](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222140948634.png)
+![image-20220222140948634](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222140948634.png)
 
 ### for循环
 
@@ -2408,9 +2408,9 @@ done
 
 案例1:打印命令行输入的参数
 
-![image-20220222141642452](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222141642452.png)
+![image-20220222141642452](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222141642452.png)
 
-![image-20220222141652161](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222141652161.png)
+![image-20220222141652161](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222141652161.png)
 
 基本语法2
 
@@ -2425,9 +2425,9 @@ done
 应用实例
 案例1:从1加到100的值输出显示[这里可以看出$*和$@的区别
 
-![image-20220222142201082](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222142201082.png)
+![image-20220222142201082](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222142201082.png)
 
-![image-20220222142205622](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222142205622.png)
+![image-20220222142205622](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222142205622.png)
 
 ### while循环
 
@@ -2441,9 +2441,9 @@ done
 应用实例
 案例1:从命令行输入一个数n,统计从1+到n的值是多少?
 
-![image-20220222142708888](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222142708888.png)
+![image-20220222142708888](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222142708888.png)
 
-![image-20220222142712831](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222142712831.png)
+![image-20220222142712831](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222142712831.png)
 
 ## read读取控制台输入
 
@@ -2457,9 +2457,9 @@ read(选项)(参数
 案例1:读取控制台输入一个num值
 案例2:读取控制台输入一个num值,在10秒内输入。
 
-![image-20220222150841432](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222150841432.png)
+![image-20220222150841432](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222150841432.png)
 
-![image-20220222150846347](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222150846347.png)
+![image-20220222150846347](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222150846347.png)
 
 ## 函数介绍
 
@@ -2473,14 +2473,14 @@ shell编程和其它编程语言一样,有系统函数,也可以自定义函数�
 
   basename [string] [suffix]
 
-  ![image-20220222151224867](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222151224867.png)(功能描述: basename命令会删掉所有的前缀包括最后一个(‘/'字符,然后将字符串显示出来。
+  ![image-20220222151224867](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222151224867.png)(功能描述: basename命令会删掉所有的前缀包括最后一个(‘/'字符,然后将字符串显示出来。
   选项
   suffix为后缀,如果suffix被指定了, basename会将 pathname或 string中的suffⅸ去掉。
 
 - dirname基本语法
   功能:返回完整路径最后/的前面的部分,用于返回路径部分
   dirname 文件绝对路径 (功能描述:从给定的包含绝对路径的文件名中去除文件名(非目录的部分),然后返回剩下的路径(目录的部分)
-  ![image-20220222151501955](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222151501955.png)
+  ![image-20220222151501955](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222151501955.png)
 
 ### 自定义函数
 
@@ -2495,9 +2495,9 @@ shell编程和其它编程语言一样,有系统函数,也可以自定义函数�
 应用实例
 案例1:计算输入两个参数的和
 
-![image-20220222152159489](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222152159489.png)
+![image-20220222152159489](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222152159489.png)
 
-![image-20220222152205338](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222152205338.png)
+![image-20220222152205338](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222152205338.png)
 
 # 综合案例
 
@@ -2508,19 +2508,19 @@ shell编程和其它编程语言一样,有系统函数,也可以自定义函数�
 2018-03-12230201.tar.gz
 4)在备份的同时,检査是否有10天前备份的数据库文件,如果有就将其删除。
 
-![image-20220222160001398](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222160001398.png)
+![image-20220222160001398](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222160001398.png)
 
-![image-20220222160319991](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222160319991.png)
+![image-20220222160319991](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222160319991.png)
 
-![image-20220222160324564](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222160324564.png)
+![image-20220222160324564](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222160324564.png)
 
-![image-20220222162119458](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222162119458.png)
+![image-20220222162119458](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222162119458.png)
 
-![image-20220222162125833](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222162125833.png)
+![image-20220222162125833](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222162125833.png)
 
-![image-20220222162339601](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222162339601.png)
+![image-20220222162339601](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222162339601.png)
 
-![image-20220222162426597](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222162426597.png)![image-20220222162431910](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220222162431910.png)
+![image-20220222162426597](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222162426597.png)![image-20220222162431910](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220222162431910.png)
 
 ```
 #!/bin/bash

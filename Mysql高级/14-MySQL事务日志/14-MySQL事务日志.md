@@ -36,7 +36,7 @@ InoDB存储引擎是以**页为单位**来管理存储空间的。在真正访�
 
 InnoDBi引擎的事务采用了WAL技术(Write-Ahead Logging),这种技术的思想就是先写日志，再写磁盘，只有日志写入成功，才算事务提交成功，这里的日志就是redo log。当发生宕机且数据未刷到磁盘的时候，可以通过redo log来恢复，保证ACID中的D,这就是redo log的作用。
 
-![image-20220407122521535](../../AppData/Roaming/Typora/typora-user-images/image-20220407122521535.png)
+![image-20220407122521535](C:/Users/YQ/AppData/Roaming/Typora/typora-user-images/image-20220407122521535.png)
 
 ### 1.2 REDO日志的好处、特点
 
@@ -65,7 +65,7 @@ Redo log可以简单分为以下两个部分：
 
 在服务器启动时就向操作系统申请了一大片称之为redo log buffer的连续内存空间，翻译成中文就是redo日志缓冲区。这片内存空间被划分成若干个连续的redo log block。一个redo log block占用512字节大小。
 
-![image-20220407122908091](../../AppData/Roaming/Typora/typora-user-images/image-20220407122908091.png)
+![image-20220407122908091](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407122908091.png)
 
 参数设置：innodb_log_buffer_.size:
 
@@ -84,13 +84,13 @@ mysql> show variables like '%innodb_log_buffer_size%';
 
 REDO日志文件如图所示，其中的ib_logfile0和ib_logfile1即为REDO日志。
 
-![image-20220407123607656](../../AppData/Roaming/Typora/typora-user-images/image-20220407123607656.png)
+![image-20220407123607656](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407123607656.png)
 
 ### 1.4 redo的整体流程
 
 以一个更新事务为例，redo log流转过程，如下图所示：
 
-![image-20220407123703329](../../AppData/Roaming/Typora/typora-user-images/image-20220407123703329.png)
+![image-20220407123703329](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407123703329.png)
 
 ```
 第1步：先将原始数据从磁盘中读入内存中来，修改数据的内存拷贝
@@ -107,7 +107,7 @@ REDO日志文件如图所示，其中的ib_logfile0和ib_logfile1即为REDO日�
 
 redo log的写入**并不是直接写入磁盘的**，InnoDB引擎会在写redo log的时候先写redo log buffer,之后以**一定的频率**刷入到真正的redo log file中。这里的一定频率怎么看待呢？这就是我们要说的刷盘策略。
 
-![image-20220407123947047](../../AppData/Roaming/Typora/typora-user-images/image-20220407123947047.png)
+![image-20220407123947047](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407123947047.png)
 
 注意，redo log buffer刷盘到redo log file的过程并不是真正的刷到磁盘中去，只是刷入到**文件系统缓存**(page cache)中去（这是现代操作系统为了提高文件写入效率做的一个优化），真正的写入会交给系统自己来决定（比如page cache足够大了)。那么对于InnoDB:来说就存在一个问题，如果交给系统来同步，同样如果系统宕机，那么数据也丢失了（虽然整个系统宕机的概率还是比较小的）
 
@@ -129,11 +129,11 @@ mysql> show variables like '%innodb_flush_log_at_trx_commit%';
 
 另外，InnoDB存储擎有一个后台线程，每隔1秒，就会把**redo log buffer**中的内容写到文件系统缓存(page cache),然后调用刷盘操作。
 
-![image-20220407124424006](../../AppData/Roaming/Typora/typora-user-images/image-20220407124424006.png)
+![image-20220407124424006](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407124424006.png)
 
 也就是说，一个没有提交事务的redo log记录，**也可能会刷盘**。因为在事务执行过程redo log记录是会写入redo log buffer中，这些redo log记录会被**后台线程**刷盘。
 
-![image-20220407124513161](../../AppData/Roaming/Typora/typora-user-images/image-20220407124513161.png)
+![image-20220407124513161](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407124513161.png)
 
 除了后台线程每秒1次的轮询操作，还有一种情况，当**redo log buffer**占用的空间即将达到innodb_log_buffer_size(这个参数默认是16M)的**一半**的时候，后台线程会主动刷盘。
 
@@ -141,7 +141,7 @@ mysql> show variables like '%innodb_flush_log_at_trx_commit%';
 
 #### 1.流程图
 
-![image-20220407124615541](../../AppData/Roaming/Typora/typora-user-images/image-20220407124615541.png)
+![image-20220407124615541](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407124615541.png)
 
 > 小结：innodb_flush_log_at_trx_commit=1
 >
@@ -151,7 +151,7 @@ mysql> show variables like '%innodb_flush_log_at_trx_commit%';
 >
 > 建议使用默认值，虽然操作系统宕机的概率理论小于数据库宕机的概率，但是一般既然使用了事务，那么数据的安全相对来说更重要些。
 
-![image-20220407124801988](../../AppData/Roaming/Typora/typora-user-images/image-20220407124801988.png)
+![image-20220407124801988](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407124801988.png)
 
 > 小结innodb_flush_.log_at_trx_commit=2
 >
@@ -159,7 +159,7 @@ mysql> show variables like '%innodb_flush_log_at_trx_commit%';
 >
 > 如果仅仅只是MySQL挂了不会有任何数据丢失，但是操作系统宕机可能会有1秒数据的丢失，这种情况下无法满足ACID中的D。但是数值2肯定是**效率最高的。**
 
-![image-20220407125000004](../../AppData/Roaming/Typora/typora-user-images/image-20220407125000004.png)
+![image-20220407125000004](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407125000004.png)
 
 > 小结：innodb_flush_log_at_trx_commit=0
 >
@@ -179,13 +179,13 @@ MySQL把对底层页面中的一次原子访问的过程称之为一个**Mini-Tr
 
 一个事务可以包含若干条语句，每一条语句其实是由若干个mtr组成，每一个mtr又可以包含若干条redo日志，画个图表示它们的关系就是这样：
 
-![image-20220407125743564](../../AppData/Roaming/Typora/typora-user-images/image-20220407125743564.png)
+![image-20220407125743564](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407125743564.png)
 
 #### 2. redo日志写入log buffer
 
 可log buffer中写入redo日志的过程是顺序的，也就是先往前边的block中写，当该block的空闲空间用完之后再往下一个block中写。当我们想往log buffer中写入redo日志时，第一个遇到的问题就是应该写在哪个block的哪个偏移量处，所以InnoDB的设计者特意提供了一个称之为buf_free的全局变量，该变量指明后续写入的redo日志应该写入到log buffer中的哪个位置，如图所示：
 
-![image-20220407125942575](../../AppData/Roaming/Typora/typora-user-images/image-20220407125942575.png)
+![image-20220407125942575](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407125942575.png)
 
 一个mtr执行过程中可能产生若干条redo日志，这些redo日志是**一个不可分割的组**，所以其实并不是每生成一条redo日志，就将其插入到log buffer中，而是每个mtr运行过程中产生的日志先暂时存到一个地方，当该mtr结束的时候，将过程中产生的一组redo日志再全部复制到log buffer中。我们现在假设有两个名为T1、T2的事务，每个事务都包含2个mtr,我们给这几个mtr命名一下：
 
@@ -194,11 +194,11 @@ MySQL把对底层页面中的一次原子访问的过程称之为一个**Mini-Tr
 
 每个mtr都会产生一组redo日志，用示意图来描述一下这些mtr产生的日志情况：
 
-![image-20220407130118278](../../AppData/Roaming/Typora/typora-user-images/image-20220407130118278.png)
+![image-20220407130118278](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407130118278.png)
 
 不同的事务可能是併发执行的，所以T1、T2之间的mtr可能是交替执行的。每当一个mt执行完成时，伴随该mtr生成的一组redo日志就需要被复制到log buffer中，也就是说不同事务的mtr可能是交替写入log buffer的，我们画个示意图（为了美观，我们把一个mtr中产生的所有的redo日志当作一个整体来画）：
 
-![image-20220407130247956](../../AppData/Roaming/Typora/typora-user-images/image-20220407130247956.png)
+![image-20220407130247956](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407130247956.png)
 
 有的mtr产生的redo日志量非常大，比如m㎡tr_t1_2产生的redo日志占用空间比较大，占用了3个block:来存储。
 
@@ -210,11 +210,11 @@ MySQL把对底层页面中的一次原子访问的过程称之为一个**Mini-Tr
 >
 > 这个和磁盘的扇区有关，机械磁盘默认的扇区就是512字节，如果你要写入的数据大于512字节，那么要写入的扇区肯定不止一个，这时就要涉及到盘片的转动，找到下一个扇区，假设现在需要写入两个扇区A和B,如果扇区A写入成功，而扇区B写入失败，那么就会出现非原子性的写入，而如果每次只写入和扇区的大小一样的512字节，那么每次的写入都是原子性的。
 
-![image-20220407130408161](../../AppData/Roaming/Typora/typora-user-images/image-20220407130408161.png)
+![image-20220407130408161](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407130408161.png)
 
 真正的redo日志都是存储到占用496字节大小的log block body中，图中的log block header和log block trailer存储的是一些管理信息。我们来看看这些所谓的管理信息都有什么。
 
-![image-20220407130454411](../../AppData/Roaming/Typora/typora-user-images/image-20220407130454411.png)
+![image-20220407130454411](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407130454411.png)
 
 - log block header的属分别如下：
 	- LOG_BLOCK_HDR_NO: log buffer是由log block组成，在内部log buffer就好似一个数组，因此LOG_BLOCK_HDR_NO用来标记这个数组中的位置。其是递增并且循环使用的，占用4个字节，但是由于第一位用来判断是否是flush bit,所以最大的值为2G。
@@ -281,7 +281,7 @@ innodb_log_file_size=200M
 
 在将redo日志写入日志文件组时，是从ib_logfile0开始写，如果ib_logfile0写满了，就接着ib_logfile1写。同理，ib_1ogfi1e1写满了就去写ib_logfile2,依此类推。如果写到最后一个文件该咋办？那就重新转到ib_logfile0继续写，所以整个过程如下图所示：
 
-![image-20220407131549519](../../AppData/Roaming/Typora/typora-user-images/image-20220407131549519.png)
+![image-20220407131549519](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407131549519.png)
 
 **总共的redo日志文件大小其实就是：innodb_log_file_size ×i nnodb-log-files_in-group。**
 
@@ -296,7 +296,7 @@ innodb_log_file_size=200M
 
 每次刷盘redo log记录到日志文件组中，write pos位置就会后移更新。每次MySQL加载日志文件组恢复数据时，会清空加载过的redo log记录，并把checkpoint)后移更新。write pos和checkpoint之间的还空着的部分可以用来写入新的redo log记录。
 
-![image-20220407131723360](../../AppData/Roaming/Typora/typora-user-images/image-20220407131723360.png)
+![image-20220407131723360](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407131723360.png)
 
 如果write pos追上checkpoint,表示**日志文件组**满了，这时候不能再写入新的redo log记录，MySQL得停下来，清空一些记录，把checkpoint推进一下。
 
@@ -306,7 +306,7 @@ innodb_log_file_size=200M
 
 InnoDB的更新操作采用的是Write Ahead Log(预先日志持久化)策略，**即先写日志，再写入磁盘。**
 
-![image-20220407131854879](../../AppData/Roaming/Typora/typora-user-images/image-20220407131854879.png)
+![image-20220407131854879](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407131854879.png)
 
 ## 2. undo日志
 
@@ -436,11 +436,11 @@ undo log相关参数一般很少改动。
 
 **只有Buffer Pool的流程：**
 
-![image-20220407134101394](../../AppData/Roaming/Typora/typora-user-images/image-20220407134101394.png)
+![image-20220407134101394](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407134101394.png)
 
 **有了Redo Log和Undo Log之后：**
 
-![image-20220407134152455](../../AppData/Roaming/Typora/typora-user-images/image-20220407134152455.png)
+![image-20220407134152455](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407134152455.png)
 
 在更新Buffer Pool中的数据之前，我们需要先将该数据事务开始之前的状态写入Undo Log中。假设更新到一半出错了，我们就可以通过Undo Log来回滚到事务开始前。
 
@@ -452,7 +452,7 @@ undo log相关参数一般很少改动。
 - DB_TRX_ID：每个事务都会分配一个事务ID,当对某条记录发生衮更时，就会将这个事务的事务ID写入txid中。
 - DB_ROLL_PTR：回滚指针，本质上就是指向undo log的指针。
 
-![image-20220407134312910](../../AppData/Roaming/Typora/typora-user-images/image-20220407134312910.png)
+![image-20220407134312910](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407134312910.png)
 
 **当我们执行INSERT时：**
 
@@ -463,7 +463,7 @@ INSERT INTO user (name) VALUES('tom');
 
 插入的数据都会生成一条insert undo log,并且数据的回滚指针会指向它。undo log会记录undo log的序号、插入主键的列和值..，那么在进行rollback的时候，通过主键直接把对应的数据删除即可。
 
-![image-20220407134430700](../../AppData/Roaming/Typora/typora-user-images/image-20220407134430700.png)
+![image-20220407134430700](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407134430700.png)
 
 **当我们执行UPDATE时：**
 
@@ -473,7 +473,7 @@ INSERT INTO user (name) VALUES('tom');
 UPDATE user SET name="Sun" WHERE id=1;
 ```
 
-![image-20220407134544044](../../AppData/Roaming/Typora/typora-user-images/image-20220407134544044.png)
+![image-20220407134544044](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407134544044.png)
 
 这时会把老的记录写入新的undo log,让回滚指针指向新的undo log,它的undo no:是1，并且新的undo log:会指向老的undo log(undo no=0)。
 
@@ -483,7 +483,7 @@ UPDATE user SET name="Sun" WHERE id=1;
 UPDATE user SET id=2 WHERE id=1;
 ```
 
-![image-20220407134617587](../../AppData/Roaming/Typora/typora-user-images/image-20220407134617587.png)
+![image-20220407134617587](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407134617587.png)
 
 对于更新主键的操作，会先把原来的数据deletemark标识打开，这时并没有真正的删除数据，真正的删除会交给清理线程去判断，然后在后面插入一条新的数据，新的数据也会产生undo log,并且undo log的序号会递增。
 
@@ -514,7 +514,7 @@ UPDATE user SET id=2 WHERE id=1;
 
 ### 2.6小结
 
-![image-20220407134850641](../../AppData/Roaming/Typora/typora-user-images/image-20220407134850641.png)
+![image-20220407134850641](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407134850641.png)
 
 undo log是逻辑日志，对事务回滚时，只是将数据库逻辑地恢复到原来的样子。
 

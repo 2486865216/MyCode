@@ -114,11 +114,11 @@ DROP TRIGGER 触发器名
 
 ​	假设我们用进货单头表（demo.importhead)来保存进货单的总体信息，包括进货单编号、供货商编号、仓库编号、总计进货数量、总计进货金额和验收日期。
 
-![image-20220226152318363](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220226152318363.png)
+![image-20220226152318363](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220226152318363.png)
 
 ​	用进货单明细表(demo.importdetails)来保存进货商品的明细，包括进货单编号、商品编号、进货数量、进货价格和进货金额。
 
-![image-20220226152334488](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220226152334488.png)
+![image-20220226152334488](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220226152334488.png)
 
 每当我们录入、删除和修改一条进货单明细数据的时候，进货单明细表里的数据就会发生变动。这个时候，在进货单头表中的总计数量和总计金额就必须重新计算，否则，进货单头表中的总计数量和总计金额就不等于进货单明细表中数量合计和金额合计了，这就是数据不一致。
 

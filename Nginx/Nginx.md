@@ -14,14 +14,13 @@ Nginx不仅可以做反向代理，实现负载均衡。还能用作正向代理
 
 正向代理：如果把局域网外的Internet想象成一个巨犬的资源库，则局域网中的客户端要访问Internet,则需要通过代理服务器来访问，这种代理服务就称为正向代理。
 
-![image-20220306103410031](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306103410031.png)
+![image-20220306103410031](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306103410031.png)
 
 ## 1.4反向代理
 
-反向代理，其实客户端对代理是无感知的，因为客户端不需要任何配置就可以访问，我们只需要将请求发送到反向代理服务器，由反向代理服务器去选择目标服务器获取数据后，在返回给客户端，此时反向代理服务器和目标服务器对外就是一个服务器，暴露的是代理服务器
-地址，隐藏了真实服务器IP地址。
+反向代理，其实客户端对代理是无感知的，因为客户端不需要任何配置就可以访问，我们只需要将请求发送到反向代理服务器，由反向代理服务器去选择目标服务器获取数据后，在返回给客户端，此时反向代理服务器和目标服务器对外就是一个服务器，暴露的是代理服务器地址，隐藏了真实服务器IP地址。
 
-![image-20220306104220319](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306104220319.png)
+![image-20220306104220319](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306104220319.png)
 
 ## 1.5负载均衡
 
@@ -34,13 +33,13 @@ Nginx不仅可以做反向代理，实现负载均衡。还能用作正向代理
 
 ​	上面的分析我们去掉了增加服务器物理配置来解决问题的办法，也就是说纵向解决问题的办法行不通了，那么横向增加服务器的数量呢？这时候集群的概念产生了，单个服务器解决不了，我们增加服务器的数量，然后将请求分发到各不服务器上，将原先请求集中到单个服务器上的情况改为将请求分发到多个服务器上，将负载分发到不同的服务器，也就是我们所说的**负载均衡**
 
-![image-20220306111431559](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306111431559.png)
+![image-20220306111431559](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306111431559.png)
 
 ## 1.6动静分离
 
 为了加快网站的解析速度，可以把动态页面和静态页面由不同的服务器来解析，加快解析速度。降低原来单个服务器的压力。
 
-![image-20220306111646298](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306111646298.png)
+![image-20220306111646298](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306111646298.png)
 
 # 第2章Nginx安装
 
@@ -48,13 +47,13 @@ Nginx不仅可以做反向代理，实现负载均衡。还能用作正向代理
 
 http://nginx.org/
 
-![image-20220306112413305](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306112413305.png)
+![image-20220306112413305](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306112413305.png)
 
 ---
 
 
 
-![image-20220306112504079](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306112504079.png)
+![image-20220306112504079](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306112504079.png)
 
 
 
@@ -70,13 +69,13 @@ zlib库：zlib库用于对HTTP包的内容做gzip格式的压缩，我们可以�
 
 OpenSSL开发库：HTTPS必备，这个就不用解释了
 
-![image-20220306112556342](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306112556342.png)
+![image-20220306112556342](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306112556342.png)
 
 ## 2.2安装nginx
 
 **1.安装prce依赖**
 
-![image-20220306113258657](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306113258657.png)
+![image-20220306113258657](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306113258657.png)
 
 ```shell
 yum install -y pcre pcre-devle
@@ -99,7 +98,7 @@ yum install gcc-c++ -y
 ./configure
 ```
 
-![image-20220306114306412](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306114306412.png)
+![image-20220306114306412](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306114306412.png)
 
 编译并安装
 
@@ -109,7 +108,7 @@ make && make install
 
 查看版本
 
-![image-20220306114902938](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306114902938.png)
+![image-20220306114902938](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306114902938.png)
 
 **2.安装其它依赖**
 
@@ -130,7 +129,7 @@ make && make install
 
 安装成功之后，在usr多出来一个文件夹local/ginx,在nginx有sbin有启动脚本
 
-![image-20220306115603670](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306115603670.png)
+![image-20220306115603670](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306115603670.png)
 
 **启动**
 
@@ -195,7 +194,7 @@ nginx version: nginx/1.20.2
 
 ## 3.2 nginx.conf配置文件
 
-![image-20220306121356946](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306121356946.png)
+![image-20220306121356946](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306121356946.png)
 
 根据上述文件，我们可以很明显的将nginx.conf配置文件分为三部分：
 
@@ -274,13 +273,13 @@ firewall-cmd --reload
 
 3.访问过程分析
 
-![image-20220306131745306](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306131745306.png)
+![image-20220306131745306](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306131745306.png)
 
 4.具体配置
 
 第一步在windows系统的host文件进行域名和ip对应关系的配置
 
-![image-20220306132002153](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306132002153.png)
+![image-20220306132002153](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306132002153.png)
 
 ```properties
 192.168.229.131 www.123.com
@@ -288,11 +287,11 @@ firewall-cmd --reload
 
 第二步修改ngnix配置文件
 
-![image-20220306141318031](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306141318031.png)
+![image-20220306141318031](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306141318031.png)
 
 5.最终效果
 
-![image-20220306134032177](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306134032177.png)
+![image-20220306134032177](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306134032177.png)
 
 ## 4.2反向代理实例二
 
@@ -307,18 +306,18 @@ firewall-cmd --reload
 
 (1)准备两个tomcat服务器，一个8080端口，一个8081端口：
 
-![image-20220306134901416](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306134901416.png)
+![image-20220306134901416](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306134901416.png)
 
 3、具体配置
 (1)找到nginx配置文件，进行反向代理配置
 
-![image-20220306140046151](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306140046151.png)
+![image-20220306140046151](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306140046151.png)
 
 (2)开放9001端口
 
-![image-20220306141422279](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306141422279.png)
+![image-20220306141422279](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306141422279.png)
 
-![image-20220306141426291](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306141426291.png)
+![image-20220306141426291](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306141426291.png)
 
 #### location指令说明
 
@@ -326,7 +325,7 @@ firewall-cmd --reload
 
 语法如下：
 
-![image-20220306140453474](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306140453474.png)
+![image-20220306140453474](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306140453474.png)
 
 1、= ：用于不含正则表达式的uri前，要求请求字符串与uri严格匹配，如果匹配成功，就停止继续向下搜索并立即处理该请求。
 
@@ -350,13 +349,13 @@ firewall-cmd --reload
 
 (2)在两台tomcat里面webapps目录中，创建名称是edu文件夹，在edu文件夹中创建a.html页面，用于测试
 
-![image-20220306143401772](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306143401772.png)
+![image-20220306143401772](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306143401772.png)
 
 
 
-![image-20220306143605431](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306143605431.png)
+![image-20220306143605431](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306143605431.png)
 
-![image-20220306143615236](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306143615236.png)
+![image-20220306143615236](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306143615236.png)
 
 随着互联网信息的爆炸性增长，负载均衡(load balance)已经不再是一个很陌生的话题，顾名思义，负载均衡即是将负载分摊到不同的服务单元，既保证服务的可用性，又保证响应足够快，给用户很好的体验.快速增长的访问量和数据流量催生了各式各样的负载均衡产品，
 很多专业的负载均衡硬件提供了很好的功能，但却价格不菲，这使得负载均衡软件大受欢迎，nginx就是其中的一个，在linux下有Nginx、LVS、Haproxy等等服务可以提供负载均衡服务，而且Nginx提供了几种分配方式（策略）：
@@ -420,7 +419,7 @@ Nginx动静分离简单来说就是把动态跟静态请求分开，不能理解
 
 2、配置文件
 
-![image-20220306150037163](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306150037163.png)
+![image-20220306150037163](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306150037163.png)
 
 配置文件autoindex on 列出文件目录
 
@@ -430,17 +429,17 @@ Nginx动静分离简单来说就是把动态跟静态请求分开，不能理解
 
 htpp:/192.168.229.131/image/01.jpg
 
-![image-20220306150927320](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306150927320.png)
+![image-20220306150927320](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306150927320.png)
 
 (2)浏览器中输入地址
 
 htpp:/192.168.229.131/www/a.html
 
-![image-20220306151019393](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306151019393.png)
+![image-20220306151019393](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306151019393.png)
 
 # 第7章nginx搭建高可用集群
 
-![image-20220306153135302](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306153135302.png)
+![image-20220306153135302](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306153135302.png)
 
 ##  Keepalived+Nginx高可用集群
 
@@ -458,11 +457,11 @@ yum install keepalived -y
 
 如果安装失败
 
-![image-20220306161626470](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306161626470.png)
+![image-20220306161626470](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306161626470.png)
 
 2、修改配置文件
 
-![image-20220306200036281](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306200036281.png)
+![image-20220306200036281](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306200036281.png)
 
 ```properties
 # 全局配置
@@ -542,7 +541,7 @@ root      34479  29557  0 21:24 pts/2    00:00:00 grep --color=auto keepalived
 
 
 
-![image-20220306212543357](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306212543357.png)
+![image-20220306212543357](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306212543357.png)
 
 
 
@@ -552,9 +551,9 @@ root      34479  29557  0 21:24 pts/2    00:00:00 grep --color=auto keepalived
 
 # 第8章nginx原理
 
-![image-20220306213156089](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306213156089.png)
+![image-20220306213156089](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306213156089.png)
 
-![image-20220306213237643](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306213237643.png)
+![image-20220306213237643](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306213237643.png)
 
 **master-workers的机制的好处**
 
@@ -569,4 +568,4 @@ Ninx同edis类似都采用了io多路复用机制，每个worker都是一个独�
 
 这个值是表示每个worker进程所能建立连接的最大值，所以，一个nginx能建立的最大连接数，应该是worker connections * worker processes。当然，这里说的是最大连接数，对于HTTP请求本地资源来说，能够支持的最大并发数量是worker connections * worker_processes,如果是支持http1.1的浏览器每次访问要占**两个连接**，所以普通的静态访问最大并发数是：worker connections * worker processes/2,而如果是HTTP作为反向代理来说，最大并发数量应该是worker connections * worker processes/4。因为作为反向代理服务器，**每个并发会建立与客户端的连接和与后端服务的连接，会占用两个连接。**
 
-![image-20220306214145568](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220306214145568.png)
+![image-20220306214145568](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220306214145568.png)

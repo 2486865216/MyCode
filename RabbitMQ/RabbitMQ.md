@@ -16,13 +16,13 @@ MQ(message queue),从字面意思上看，本质是个队列，FIF0先入先出�
 
 以电商应用为例，应用中有订单系统、库存系统、物流系统、支付系统。用户创建订单后，如果耦合调用库存系统、物流系统、支付系统，任何一个子系统出了故障，都会造成下单操作异常。当转变成基于消息队列的方式后，系统间调用的问题会减少很多，比如物流系统因为发生故障，需要几分钟来修复。在这几分钟的时间里，物流系统要处理的内存被缓存在消息队列中，用户的下单操作可以正常完成。当物流系统恢复后，继续处理订单信息即可，订单用户感受不到物流系统的故障，提升系统的可用性。
 
-![image-20220223202643514](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220223202643514.png)
+![image-20220223202643514](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220223202643514.png)
 
 #### 3.异步处理
 
 有些服务间调用是异步的，例如A调用B,B需要花费很长时间执行，但是A需要知道B什么时候可以执行完，以前一般有两种方式，A过一段时间去调用B的查询api查询。或者A提供一个callback api,B执行完之后调用api通知A服务。这两种方式都不是很优雅，使用消息总线，可以很方便解决这个问题，A调用B服务后，只需要监听B处理完成的消息，当B处理完成后，会发送一条消息给MQ,MQ会将此消息转发给A服务。这样A服务既不用循环调用B的查询api,也不用提供callback api。同样B服务也不用做这些操作。A服务还能及时的得到异步处理成功的消息。
 
-![image-20220223203215266](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220223203215266.png)
+![image-20220223203215266](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220223203215266.png)
 
 ### 1.1.3. MQ的分类
 
@@ -76,7 +76,7 @@ Kafka主要特点是基于Pull的模式来处理消息消费，追求高吞吐�
 
 RabbitMQ是一个消息中间件：它接受并转发消息。你可以把它当做一个快递站点，当你要发送一个包裹时，你把你的包裹放到快递站，快递员最终会把你的快递送到收件人那里，按照这种逻辑RabbitMQ是一个快递站，一个快递员帮你传递快件。RabbitMQ与快递站的主要区别在于，它不处理快件而是接收，存储和转发消息数据。
 
-![image-20220223205037168](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220223205037168.png)
+![image-20220223205037168](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220223205037168.png)
 
 ### 1.2.2.四大核心概念
 
@@ -98,11 +98,11 @@ RabbitMQ是一个消息中间件：它接受并转发消息。你可以把它当
 
 ### 1.2.3. RabbitMQ核心部分
 
-![image-20220223205345104](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220223205345104.png)
+![image-20220223205345104](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220223205345104.png)
 
 ### 1.2.4. 各个名词介绍
 
-![image-20220223205419395](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220223205419395.png)
+![image-20220223205419395](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220223205419395.png)
 
 **Broker**:接收和分发消息的应用，RabbitMQ Server就是Message Broker
 
@@ -122,7 +122,7 @@ RabbitMQ是一个消息中间件：它接受并转发消息。你可以把它当
 2. 文件上传
    上传到/usr/local/software目录下（如果没有software需要自己创建）
 
-   ![image-20220223211553497](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220223211553497.png)
+   ![image-20220223211553497](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220223211553497.png)
 
 3. 安装文件（分别按照以下顺序安装）
    
@@ -145,7 +145,7 @@ RabbitMQ是一个消息中间件：它接受并转发消息。你可以把它当
    - 查看服务状态
      - /sbin/service rabbitmq-server status
      
-   - ![image-20220223221836964](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220223221836964.png)
+   - ![image-20220223221836964](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220223221836964.png)
    
    - 停止服务（选择执行）
      /sbin/service rabbitmq-server stop
@@ -162,7 +162,7 @@ RabbitMQ是一个消息中间件：它接受并转发消息。你可以把它当
      
      用默认账号密码(guest)访问地址{hostname}:15672/出现权限问题
      
-   - ![image-20220223231419974](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220223231419974.png)
+   - ![image-20220223231419974](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220223231419974.png)
    
    - 创建用户设置角色
    
@@ -175,13 +175,13 @@ RabbitMQ是一个消息中间件：它接受并转发消息。你可以把它当
    
    	
    
-   - ![image-20220223231644157](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220223231644157.png)
+   - ![image-20220223231644157](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220223231644157.png)
    
-   - ![image-20220223231826173](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220223231826173.png)
+   - ![image-20220223231826173](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220223231826173.png)
    
    - 设置用户权限
    
-   - ![image-20220223232007341](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220223232007341.png)
+   - ![image-20220223232007341](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220223232007341.png)
    
    - set_permissions [-p <vhostpath>]<user><conf><write><read>
      用户user_admin具有/vhost这个virtual host中所有资源的配置、写、读权限
@@ -377,7 +377,7 @@ public class Consumer {
 
 ## 3.1.轮训分发消息
 
-![image-20220224165250583](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224165250583.png)
+![image-20220224165250583](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224165250583.png)
 
 ### 3.1.1.抽取工具类
 
@@ -427,17 +427,17 @@ public class RabbitMQUtil {
 
 ### 3.1.2.启动两个工作线程
 
-![image-20220224174611423](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224174611423.png)
+![image-20220224174611423](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224174611423.png)
 
 ### 3.1.3.启动一个发送线程
 
-![image-20220224174634558](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224174634558.png)
+![image-20220224174634558](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224174634558.png)
 
 ### 3.1.4.结果展示
 
-![image-20220224174654710](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224174654710.png)
+![image-20220224174654710](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224174654710.png)
 
-![image-20220224174659861](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224174659861.png)
+![image-20220224174659861](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224174659861.png)
 
 ## 3.2.消息应答
 
@@ -468,25 +468,25 @@ multiple的true和false代表不同意思
 - false同上面相比
   只会应答tag=8的消息,5,6,7这三个消息依然不会被确认收到消息应答
 
-![image-20220224175218341](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224175218341.png)
+![image-20220224175218341](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224175218341.png)
 
-![image-20220224175258116](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224175258116.png)
+![image-20220224175258116](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224175258116.png)
 
 ### 3.2.5.消息自动重新入队
 
 ​	如果消费者由于某些原因失去连接（其通道已关闭，连接己关闭或TCP连接丢失），导致消息未发送ACK确认，RabbitMQ将了解到消息未完全处理，并将对其重新排队。如果此时其他消费者可以处理，它将很快将其重新分发给另一个消费者。这样，即使某个消费者偶尔死亡，也可以确保不会丢失任何消息。
 
-![image-20220224175412800](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224175412800.png)
+![image-20220224175412800](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224175412800.png)
 
 ### 3.2.6.消息手动应答代码(消息在手动应答时是不丢失、放回队列中重新消费)
 
 ​	默认消息采用的是自动应答，所以我们要想实现消息消费过程中不丢失，需要把自动应答改为手动应答，消费者在上面代码的基础上增加下面画红色部分代码。
 
-![image-20220224175821790](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224175821790.png)
+![image-20220224175821790](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224175821790.png)
 
 ### 3.2.7效果展示
 
-![image-20220224204223671](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224204223671.png)
+![image-20220224204223671](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224204223671.png)
 
 ## 3.3. RabbitMQ持久化
 
@@ -498,13 +498,13 @@ multiple的true和false代表不同意思
 
 ​	之前我们创建的队列都是非持久化的，rabbitmg如果重启的话，该队列就会被删除掉，如果要队列实现持久化需要在声明队列的时候把durable参数设置为持久化
 
-![image-20220224212100949](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224212100949.png)
+![image-20220224212100949](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224212100949.png)
 
 但是需要注意的就是如果之前声明的队列不是持久化的，需要把原先队列先删除，或者重新创建一个持久化的队列，不然就会出现错误
 
 以下为控制台中持久化与非持久化队列的UI显示区
 
-![image-20220224212541999](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224212541999.png)
+![image-20220224212541999](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224212541999.png)
 
 这个时候即使重启rabbitmq队列也依然存在
 
@@ -513,7 +513,7 @@ multiple的true和false代表不同意思
 ​	要想让消息实现持久化需要在消息生产者修改代码，MessageProperties.PERSISTENT_TEXT_PLAIN添
 加这个属性。
 
-![image-20220224212726280](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224212726280.png)
+![image-20220224212726280](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224212726280.png)
 
 ​	将消息标记为持久化并不能完全保证不会丢失消息。尽管它告诉RabbitMQ将消息保存到磁盘，但是这里依然存在当消息刚准备存储在磁盘的时候但是还没有存储完，消息还在缓存的一个间隔点。此时并没有真正写入磁盘。持久性保证并不强，但是对于我们的简单任务队列而言，这已经绰绰有余了。如果需要更强有力的持久化策略，参考后边课件发布确认章节。
 
@@ -523,11 +523,11 @@ multiple的true和false代表不同意思
 
 ​	为了避免这种情况，我们可以设置参数channel.basicQos(1):
 
-![image-20220224213029700](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224213029700.png)
+![image-20220224213029700](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224213029700.png)
 
-![image-20220224215221616](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224215221616.png)
+![image-20220224215221616](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224215221616.png)
 
-![image-20220224213615491](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224213615491.png)
+![image-20220224213615491](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224213615491.png)
 
 ​	意思就是如果这个任务我还没有处理完或者我还没有应答你，你先别分配给我，我目前只能处理一个任务，然后rabbitmq就会把该任务分配给没有那么忙的那个空闲消费者，当然如果所有的消费者都没有完成手上任务，队列还在不停的添加新任务，队列有可能就会遇到队列被撑满的情况，这个时候就只能添加新的worker或者改变其他存储任务的策略。
 
@@ -540,15 +540,15 @@ multiple的true和false代表不同意思
 ​	应该小心使用具有无限预处理的自动确认模式或手动确认模式，消费者消费了大量的消息如果没有确认的话，会导致消费者连接节点的
 内存消耗变大，所以找到合适的预取值是一个反复试验的过程，不同的负载该值取值也不同100到300范围内的值通常可提供最佳的吞吐量，并且不会给消费者带来太大的风险。预取值为1是最保守的。当然这将使吞吐量变得很低，特别是消费者连接延迟很严重的情况下，特别是在消费者连接等待时间较长的环境中。对于大多数应用来说，稍微高一点的值将是最佳的。
 
-![image-20220224215932881](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224215932881.png)
+![image-20220224215932881](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224215932881.png)
 
-![image-20220224220003608](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224220003608.png)
+![image-20220224220003608](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224220003608.png)
 
 # 4.发布确认
 
 ## 4.1.发布确认原理
 
-![image-20220224221224200](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224221224200.png)
+![image-20220224221224200](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224221224200.png)
 
 ​	生产者将信道设置成confirm模式，一旦信道进入confirm模式，所有在该信道上面发布的消息都将会被指派一个唯一的ID(从1开始)，一旦消息被投递到所有匹配的队列之后，broker就会发送一个确认给生产者（包含消息的唯一ID),这就使得生产者知道消息已经正确到达目的队列了，如果消息和队列是可持久化的，那么确认消息会在将消息写入磁盘之后发出，broker回传给生产者的确认消息中delivery-tag域包含了确认消息的序列号，此外broker也可以设置basic.ack的multiple域，表示到这个序列号之前的所有消息都已经得到了处理。
 confirm模式最大的好处在于他是异步的，一旦发布一条消息，生产者应用程序就可以在等信道返回确认的同时继续发送下一条消息，当消息最终得到确认之后，生产者应用便可以通过回调方法来处理该确认消息，如果RabbitMQ因为自身内部错误导致消息丢失，就会发送一条nack消息，生产者应用程序同样可以在回调方法中处理该nack消息。
@@ -559,7 +559,7 @@ confirm模式最大的好处在于他是异步的，一旦发布一条消息，�
 
 ​	发布确认默认是没有开启的，如果要开启需要调用方法confirmSelect,每当你要想使用发布确认，都需要在channel上调用该方法
 
-![image-20220224221159719](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220224221159719.png)
+![image-20220224221159719](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220224221159719.png)
 
 ### 4.2.2.单个确认发布
 
@@ -611,7 +611,7 @@ confirm模式最大的好处在于他是异步的，一旦发布一条消息，�
 
 ​	异步确认虽然编程逻辑比上两个要复杂，但是性价比最高，无论是可靠性还是效率都没得说，他是利用回调函数来达到消息可靠性传递的，这个中间件也是通过函数回调来保证是否投递成功，下面就让我们来详细讲解异步确认是怎么实现的。
 
-![image-20220225112051795](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220225112051795.png)
+![image-20220225112051795](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220225112051795.png)
 
 ```java
 //准备消息的监听器
@@ -702,7 +702,7 @@ confirm模式最大的好处在于他是异步的，一旦发布一条消息，�
 
 ​	相反，生产者只能将消息发送到交换机(exchange),交换机工作的内容非常简单，一方面它接收来自生产者的消息，另一方面将它们推入队列。交换机必须确切知道如何处理收到的消息。是应该把这些消息放到特定队列还是说把他们到许多队列中还是说应该丢弃它们。这就的由交换机的类型来决定。
 
-![image-20220225213825838](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220225213825838.png)
+![image-20220225213825838](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220225213825838.png)
 
 ### 5.1.2. Exchanges的类型
 
@@ -713,7 +713,7 @@ confirm模式最大的好处在于他是异步的，一旦发布一条消息，�
 
 ​	在本教程的前面部分我们对exchange一无所知，但仍然能够将消息发送到队列。之前能实现的原因是因为我们使用的是默认交换，我们通过空字符串("")进行标识。
 
-![image-20220225214032464](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220225214032464.png)
+![image-20220225214032464](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220225214032464.png)
 
 ​	第一个参数是交换机的名称。空字符串表示默认或无名称交换机：消息能路由发送到队列中其实是由routingKey(bindingkey)绑定key指定的，如果它存在的话
 
@@ -729,15 +729,15 @@ String queueName = channel.queueDeclare().getQueue();
 
 创建出来之后长成这样：
 
-![image-20220225214638522](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220225214638522.png)
+![image-20220225214638522](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220225214638522.png)
 
 ## 5.3.绑定(bindings)
 
 ​	什么是bingding呢，binding其实是exchange和queue之间的桥梁，它告诉我们exchange和那个队列进行了绑定关系。比如说下面这张图告诉我们的就是X与Q1和Q2进行了绑定
 
-![image-20220225214914182](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220225214914182.png)
+![image-20220225214914182](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220225214914182.png)
 
-![image-20220225215028408](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220225215028408.png)
+![image-20220225215028408](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220225215028408.png)
 
 ## 5.4.Fanout(扇出)
 
@@ -745,15 +745,15 @@ String queueName = channel.queueDeclare().getQueue();
 
 ​	Fanout这种类型非常简单。正如从名称中猜到的那样，它是将接收到的所有消息广播到它知道的**所有队列中**。系统中默认有些exchange类型
 
-![image-20220225215239629](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220225215239629.png)
+![image-20220225215239629](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220225215239629.png)
 
 ### 5.4.2. Fanout实战
 
-![image-20220225215423249](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220225215423249.png)
+![image-20220225215423249](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220225215423249.png)
 
 Logs和临时队列的绑定关系如下图
 
-![image-20220225215452167](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220225215452167.png)
+![image-20220225215452167](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220225215452167.png)
 
 ## 5.5. Direct (直接) exchange
 
@@ -767,7 +767,7 @@ Logs和临时队列的绑定关系如下图
 
 ​	上一节中的我们的日志系统将所有消息广播给所有消费者，对此我们想做一些改变，例如我们希望将日志消息写入磁盘的程序仅接收严重错误(errors),而不存储哪些警告(warning)或信息(info)日志 消息避免浪费磁盘空间。Fanout这种交换类型并不能给我们带来很大的灵活性-它只能进行无意识的广播，在这里我们将使用direct这种类型来进行替换，这种类型的工作方式是，消息只去到它绑定的routingKey队列中去。
 
-![image-20220226212952056](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220226212952056.png)
+![image-20220226212952056](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220226212952056.png)
 
 在上面这张图中，我们可以看到X绑定了两个队列，绑定类型是direct。队列Q1绑定键为orange,队列Q2绑定键有两个：一个绑定键为black,.另一个绑定键为green.
 
@@ -775,15 +775,15 @@ Logs和临时队列的绑定关系如下图
 
 ### 5.5.3.多重绑定
 
-![image-20220226213111299](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220226213111299.png)
+![image-20220226213111299](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220226213111299.png)
 
 当然如果exchange的绑定类型是direct,但是**它绑定的多个队列的key如果都相同，**在这种情况下虽然绑定类型是direct但是它**表现的就和fanout有点类似了，**就跟广播差不多，如上图所示。
 
 ### 5.5.4.实战
 
-![image-20220226213229874](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220226213229874.png)
+![image-20220226213229874](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220226213229874.png)
 
-![image-20220226213240339](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220226213240339.png)
+![image-20220226213240339](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220226213240339.png)
 
 ## 5.6. Topics (主题)
 
@@ -811,7 +811,7 @@ Q2->绑定的是
 	最后一个单词是rabbit的3个单词( * . *.rabbit)
 	第一个单词是lazy的多个单词(lazy.#)
 
-![image-20220226215802142](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220226215802142.png)
+![image-20220226215802142](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220226215802142.png)
 
 上图是一个队列绑定关系图，我们来看看他们之间数据接收情况是怎么样的
 
@@ -828,7 +828,7 @@ Q2->绑定的是
 
 ### 5.6.4.实战
 
-![image-20220226220533528](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220226220533528.png)
+![image-20220226220533528](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220226220533528.png)
 
 # 6.死信队列
 
@@ -850,7 +850,7 @@ Q2->绑定的是
 
 ### 6.3.1代码架构图
 
-![image-20220301213110899](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220301213110899.png)
+![image-20220301213110899](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220301213110899.png)
 
 ```java
 //声明队列
@@ -868,7 +868,7 @@ Q2->绑定的是
         channel.queueDeclare(DEAD_QUEUE_NAME, false, false, false, null);
 ```
 
-![image-20220301222909758](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220301222909758.png)
+![image-20220301222909758](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220301222909758.png)
 
 ### 6.3.2消息TTL过期
 
@@ -934,9 +934,9 @@ DeliverCallback deliverCallback = (consumerTag, message) -> {
 
 这些场景都有一个特点，需要在某个事件发生之后或者之前的指定时间点完成某一项任务，如：发生订单生成事件，在十分钟之后检查该订单支付状态，然后将未支付的订单进行关闭；看起来似乎使用定时任务，一直轮询数据，每秒查一次，取出需要被处理的数据，然后处理不就完事了吗？如果数据量比较少，确实可以这样做，比如：对于“如果账单一周内未支付则进行自动结算”这样的需求，如果对于时间不是严格限制，而是宽松意义上的一周，那么每天晚上跑个定时任务检查一下所有未支付的账单，确实也是一个可行的方案。但对于数据量比较大，并且时效性较强的场景，如：“订单十分钟内未支付则关闭“，短期内未支付的订单数据可能会有很多，活动期间甚至会达到百万甚至干万级别，对这么庞大的数据量仍旧使用轮询的方式显然是不可取的，很可能在一秒内无法完成所有订单的检查，同时会给数据库带来很大压力，无法满足业务要求而且性能低下。
 
-![image-20220302213446556](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220302213446556.png)
+![image-20220302213446556](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220302213446556.png)
 
-![image-20220302213634522](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220302213634522.png)
+![image-20220302213634522](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220302213634522.png)
 
 ## 7.3. RabbitMQ中的TTL
 
@@ -1068,7 +1068,7 @@ public class SwaggerConfig {
 
 创建两个队列QA和QB,两者队列TTL分别设置为10S和40S,然后在创建一个交换机X和死信交换机Y,它们的类型都是direct,创建一个死信队列QD,它们的绑定关系如下：
 
-![image-20220303212007884](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220303212007884.png)
+![image-20220303212007884](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220303212007884.png)
 
 ### 7.5.2.配置文件类代码
 
@@ -1231,7 +1231,7 @@ public class deadLetterQueueConsumer {
 
 发送一个请求https://localhost:8080/ttl/sendMessage/helloword
 
-![image-20220303224608720](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220303224608720.png)
+![image-20220303224608720](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220303224608720.png)
 
 第一条消息在10S后变成了死信消息，然后被消费者消费掉，第二条消息在40S之后变成了死信消息，然后被消费掉，这样一个延时队列就打造完成了。
 
@@ -1243,7 +1243,7 @@ public class deadLetterQueueConsumer {
 
 ### 7.6.1.代码架构图
 
-![image-20220304212026582](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304212026582.png)
+![image-20220304212026582](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304212026582.png)
 
 ### 7.6.2.配置文件类代码
 
@@ -1286,7 +1286,7 @@ http://localhost:8080/ttl/sendExpirationMessage/hello/10000
 
 http://localhost:8080/ttl/sendExpirationMessage/word/1000
 
-![image-20220304214437994](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304214437994.png)
+![image-20220304214437994](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304214437994.png)
 
 看起来似乎没什么问题，但是在最开始的时候，就介绍过如果使用在消息属性上设置TTL的方式，消息可能并不会按时“死亡“，因为RabbitMQ**只会检查第一个消息是否过期**，如果过期则丢到死信队列，**如果第一个消息的延时时长很长，而第二个消息的延时时长很短，第二个消息并不会优先得到执行。**
 
@@ -1300,7 +1300,7 @@ http://localhost:8080/ttl/sendExpirationMessage/word/1000
 
 下载**rabbitmq_delayed_message_exchange**插件
 
-![image-20220304220508437](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304220508437.png)
+![image-20220304220508437](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304220508437.png)
 
 然后解压放置到RabbitMQ的插件目录。进入RabbitMQ的安装目录下的plgins目录，执行下面命冷让该插件生效，然后重启RabbitMQ
 
@@ -1310,17 +1310,17 @@ http://localhost:8080/ttl/sendExpirationMessage/word/1000
 rabbitmq-plugins enable rabbitmq_delayed_message_exchange
 ```
 
-![image-20220304220647295](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304220647295.png)
+![image-20220304220647295](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304220647295.png)
 
-![image-20220304220806608](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304220806608.png)
+![image-20220304220806608](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304220806608.png)
 
-![image-20220304220946867](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304220946867.png)
+![image-20220304220946867](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304220946867.png)
 
 ### 7.7.2.代码架构图
 
 在这里新增了一个队列delayed.queue,一个自定义交换机delayed.exchange,绑定关系如下：
 
-![image-20220304221110913](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304221110913.png)
+![image-20220304221110913](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304221110913.png)
 
 ### 7.7.3.配置文件类代码
 
@@ -1435,7 +1435,7 @@ http://localhost:8080/ttl/sendDelayedMessage/hello/20000
 
 http://localhost:8080/ttl/sendDelayedMessage/word/1000
 
-![image-20220304224129379](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220304224129379.png)
+![image-20220304224129379](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220304224129379.png)
 
 ## 总结:
 
@@ -1451,11 +1451,11 @@ http://localhost:8080/ttl/sendDelayedMessage/word/1000
 
 ### 8.1.1确认机制方案
 
-![image-20220305211411657](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220305211411657.png)
+![image-20220305211411657](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220305211411657.png)
 
 ### 8.1.2.代码架构图
 
-![image-20220305211453070](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220305211453070.png)
+![image-20220305211453070](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220305211453070.png)
 
 ### 8.1.3.配置文件
 
@@ -1669,7 +1669,7 @@ public class ConfirmConsumer {
 
 http://localhost:8080/confirm/sendMessage/hello/hello2
 
-![image-20220313203201944](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220313203201944.png)
+![image-20220313203201944](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220313203201944.png)
 
 ## 8.2.回退消息(路由或队列出问题)
 
@@ -1790,7 +1790,7 @@ public class MyConfirmCallBack implements RabbitTemplate.ConfirmCallback, Rabbit
 
 http://localhost:8080/confirm/sendMessage/hello/hello2
 
-![image-20220313204111506](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220313204111506.png)
+![image-20220313204111506](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220313204111506.png)
 
 ## 8.3.备份交换机
 
@@ -1798,7 +1798,7 @@ http://localhost:8080/confirm/sendMessage/hello/hello2
 
 ### 8.3.1.代码架构图
 
-![image-20220313085622604](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220313085622604.png)
+![image-20220313085622604](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220313085622604.png)
 
 ### 8.3.2.修改配置类
 
@@ -1887,7 +1887,7 @@ public class ConfirmConfig {
 
 http://localhost:8080/confirm/sendMessage/hello/hello2
 
-![image-20220313195706276](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220313195706276.png)
+![image-20220313195706276](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220313195706276.png)
 
 mandatory参数与备份交换机可以一起使用的时候，如果两者同时开启，消息究竟何去何从？谁优先级高，经过上面结果显示答案是**备份交换机优先级高。**
 
@@ -1929,7 +1929,7 @@ mandatory参数与备份交换机可以一起使用的时候，如果两者同�
 
 页面中添加：
 
-![image-20220314084033914](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314084033914.png)
+![image-20220314084033914](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314084033914.png)
 
 或：
 
@@ -1942,9 +1942,9 @@ mandatory参数与备份交换机可以一起使用的时候，如果两者同�
         channel.queueDeclare(QUEUE_NAME, false, false, true, arguments);
 ````
 
-![image-20220314084555925](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314084555925.png)
+![image-20220314084555925](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314084555925.png)
 
-![image-20220314090059133](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314090059133.png)
+![image-20220314090059133](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314090059133.png)
 
 设置消息优先级：
 
@@ -2000,7 +2000,7 @@ public class Producer {
 
 
 
-![image-20220314090724722](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314090724722.png)
+![image-20220314090724722](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314090724722.png)
 
 ## 9.3.惰性队列
 
@@ -2020,7 +2020,7 @@ public class Producer {
 
 ​	队列具备两种模式：default和lazy。默认的为default模式，在3.6.0之前的版本无需做任何变更。lazy模式即为惰性队列的模式，可以通过调用channel..queue Declare方法的时候在参数中设置，也可以通过Policy的方式设置，如果一个队列同时使用这两种方式设置的话，那么**Policy的方式具备更高的优先级**。如果要通过声明的方式改变已有队列的模式的话，那么只能先删除队列，然后再重新声明一个新的。
 
-![image-20220314091144430](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314091144430.png)
+![image-20220314091144430](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314091144430.png)
 
 ```java
 Map<String, Object> arguments = new HashMap<>();
@@ -2032,7 +2032,7 @@ Map<String, Object> arguments = new HashMap<>();
 
 ### 9.3.3.内存开销对比
 
-![image-20220314091204540](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314091204540.png)
+![image-20220314091204540](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314091204540.png)
 
 在发送1百万第消息，每条消息大概占1KB的情况下，普通队列占用内存是1.2GB，惰性队列仅仅用1.5MB
 
@@ -2054,7 +2054,7 @@ Map<String, Object> arguments = new HashMap<>();
 
 `vim /etc/hosts`
 
-![image-20220314095527736](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314095527736.png)
+![image-20220314095527736](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314095527736.png)
 
 3.以确保各个节点的cookie文件使用的是同一个值
 
@@ -2065,7 +2065,7 @@ scp /var/lib/rabbitmq/.erlang.cookie root@node1:/var/lib/rabbitmq/.erlang.cookie
 scp /var/lib/rabbitmq/.erlang.cookie root@node2:/var/lib/rabbitmq/.erlang.cookie
 ```
 
-![image-20220314095951280](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314095951280.png)
+![image-20220314095951280](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314095951280.png)
 
 4.启动RabbitMQ服务，顺带启动Erlang虚拟机和RbbitMQ应用服务（在三台节点上分别执行以下命令)
 
@@ -2098,7 +2098,7 @@ rabbitmqctl start_app
 rabbitmqctl cluster_status
 ```
 
-![image-20220314111641172](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314111641172.png)
+![image-20220314111641172](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314111641172.png)
 
 8.需要重新设置用户
 
@@ -2120,7 +2120,7 @@ rabbitmqctl set_user_tags admin administrator
 rabbitmqctl set_permissions -p "/" admin ".*" ".*" ".*"
 ```
 
-![image-20220314111932377](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314111932377.png)
+![image-20220314111932377](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314111932377.png)
 
 9.解除集群节点(node2和node3机器分别执行)
 
@@ -2148,9 +2148,9 @@ rabbitmqctl forget_cluster_node rabbit@node2(node1机器上执行) # 让node1忘
 
 2.随便找一个节点添加policy
 
-![image-20220314112918462](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314112918462.png)
+![image-20220314112918462](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314112918462.png)
 
-![image-20220314113403706](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314113403706.png)
+![image-20220314113403706](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314113403706.png)
 
 **就算整个集群只剩下一台机器了依然能消费队列里面的消息说明队列里面的消息被镜像队列传递到相应机器里面了**
 
@@ -2158,7 +2158,7 @@ rabbitmqctl forget_cluster_node rabbit@node2(node1机器上执行) # 让node1忘
 
 ### 10.3.1.整体架构图
 
-![image-20220314164905881](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314164905881.png)
+![image-20220314164905881](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314164905881.png)
 
 ### 10.3.2. Haproxy实现负载均衡
 
@@ -2189,21 +2189,21 @@ rabbitmq-plugins enable rabbitmg_federation
 rabbitmq-plugins enable rabbitmq_federation_management
 ```
 
-![image-20220314171651895](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314171651895.png)
+![image-20220314171651895](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314171651895.png)
 
 3.原理图（先运行consumer在node 2创建fed_exchange)
 
-![image-20220314165927136](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314165927136.png)
+![image-20220314165927136](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314165927136.png)
 
 4. 在downstream(node 2)配置upstream(node 1)
 
-	![image-20220314171255719](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314171255719.png)
+	![image-20220314171255719](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314171255719.png)
 
-	![image-20220314171552864](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314171552864.png)
+	![image-20220314171552864](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314171552864.png)
 
 5. 成功的标志
 
-	![image-20220314171842397](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314171842397.png)
+	![image-20220314171842397](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314171842397.png)
 
 ## 10.5. Federation Queue
 
@@ -2215,13 +2215,13 @@ rabbitmq-plugins enable rabbitmq_federation_management
 
 1.原理图
 
-![image-20220314203004497](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314203004497.png)
+![image-20220314203004497](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314203004497.png)
 
 2.添加upstream(同上)
 
 3.添加policy
 
-![image-20220314203746593](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314203746593.png)
+![image-20220314203746593](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314203746593.png)
 
 ## 10.6. Shovel
 
@@ -2238,13 +2238,13 @@ rabbitmq-plugins enable rabbitmg_shovel
 rabbitmq-plugins enable rabbitmq_shovel_management
 ```
 
-![image-20220314204149584](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314204149584.png)
+![image-20220314204149584](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314204149584.png)
 
 2.原理图（在源头发送的消息直接回进入到目的地队列）
 
-![image-20220314203945420](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314203945420.png)
+![image-20220314203945420](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314203945420.png)
 
 3.添加shovel源和目的地
 
-![image-20220314204331605](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220314204331605.png)
+![image-20220314204331605](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220314204331605.png)
 

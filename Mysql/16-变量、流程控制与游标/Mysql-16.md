@@ -16,7 +16,7 @@
 
 每一个MySQL客户机成功连接MySQL服务器后，都会产生与之对应的会话。会话期间，MySQL服务实例会在MySQL服务器内存中生成与该会话对应的会话系统变量，这些会话系统变量的初始值是全局系统变量值的复制。如下图：
 
-![image-20220225132556645](C:\Users\YQ\AppData\Roaming\Typora\typora-user-images\image-20220225132556645.png)
+![image-20220225132556645](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220225132556645.png)
 
 - 全局系统变量针对于所有会话（连接）有效，但不能跨重启
 - 会话系统变量仅针对于当前会话（连接）有效。会话期间，当前会话对某个会话系统变量值的修改，不会影
