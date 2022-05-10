@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--        serve 和 user 对象创建-->
+    <bean id="serve" class="serve.UserServe">
+<!--        注入User对象
+                name 属性：类里面属性名称
+                ref属性:创建user对象bean标签id值 -->
+        <property name="userInter" ref="user"></property>
+    </bean>
+    <bean id="user" class="dog.User"></bean>
+</beans>

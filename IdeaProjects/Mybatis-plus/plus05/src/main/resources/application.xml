@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+<!--    数据源-->
+    <context:property-placeholder location="classpath:db.properties"/>
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+<!--    事务管理器-->
+    <bean id="dataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+<!--    基于注解的事务管理-->
+    <tx:annotation-driven transaction-manager="dataSourceTransactionManager"></tx:annotation-driven>
+
+    <bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
+<!--        数据源-->
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <property name="globalConfig" ref="globalConfig"/>
+        <property name="plugins">
+            <list>
+                <ref bean="mybatisPlusInterceptor"/>
+            </list>
+        </property>
+     </bean>
+
+    <bean id="mybatisPlusInterceptor" class="com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor">
+        <property name="interceptors">
+            <list>
+                <ref bean="interceptor"/>
+                <ref bean="optimisticLockerInnerInterceptor"/>
+            </list>
+        </property>
+    </bean>
+<!--    分页-->
+    <bean id="interceptor" class="com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor">
+        <constructor-arg name="dbType" value="MYSQL"/>
+    </bean>
+
+<!--    乐观锁-->
+    <bean id="optimisticLockerInnerInterceptor" class="com.baomidou.mybatisplus.extension.plugins.inner.OptimisticLockerInnerInterceptor">
+
+    </bean>
+
+<!--    定义MybatisPlus全局配置-->
+    <bean id="configuration" class="com.baomidou.mybatisplus.core.MybatisConfiguration">
+<!--        驼峰命名-->
+        <property name="mapUnderscoreToCamelCase" value="true"/>
+    </bean>
+    <bean id="globalConfig" class="com.baomidou.mybatisplus.core.config.GlobalConfig">
+        <property name="dbConfig" ref="dbConfig"/>
+        <property name="banner" value="false"/>
+<!--        <property name="sqlInjector" ref="mysqlInjector"/>-->
+        <property name="metaObjectHandler" ref="mateObjectHandler"/>
+        <property name="sqlInjector" ref="mysqlInjector"/>
+    </bean>
+    <bean id="dbConfig" class="com.baomidou.mybatisplus.core.config.GlobalConfig.DbConfig">
+<!--        全局主键策略-->
+        <property name="idType" value="AUTO"/>
+<!--        全局的表前缀配置-->
+<!--        <property name="tablePrefix" value="tbl_"/>-->
+        <property name="logicDeleteField" value="logic_flag"/>
+        <property name="logicDeleteValue" value="-1"/>
+        <property name="logicNotDeleteValue" value="1"/>
+    </bean>
+
+<!--    定义自定义注入器-->
+    <bean id="mysqlInjector" class="com.qiqi.mybatisplus.Injector.MysqlInjector">
+    </bean>
+
+<!--    自动填充-->
+    <bean id="mateObjectHandler" class="com.qiqi.mybatisplus.MetaObjectHandler.MyMateObjectHandler"/>
+
+    <bean class="com.qiqi.mybatisplus.Injector.MysqlInjector"></bean>
+<!--    扫描mapper接口文件-->
+    <bean id="mapperScannerConfigurer"
+          class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.qiqi.mybatisplus"/>
+     </bean>
+</beans>

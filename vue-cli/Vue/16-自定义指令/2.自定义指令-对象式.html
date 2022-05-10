@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h1>当前的n值为：<span v-text="n"></span></h1>
+        <h1>放大10倍的n值为：<span v-big="n"></span></h1>
+        <button @click=n++>点我n+1</button>
+        <br>
+        <input type="text" v-fbind:value="n">
+    </div>
+</body>
+    <script>
+        Vue.config.productionTip = false;
+        Vue.directive('fbind', {
+                    // 指令成功绑定时
+                    bind(element,binding){
+                        element.value = binding.value
+                        console.log(1);
+                    },
+                    // 指令所在的元素被插入页面时
+                    inserted(element,binding){
+                        element.focus()
+                        console.log(element)
+                    },
+                    // 指令所在的模板被重新解析时
+                    update(element,binding){
+                        element.value = binding.value
+                        console.log(3)
+                    }
+                });
+        new Vue({
+            el:'#root',
+            data:{
+                n:1
+            },
+            directives:{
+                // big何时调用?1.指令与元素绑定成功时。2.指令所在的模板被重新解析时
+                big(element, binding){
+                    console. log(this)//此处的this是window
+                    element.innerText = binding.value * 10
+                },
+                fbind:{
+                    // 指令成功绑定时
+                    bind(element,binding){
+                        element.value = binding.value
+                        console.log(1);
+                    },
+                    // 指令所在的元素被插入页面时
+                    inserted(element,binding){
+                        element.focus()
+                        console.log(element)
+                    },
+                    // 指令所在的模板被重新解析时
+                    update(element,binding){
+                        element.value = binding.value
+                        console.log(3)
+                    }
+                }
+            }   
+        })
+    </script>
+</html>

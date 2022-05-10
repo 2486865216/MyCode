@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class Person{
+            name;
+
+        //    私有属性
+            #age;
+            #weight;
+            constructor(name,age,weight){
+                this.name = name;
+                this.#age = age;
+                this.#weight = weight;
+            }
+            log(){
+                console.log(this.name)
+                console.log(this.#age)
+                console.log(this.#weight)
+            }
+        }
+        const man = new Person('hello',18,100)
+        man.log()
+
+    </script>
+</body>
+</html>

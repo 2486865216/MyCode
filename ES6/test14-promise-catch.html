@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const p =new Promise((resolve,reject) => {
+            setTimeout(() => {
+                reject("error");
+            },1000)
+        })
+        p.then(value => {
+            console.log(value);
+        },reason => {
+            console.log(reason);
+        })
+        p.catch((reason => {
+            console.warn(reason);
+        }))
+    </script>
+</body>
+</html>

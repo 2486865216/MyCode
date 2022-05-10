@@ -1,0 +1,49 @@
+version: "3"
+
+services:
+  microService:
+    image: dockercompose:1.1
+    container_name: compose
+    ports:
+      - "6001:6001"
+    volumes:
+      - /app/microServices:/data
+    networks:
+      - mynetwork
+    depends_on:
+      - redis
+      - mysql
+
+  redis:
+    image: redis:6.2.6-bullseye
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - /app/redis/redis.conf:/etc/redis/redis.conf
+      - /app/redis/data:/data
+    networks:
+      - mynetwork
+    command: redis-server /etc/redis/redis.conf
+  
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: '123456'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
+      MYSQL_DATABASE: 'docker'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: '123456'
+    ports:
+     - "3306:3306"
+    volumes:
+      - /zhangyuye/mysql/log:/var/log/mysql
+      - /zhangyuye/mysql/data:/var/lib/mysql
+      - /zhangyuye/mysql/conf:/etc/mysql/conf.d
+      - /app/mysql/init:/docker-entrypoint-initdb.d
+    networks:
+      - mynetwork
+    command: --default-authentication-plugin=mysql_native_password #解决外部无法访问
+
+networks:
+  mynetwork:

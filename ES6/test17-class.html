@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class Phone{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+            call(){
+                console.log('hello word!')
+            }
+        }
+        let noePlus = new Phone('hello',18);
+        console.log(noePlus)
+        noePlus.call();
+
+        class iphone{
+            static name = 'iphone'
+            static change(){
+                console.log("hello iphone")
+            }
+        }
+        console.log(iphone.name)
+        iphone.change()
+    </script>
+</body>
+</html>

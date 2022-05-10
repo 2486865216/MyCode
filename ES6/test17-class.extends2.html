@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+    <script>
+        class Phone{
+            constructor(name,age){
+                this.name = name
+                this.age = age
+            }
+            call(){
+                console.log("hello")
+            }
+        }
+        class Smartphone extends Phone{
+            constructor(name,age,no,sex){
+                super(name,age)
+                this.no = no
+                this.sex = sex
+            }
+            photo(){
+                console.log('photo')
+            }
+            call(){
+                console.log('word')
+            }
+        }
+        const xiaomi = new Smartphone('hello',18,52,true)
+        console.log(xiaomi)
+        xiaomi.call()
+    </script>
+</body>
+</html>

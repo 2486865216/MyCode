@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <xuexiao></xuexiao>
+        <test></test>
+    </div>
+</body>
+    <script>
+        Vue.config.productionTip = false;
+
+        let student = Vue.extend({
+            data(){
+                return{
+                    name:'word!'
+                }
+            },
+            template:`
+                <div>
+                    <h1>{{name}}</h1>    
+                </div>
+            `
+        })
+
+        let school = Vue.extend({
+            data() {
+                return {
+                    name: 'hello',
+                    name2:'word'
+                };
+            },
+            components:{
+                student:student
+            },
+            template:`
+            <div>
+                <h1>{{name}}</h1>
+                <h1>{{name2}}</h1>
+                <student></student>
+            </div>
+            `
+        })
+        
+        let hello = Vue.extend({
+            name:'test',
+            data(){
+                return{
+                    name:"test"
+                }
+            },
+            template:`
+                <div>
+                    <h1>{{name}}</h1>
+                </div>
+            `
+        });
+
+        const Feature = Vue.component('test',hello);
+
+        new Vue({
+            el:'#root',
+            components:{
+                xuexiao:school
+            }
+        })
+    </script>
+</html>

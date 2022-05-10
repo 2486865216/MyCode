@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div>
+        <ul id="ul">
+            <li v-for="item in items" :key="item.message">
+                {{item.message}}
+            </li>
+        </ul>
+        
+        <ul id="ul2">
+            <li v-for="(item,index) in items">
+                {{index}}-{{item.message}}
+            </li>
+        </ul>
+
+        <ul id="ul3">
+            <li v-for="value in object">
+                {{value}}
+            </li>
+            <li v-for="(value,name) in object">
+                {{name}}:{{value}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false;
+    let vm = new Vue({
+        el:'#ul',
+        data:{
+            items:[
+                {message:'hello'},
+                {message:'word'}
+            ]
+        }
+    })
+    let vm2 = new Vue({
+        el:'#ul2',
+        data:{
+            items:[
+                {message:'hello'},
+                {message:'word'}
+            ]
+        }
+    })
+    let vm3 = new Vue({
+        el:'#ul3',
+        data:{
+            object:{
+                title:'wecome',
+                author:'zhang'
+            }
+        }
+    })
+</script>
+</html>

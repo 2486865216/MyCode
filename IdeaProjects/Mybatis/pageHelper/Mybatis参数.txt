@@ -1,0 +1,61 @@
+单个参数，mybatis不做任何处理
+    #{参数名}，取出参数
+多个参数，mybatis做特殊处理
+    多个参数会被封装成Map
+        key：param1，..，paramN，或参数的索引
+        value：传入的参数值
+        public Employee getEmployee(Integer id，String lastName);
+
+        select * from employee where id = #{param1} and lastName = #{param2}
+        select * from employee where id = #{0} and lastName = #{1}
+命名参数
+    明确指定封装参数时Map的key：@param("id")
+        多个参数会被封装成Map
+                key：使用@param注解指定的值
+                value：传入的参数值
+ POJO
+如果有多个参数正好是我们业务逻辑的数据模型，我们就可以直接传入pojo
+    #{属性名}:取出传入的pojo
+Map:
+如果多个参数不是业务模型中的数据，没有对应的pojo，为了方便，也可以直接传一个Map
+    #{key}:取出map中对应的值
+
+
+如果多个参数不是业务逻辑中的数据，但是要经常使用，推荐编写一个TO（Transfer Object）数据传输对象
+Page{
+    int index;
+    int size;
+}
+
+============================================================================
+如果是Collection（List，Set）类型或者是数组，也会特殊处理。
+也是把传入的List或数组封装在map中
+    key：Collection（collection），如果是List还可以使用list，数组（array）
+    public Employee getEmployee(List<Integer> ids)
+        取出第一个id值:  #{list[0]}
+
+============================================================================
+select * from employee where id = ${id} and lastName = #{lastName}
+Preparing:select * from employee where id = 2 and lastName = ?
+    ${}和#{}区别：
+        #{}:是以预编译的形式，将参数设置到sql语句中；PreparedStatement；防止sql注入
+        ${}:取出的值直接拼接在sql语句中，会有安全问题
+
+        多数情况下用#{}
+
+        原生jdbc不支持占位符的地方我们就可以使用${}进行取值
+        比如分表：按照年份分表
+            select * from ${year}_salary where xxxx;
+            select * from ${ktableName} where xxxx;
+
+#{}:更丰富的用法
+    规定参数的一些规则：
+        javaType,jdbcType,mode(存储过程),numbericScale
+        resultMap,typeHandler.jsbcTypeName,expression
+
+        jdbcType通常需要在某种特定的条件下被设置：
+            在我们数据为null时，有些数据库不能识别mybatis对null的默认处理，比如Oracle(报错)
+
+            由于全局配置中，jdbcTypeForNull=OTHER，Oracle不支持：两种办法
+                1，#{email,jdbcType=NULL}
+                2,<setting name="jdbcType" value="NULL"></setting>

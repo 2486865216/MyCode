@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js">
+    </script>
+</head>
+<body>
+    <div id="root">
+        单向数据绑定<input type="text" v-bind:value="name">
+        <br>
+        单向数据绑定1<input type="text" :value="name">
+        <br>
+        <!-- v-model指令只能用于表单内元素上（输入类元素) value
+            单向数据绑定,数据只能从data流向页面
+            双向数据绑定，数据不仅能从data流向页面，还可以从页面流向data
+            v-model:value可以简写为v-model,因为v-model默认收集的就是value值 -->
+        双向数据绑定<input type="text" v-model:value="name">
+        <br>
+        双向数据绑定1<input type="text" v-model="name">
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        new Vue({
+            el:'#root',
+            data:{
+                name:'vue'
+            }
+        })
+    </script>
+</body>
+</html>

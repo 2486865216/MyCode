@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script type="module">
+        // 1.通用的导入方式
+        // import * as test from "./test20-ES6-module.js";
+        // console.log(test)
+        // test.default.test()
+
+        // 2.解构赋值形式
+        // import {name,test} from "./test20-ES6-module.js"
+        // import {name as m,test} from "./test20-ES6-module.js"
+        // import {default as m3} from "./test20-ES6-module.js"
+        // console.log(m,test)
+
+        // 3.简便形式，针对默认形式
+        import m3 from "./test20-ES6-module.js"
+        console.log(m3)
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <properties resource="jdbcconfig.properties"></properties>
+    <!--    plugin注册插件-->
+    <plugins>
+        <plugin interceptor="com.qiqi.Mybatis.MyfirstPlugin">
+            <property name="username" value="root"/>
+            <property name="password" value="123456"/>
+        </plugin>
+    </plugins>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <databaseIdProvider type="DB_VENDOR">
+        <!--为不同的数据库厂商起别名-->
+        <property name="MySQL" value="mysql"/>
+        <property name="Oracle" value="oracle"/>
+    </databaseIdProvider>
+    <mappers>
+        <mapper resource="EmployeeMapping.xml"/>
+        <mapper class="com.qiqi.Mybatis.EmployeeAnnotetion"></mapper>
+    </mappers>
+</configuration>

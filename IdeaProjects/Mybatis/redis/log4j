@@ -1,0 +1,171 @@
+2021-12-20 09:40:42,053 - org.apache.ibatis.logging.LogFactory -0    [main] DEBUG  - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2021-12-20 09:40:42,068 - org.apache.ibatis.datasource.pooled.PooledDataSource -15   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 09:40:42,068 - org.apache.ibatis.datasource.pooled.PooledDataSource -15   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 09:40:42,068 - org.apache.ibatis.datasource.pooled.PooledDataSource -15   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 09:40:42,068 - org.apache.ibatis.datasource.pooled.PooledDataSource -15   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 09:40:44,709 - org.apache.ibatis.datasource.pooled.PooledDataSource -2656 [main] DEBUG  - Created connection 504858437.
+2021-12-20 09:40:44,709 - org.apache.ibatis.datasource.pooled.PooledDataSource -2656 [main] DEBUG  - Returned connection 504858437 to pool.
+2021-12-20 09:40:44,787 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2734 [main] DEBUG  - Opening JDBC Connection
+2021-12-20 09:40:44,787 - org.apache.ibatis.datasource.pooled.PooledDataSource -2734 [main] DEBUG  - Checked out connection 504858437 from pool.
+2021-12-20 09:40:44,787 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2734 [main] DEBUG  - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1e178745]
+2021-12-20 09:40:44,850 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2797 [main] DEBUG  - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1e178745]
+2021-12-20 09:40:44,865 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2812 [main] DEBUG  - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1e178745]
+2021-12-20 09:40:44,865 - org.apache.ibatis.datasource.pooled.PooledDataSource -2812 [main] DEBUG  - Returned connection 504858437 to pool.
+2021-12-20 09:42:13,240 - org.apache.ibatis.logging.LogFactory -0    [main] DEBUG  - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2021-12-20 09:42:13,256 - org.apache.ibatis.datasource.pooled.PooledDataSource -16   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 09:42:13,256 - org.apache.ibatis.datasource.pooled.PooledDataSource -16   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 09:42:13,256 - org.apache.ibatis.datasource.pooled.PooledDataSource -16   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 09:42:13,256 - org.apache.ibatis.datasource.pooled.PooledDataSource -16   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 09:42:15,974 - org.apache.ibatis.datasource.pooled.PooledDataSource -2734 [main] DEBUG  - Created connection 504858437.
+2021-12-20 09:42:15,974 - org.apache.ibatis.datasource.pooled.PooledDataSource -2734 [main] DEBUG  - Returned connection 504858437 to pool.
+2021-12-20 09:42:16,037 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2797 [main] DEBUG  - Opening JDBC Connection
+2021-12-20 09:42:16,037 - org.apache.ibatis.datasource.pooled.PooledDataSource -2797 [main] DEBUG  - Checked out connection 504858437 from pool.
+2021-12-20 09:42:16,037 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2797 [main] DEBUG  - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1e178745]
+2021-12-20 09:42:16,099 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2859 [main] DEBUG  - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1e178745]
+2021-12-20 09:42:16,099 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2859 [main] DEBUG  - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1e178745]
+2021-12-20 09:42:16,099 - org.apache.ibatis.datasource.pooled.PooledDataSource -2859 [main] DEBUG  - Returned connection 504858437 to pool.
+2021-12-20 09:48:19,537 - org.apache.ibatis.logging.LogFactory -0    [main] DEBUG  - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2021-12-20 09:48:19,552 - org.apache.ibatis.datasource.pooled.PooledDataSource -15   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 09:48:19,552 - org.apache.ibatis.datasource.pooled.PooledDataSource -15   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 09:48:19,552 - org.apache.ibatis.datasource.pooled.PooledDataSource -15   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 09:48:19,552 - org.apache.ibatis.datasource.pooled.PooledDataSource -15   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 09:48:22,287 - org.apache.ibatis.datasource.pooled.PooledDataSource -2750 [main] DEBUG  - Created connection 504858437.
+2021-12-20 09:48:22,302 - org.apache.ibatis.datasource.pooled.PooledDataSource -2765 [main] DEBUG  - Returned connection 504858437 to pool.
+2021-12-20 09:48:22,365 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2828 [main] DEBUG  - Opening JDBC Connection
+2021-12-20 09:48:22,365 - org.apache.ibatis.datasource.pooled.PooledDataSource -2828 [main] DEBUG  - Checked out connection 504858437 from pool.
+2021-12-20 09:48:22,365 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2828 [main] DEBUG  - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1e178745]
+2021-12-20 09:48:22,427 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2890 [main] DEBUG  - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1e178745]
+2021-12-20 09:48:22,427 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2890 [main] DEBUG  - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1e178745]
+2021-12-20 09:48:22,427 - org.apache.ibatis.datasource.pooled.PooledDataSource -2890 [main] DEBUG  - Returned connection 504858437 to pool.
+2021-12-20 09:48:47,621 - org.apache.ibatis.logging.LogFactory -0    [main] DEBUG  - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2021-12-20 09:48:47,652 - org.apache.ibatis.datasource.pooled.PooledDataSource -31   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 09:48:47,652 - org.apache.ibatis.datasource.pooled.PooledDataSource -31   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 09:48:47,652 - org.apache.ibatis.datasource.pooled.PooledDataSource -31   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 09:48:47,652 - org.apache.ibatis.datasource.pooled.PooledDataSource -31   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 09:48:50,386 - org.apache.ibatis.datasource.pooled.PooledDataSource -2765 [main] DEBUG  - Created connection 504858437.
+2021-12-20 09:48:50,386 - org.apache.ibatis.datasource.pooled.PooledDataSource -2765 [main] DEBUG  - Returned connection 504858437 to pool.
+2021-12-20 09:48:50,449 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2828 [main] DEBUG  - Opening JDBC Connection
+2021-12-20 09:48:50,449 - org.apache.ibatis.datasource.pooled.PooledDataSource -2828 [main] DEBUG  - Checked out connection 504858437 from pool.
+2021-12-20 09:48:50,449 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2828 [main] DEBUG  - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1e178745]
+2021-12-20 09:48:50,527 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2906 [main] DEBUG  - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1e178745]
+2021-12-20 09:48:50,527 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2906 [main] DEBUG  - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1e178745]
+2021-12-20 09:48:50,527 - org.apache.ibatis.datasource.pooled.PooledDataSource -2906 [main] DEBUG  - Returned connection 504858437 to pool.
+2021-12-20 10:18:18,736 - org.apache.ibatis.logging.LogFactory -0    [main] DEBUG  - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2021-12-20 10:18:18,736 - org.apache.ibatis.datasource.pooled.PooledDataSource -0    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 10:18:18,736 - org.apache.ibatis.datasource.pooled.PooledDataSource -0    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 10:18:18,736 - org.apache.ibatis.datasource.pooled.PooledDataSource -0    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 10:18:18,736 - org.apache.ibatis.datasource.pooled.PooledDataSource -0    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 10:18:21,486 - org.apache.ibatis.datasource.pooled.PooledDataSource -2750 [main] DEBUG  - Created connection 1112414583.
+2021-12-20 10:18:21,486 - org.apache.ibatis.datasource.pooled.PooledDataSource -2750 [main] DEBUG  - Returned connection 1112414583 to pool.
+2021-12-20 10:18:21,548 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2812 [main] DEBUG  - Opening JDBC Connection
+2021-12-20 10:18:21,548 - org.apache.ibatis.datasource.pooled.PooledDataSource -2812 [main] DEBUG  - Checked out connection 1112414583 from pool.
+2021-12-20 10:18:21,548 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2812 [main] DEBUG  - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@424e1977]
+2021-12-20 10:18:21,611 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2875 [main] DEBUG  - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@424e1977]
+2021-12-20 10:18:21,611 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2875 [main] DEBUG  - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@424e1977]
+2021-12-20 10:18:21,611 - org.apache.ibatis.datasource.pooled.PooledDataSource -2875 [main] DEBUG  - Returned connection 1112414583 to pool.
+2021-12-20 10:18:21,611 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2875 [main] DEBUG  - Opening JDBC Connection
+2021-12-20 10:18:21,611 - org.apache.ibatis.datasource.pooled.PooledDataSource -2875 [main] DEBUG  - Checked out connection 1112414583 from pool.
+2021-12-20 10:18:21,611 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2875 [main] DEBUG  - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@424e1977]
+2021-12-20 10:18:21,626 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2890 [main] DEBUG  - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@424e1977]
+2021-12-20 10:18:21,626 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2890 [main] DEBUG  - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@424e1977]
+2021-12-20 10:18:21,626 - org.apache.ibatis.datasource.pooled.PooledDataSource -2890 [main] DEBUG  - Returned connection 1112414583 to pool.
+2021-12-20 10:18:45,672 - org.apache.ibatis.logging.LogFactory -0    [main] DEBUG  - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2021-12-20 10:18:45,688 - org.apache.ibatis.datasource.pooled.PooledDataSource -16   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 10:18:45,688 - org.apache.ibatis.datasource.pooled.PooledDataSource -16   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 10:18:45,688 - org.apache.ibatis.datasource.pooled.PooledDataSource -16   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 10:18:45,688 - org.apache.ibatis.datasource.pooled.PooledDataSource -16   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 10:18:48,397 - org.apache.ibatis.datasource.pooled.PooledDataSource -2725 [main] DEBUG  - Created connection 1112414583.
+2021-12-20 10:18:48,397 - org.apache.ibatis.datasource.pooled.PooledDataSource -2725 [main] DEBUG  - Returned connection 1112414583 to pool.
+2021-12-20 10:18:48,460 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2788 [main] DEBUG  - Opening JDBC Connection
+2021-12-20 10:18:48,460 - org.apache.ibatis.datasource.pooled.PooledDataSource -2788 [main] DEBUG  - Checked out connection 1112414583 from pool.
+2021-12-20 10:18:48,460 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2788 [main] DEBUG  - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@424e1977]
+2021-12-20 10:18:48,538 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2866 [main] DEBUG  - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@424e1977]
+2021-12-20 10:18:48,538 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -2866 [main] DEBUG  - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@424e1977]
+2021-12-20 10:18:48,538 - org.apache.ibatis.datasource.pooled.PooledDataSource -2866 [main] DEBUG  - Returned connection 1112414583 to pool.
+2021-12-20 12:53:54,525 - org.apache.ibatis.logging.LogFactory -0    [main] DEBUG  - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-12-20 12:53:54,532 - org.apache.ibatis.datasource.pooled.PooledDataSource -7    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:53:54,532 - org.apache.ibatis.datasource.pooled.PooledDataSource -7    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:53:54,533 - org.apache.ibatis.datasource.pooled.PooledDataSource -8    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:53:54,533 - org.apache.ibatis.datasource.pooled.PooledDataSource -8    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:53:57,784 - org.apache.ibatis.datasource.pooled.PooledDataSource -3259 [main] DEBUG  - Created connection 270056930.
+2021-12-20 12:53:57,786 - org.apache.ibatis.datasource.pooled.PooledDataSource -3261 [main] DEBUG  - Returned connection 270056930 to pool.
+2021-12-20 12:53:57,817 - net.sf.ehcache.config.ConfigurationFactory -3292 [main] DEBUG  - Configuring ehcache from ehcache.xml found in the classpath: file:/C:/Users/%e7%83%a8/IdeaProjects/Mybatis/redis/target/classes/ehcache.xml
+2021-12-20 12:53:57,818 - net.sf.ehcache.config.ConfigurationFactory -3293 [main] DEBUG  - Configuring ehcache from URL: file:/C:/Users/%e7%83%a8/IdeaProjects/Mybatis/redis/target/classes/ehcache.xml
+2021-12-20 12:53:57,818 - net.sf.ehcache.config.ConfigurationFactory -3293 [main] DEBUG  - Configuring ehcache from InputStream
+2021-12-20 12:53:57,831 - net.sf.ehcache.config.BeanHandler -3306 [main] DEBUG  - Ignoring ehcache attribute xmLns:xsi
+2021-12-20 12:53:57,832 - net.sf.ehcache.config.BeanHandler -3307 [main] DEBUG  - Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+2021-12-20 12:53:57,834 - net.sf.ehcache.config.DiskStoreConfiguration -3309 [main] DEBUG  - Disk Store Path: ehcache
+2021-12-20 12:55:32,487 - org.apache.ibatis.logging.LogFactory -0    [main] DEBUG  - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-12-20 12:55:32,495 - org.apache.ibatis.datasource.pooled.PooledDataSource -8    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:55:32,496 - org.apache.ibatis.datasource.pooled.PooledDataSource -9    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:55:32,496 - org.apache.ibatis.datasource.pooled.PooledDataSource -9    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:55:32,496 - org.apache.ibatis.datasource.pooled.PooledDataSource -9    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:55:35,261 - org.apache.ibatis.datasource.pooled.PooledDataSource -2774 [main] DEBUG  - Created connection 270056930.
+2021-12-20 12:55:35,262 - org.apache.ibatis.datasource.pooled.PooledDataSource -2775 [main] DEBUG  - Returned connection 270056930 to pool.
+2021-12-20 12:55:35,286 - net.sf.ehcache.config.ConfigurationFactory -2799 [main] DEBUG  - Configuring ehcache from ehcache.xml found in the classpath: file:/C:/Users/%e7%83%a8/IdeaProjects/Mybatis/redis/target/classes/ehcache.xml
+2021-12-20 12:55:35,287 - net.sf.ehcache.config.ConfigurationFactory -2800 [main] DEBUG  - Configuring ehcache from URL: file:/C:/Users/%e7%83%a8/IdeaProjects/Mybatis/redis/target/classes/ehcache.xml
+2021-12-20 12:55:35,287 - net.sf.ehcache.config.ConfigurationFactory -2800 [main] DEBUG  - Configuring ehcache from InputStream
+2021-12-20 12:55:35,298 - net.sf.ehcache.config.BeanHandler -2811 [main] DEBUG  - Ignoring ehcache attribute xmLns:xsi
+2021-12-20 12:55:35,299 - net.sf.ehcache.config.BeanHandler -2812 [main] DEBUG  - Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+2021-12-20 12:55:35,300 - net.sf.ehcache.config.DiskStoreConfiguration -2813 [main] DEBUG  - Disk Store Path: ehcache
+2021-12-20 12:57:17,698 - org.apache.ibatis.logging.LogFactory -0    [main] DEBUG  - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-12-20 12:57:17,705 - org.apache.ibatis.datasource.pooled.PooledDataSource -7    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:57:17,706 - org.apache.ibatis.datasource.pooled.PooledDataSource -8    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:57:17,706 - org.apache.ibatis.datasource.pooled.PooledDataSource -8    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:57:17,706 - org.apache.ibatis.datasource.pooled.PooledDataSource -8    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:57:20,673 - org.apache.ibatis.datasource.pooled.PooledDataSource -2975 [main] DEBUG  - Created connection 270056930.
+2021-12-20 12:57:20,675 - org.apache.ibatis.datasource.pooled.PooledDataSource -2977 [main] DEBUG  - Returned connection 270056930 to pool.
+2021-12-20 12:57:20,700 - net.sf.ehcache.config.ConfigurationFactory -3002 [main] DEBUG  - Configuring ehcache from ehcache.xml found in the classpath: file:/C:/Users/%e7%83%a8/IdeaProjects/Mybatis/redis/target/classes/ehcache.xml
+2021-12-20 12:57:20,701 - net.sf.ehcache.config.ConfigurationFactory -3003 [main] DEBUG  - Configuring ehcache from URL: file:/C:/Users/%e7%83%a8/IdeaProjects/Mybatis/redis/target/classes/ehcache.xml
+2021-12-20 12:57:20,701 - net.sf.ehcache.config.ConfigurationFactory -3003 [main] DEBUG  - Configuring ehcache from InputStream
+2021-12-20 12:57:20,710 - net.sf.ehcache.config.BeanHandler -3012 [main] DEBUG  - Ignoring ehcache attribute xmLns:xsi
+2021-12-20 12:57:20,711 - net.sf.ehcache.config.BeanHandler -3013 [main] DEBUG  - Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+2021-12-20 12:57:20,712 - net.sf.ehcache.config.DiskStoreConfiguration -3014 [main] DEBUG  - Disk Store Path: ehcache
+2021-12-20 12:57:37,434 - org.apache.ibatis.logging.LogFactory -0    [main] DEBUG  - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-12-20 12:57:37,444 - org.apache.ibatis.datasource.pooled.PooledDataSource -10   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:57:37,444 - org.apache.ibatis.datasource.pooled.PooledDataSource -10   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:57:37,445 - org.apache.ibatis.datasource.pooled.PooledDataSource -11   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:57:37,445 - org.apache.ibatis.datasource.pooled.PooledDataSource -11   [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:57:40,512 - org.apache.ibatis.datasource.pooled.PooledDataSource -3078 [main] DEBUG  - Created connection 270056930.
+2021-12-20 12:57:40,513 - org.apache.ibatis.datasource.pooled.PooledDataSource -3079 [main] DEBUG  - Returned connection 270056930 to pool.
+2021-12-20 12:57:40,538 - net.sf.ehcache.config.ConfigurationFactory -3104 [main] DEBUG  - Configuring ehcache from ehcache.xml found in the classpath: file:/C:/Users/%e7%83%a8/IdeaProjects/Mybatis/redis/target/classes/ehcache.xml
+2021-12-20 12:57:40,539 - net.sf.ehcache.config.ConfigurationFactory -3105 [main] DEBUG  - Configuring ehcache from URL: file:/C:/Users/%e7%83%a8/IdeaProjects/Mybatis/redis/target/classes/ehcache.xml
+2021-12-20 12:57:40,539 - net.sf.ehcache.config.ConfigurationFactory -3105 [main] DEBUG  - Configuring ehcache from InputStream
+2021-12-20 12:57:40,549 - net.sf.ehcache.config.BeanHandler -3115 [main] DEBUG  - Ignoring ehcache attribute xmLns:xsi
+2021-12-20 12:57:40,549 - net.sf.ehcache.config.BeanHandler -3115 [main] DEBUG  - Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+2021-12-20 12:57:40,550 - net.sf.ehcache.config.DiskStoreConfiguration -3116 [main] DEBUG  - Disk Store Path: ehcache
+2021-12-20 12:58:12,019 - org.apache.ibatis.logging.LogFactory -0    [main] DEBUG  - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-12-20 12:58:12,028 - org.apache.ibatis.datasource.pooled.PooledDataSource -9    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:58:12,028 - org.apache.ibatis.datasource.pooled.PooledDataSource -9    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:58:12,028 - org.apache.ibatis.datasource.pooled.PooledDataSource -9    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:58:12,028 - org.apache.ibatis.datasource.pooled.PooledDataSource -9    [main] DEBUG  - PooledDataSource forcefully closed/removed all connections.
+2021-12-20 12:58:15,047 - org.apache.ibatis.datasource.pooled.PooledDataSource -3028 [main] DEBUG  - Created connection 270056930.
+2021-12-20 12:58:15,049 - org.apache.ibatis.datasource.pooled.PooledDataSource -3030 [main] DEBUG  - Returned connection 270056930 to pool.
+2021-12-20 12:58:15,073 - net.sf.ehcache.config.ConfigurationFactory -3054 [main] DEBUG  - Configuring ehcache from ehcache.xml found in the classpath: file:/C:/Users/%e7%83%a8/IdeaProjects/Mybatis/redis/target/classes/ehcache.xml
+2021-12-20 12:58:15,074 - net.sf.ehcache.config.ConfigurationFactory -3055 [main] DEBUG  - Configuring ehcache from URL: file:/C:/Users/%e7%83%a8/IdeaProjects/Mybatis/redis/target/classes/ehcache.xml
+2021-12-20 12:58:15,074 - net.sf.ehcache.config.ConfigurationFactory -3055 [main] DEBUG  - Configuring ehcache from InputStream
+2021-12-20 12:58:15,084 - net.sf.ehcache.config.BeanHandler -3065 [main] DEBUG  - Ignoring ehcache attribute xmLns:xsi
+2021-12-20 12:58:15,084 - net.sf.ehcache.config.BeanHandler -3065 [main] DEBUG  - Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+2021-12-20 12:58:15,085 - net.sf.ehcache.config.DiskStoreConfiguration -3066 [main] DEBUG  - Disk Store Path: ehcache
+2021-12-20 12:58:15,094 - net.sf.ehcache.CacheManager -3075 [main] DEBUG  - Creating new CacheManager with default config
+2021-12-20 12:58:15,099 - net.sf.ehcache.util.PropertyUtil -3080 [main] DEBUG  - propertiesString is null.
+2021-12-20 12:58:15,107 - net.sf.ehcache.config.ConfigurationHelper -3088 [main] DEBUG  - No CacheManagerEventListenerFactory class specified. Skipping...
+2021-12-20 12:58:15,126 - net.sf.ehcache.Cache -3107 [main] DEBUG  - No BootstrapCacheLoaderFactory class specified. Skipping...
+2021-12-20 12:58:15,126 - net.sf.ehcache.Cache -3107 [main] DEBUG  - CacheWriter factory not configured. Skipping...
+2021-12-20 12:58:15,127 - net.sf.ehcache.config.ConfigurationHelper -3108 [main] DEBUG  - No CacheExceptionHandlerFactory class specified. Skipping...
+2021-12-20 12:58:15,153 - net.sf.ehcache.store.MemoryStore -3134 [main] DEBUG  - Initialized net.sf.ehcache.store.MemoryStore for com.qiqi.mybatis.EmployeeMapper
+2021-12-20 12:58:15,164 - net.sf.ehcache.DiskStorePathManager -3145 [main] DEBUG  - Using diskstore path ehcache
+2021-12-20 12:58:15,164 - net.sf.ehcache.DiskStorePathManager -3145 [main] DEBUG  - Holding exclusive lock on C:\Users\烨\IdeaProjects\Mybatis\redis\ehcache\.ehcache-diskstore.lock
+2021-12-20 12:58:15,164 - net.sf.ehcache.store.disk.DiskStorageFactory -3145 [main] DEBUG  - Failed to delete file com%002eqiqi%002emybatis%002e%0045mployee%004dapper.data
+2021-12-20 12:58:15,165 - net.sf.ehcache.store.disk.DiskStorageFactory -3146 [main] DEBUG  - Failed to delete file com%002eqiqi%002emybatis%002e%0045mployee%004dapper.index
+2021-12-20 12:58:15,172 - net.sf.ehcache.store.disk.DiskStorageFactory -3153 [main] DEBUG  - Matching data file missing (or empty) for index file. Deleting index file ehcache\com%002eqiqi%002emybatis%002e%0045mployee%004dapper.index
+2021-12-20 12:58:15,172 - net.sf.ehcache.store.disk.DiskStorageFactory -3153 [main] DEBUG  - Failed to delete file com%002eqiqi%002emybatis%002e%0045mployee%004dapper.index
+2021-12-20 12:58:15,177 - net.sf.ehcache.Cache -3158 [main] DEBUG  - Initialised cache: com.qiqi.mybatis.EmployeeMapper
+2021-12-20 12:58:15,178 - net.sf.ehcache.config.ConfigurationHelper -3159 [main] DEBUG  - CacheDecoratorFactory not configured for defaultCache. Skipping for 'com.qiqi.mybatis.EmployeeMapper'.
+2021-12-20 12:58:15,280 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -3261 [main] DEBUG  - Opening JDBC Connection
+2021-12-20 12:58:15,280 - org.apache.ibatis.datasource.pooled.PooledDataSource -3261 [main] DEBUG  - Checked out connection 270056930 from pool.
+2021-12-20 12:58:15,282 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -3263 [main] DEBUG  - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1018bde2]
+2021-12-20 12:58:15,444 - net.sf.ehcache.store.disk.Segment -3425 [main] DEBUG  - put added 0 on heap
+2021-12-20 12:58:15,446 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -3427 [main] DEBUG  - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1018bde2]
+2021-12-20 12:58:15,447 - org.apache.ibatis.transaction.jdbc.JdbcTransaction -3428 [main] DEBUG  - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1018bde2]
+2021-12-20 12:58:15,447 - org.apache.ibatis.datasource.pooled.PooledDataSource -3428 [main] DEBUG  - Returned connection 270056930 to pool.

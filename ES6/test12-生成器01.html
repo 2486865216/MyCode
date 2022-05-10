@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function one(){
+            setTimeout(function(){
+                console.log(111);
+                iterator.next();
+            },1000)
+        }
+        function two(){
+            setTimeout(function(){
+                console.log(222)
+                iterator.next();
+            },1000)
+        }
+        function three(){
+            setTimeout(function(){
+                console.log(333)
+                iterator.next();
+            },1000)
+        }
+
+        function * gen(){
+            yield one();
+            yield two();
+            yield three();
+        }
+
+        let iterator = gen();
+        iterator.next();
+
+
+        function user(){
+            setTimeout(()=>{
+                let data = "user"
+                iterator1.next(data);
+            },1000)
+        }
+        function order(){
+            setTimeout(()=>{
+                let data = "order"
+                iterator1.next(data);
+            },1000)
+        }
+        function goods(){
+            setTimeout(()=>{
+                let data = "goods"
+                iterator1.next(data);
+            },1000)
+        }
+
+        function * gen1(){
+            let users = yield user()
+            console.log(users)
+
+            let orders = yield order()
+            console.log(orders)
+
+            let goodss = yield goods()
+            console.log(goodss)
+        }
+
+        let iterator1 = gen1();
+        iterator1.next();
+    </script>
+</body>
+</html>

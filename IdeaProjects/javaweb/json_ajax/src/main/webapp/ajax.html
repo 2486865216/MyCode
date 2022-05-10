@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    function ajaxrequest(){
+    //  创建
+        let xhr = new XMLHttpRequest()
+    //    设置请求参数
+        xhr.open("GET","http://localhost:8080/json_ajax_war_exploded/ajaxServlet?action=javaScriptAjax",true)
+
+    //    处理
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState==4 && xhr.status==200){
+                let json = JSON.parse(xhr.responseText);
+                document.getElementById("div01").innerHTML = json.id+"   "+json.name;
+            }
+        }
+    //    发送请求
+        xhr.send();
+    }
+  </script>
+</head>
+<body>
+    <button onclick="ajaxrequest()">ajaxrequest</button>
+    <div id="div01">
+
+    </div>
+</body>
+</html>

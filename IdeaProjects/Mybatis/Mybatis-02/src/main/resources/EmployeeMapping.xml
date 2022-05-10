@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qiqi.Mybatis.EmployeeMapping">
+    <select id="getEmployee" resultType="com.qiqi.Mybatis.Employee">
+        select * from employee where id = #{id} and lastname = #{lastname}
+        <!--select * from employee where id = #{0} and lastName = #{1}-->
+         <!--select * from employee where id = #{param1} and lastName = #{param2}-->
+    </select>
+    <select id="getEmployeeMap" resultType="com.qiqi.Mybatis.Employee">
+        select * from employee where id = #{id} and lastname = #{lastName}
+        </select>
+<!--    如果返回的是一个集合，要写集合中元素的类型-->
+    <select id="getEmployeesLists" resultType="com.qiqi.Mybatis.Employee">
+        select * from employee where lastname = #{lastName}
+    </select>
+    <!--    如果返回的是一个map，要写map-->
+    <select id="getEmployeesMap" resultType="map">
+        select * from employee where id = #{id}
+    </select>
+    <!--    如果返回的是一个多条记录的map，要写集合中元素的类型-->
+    <select id="getEmployeesReturnMaps" resultType="com.qiqi.Mybatis.Employee">
+        select * from employee where lastname like #{lastname}
+    </select>
+    <!--useGeneratedKeys="true"使用自增主键获取主键值
+        keyProperty="id" 获取到主键值后将值封装给哪一个属性
+    -->
+    <insert id="addEmp" parameterType="com.qiqi.Mybatis.Employee"
+            useGeneratedKeys="true" keyProperty="id">
+        insert into employee (lastname,gender,email)
+        values (#{lastName},#{gender},#{email})
+    </insert>
+    <update id="updateEmp">
+        update employee set lastname=#{lastName},gender=#{gender},email=#{email}
+    </update>
+    <delete id="deleteEmp">
+        delete from employee where id = #{id}
+    </delete>
+</mapper>

@@ -1,0 +1,18 @@
+npm i -D webpack webpack-cli typescript ts-loader
+
+自动生成html的插件
+npm i -D html-webpack-plugin
+自动刷新
+npm i -D webpack-dev-server
+清空dist在添加
+npm i -D clean-webpack-plugin
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "builde": "webpack",
+    "start": "webpack server --open"
+  },
+
+
+npm i -D @babel/core @babel/preset-env babel-loader core-js
+
+

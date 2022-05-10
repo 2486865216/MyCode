@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>贪吃蛇</title>
+</head>
+<body>
+<!--主容器-->
+    <div id="main">
+<!--        游戏的舞台-->
+        <div id="stage">
+<!--            蛇-->
+            <div id="snake">
+                <div></div>
+            </div>
+            <div id="food">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id="beginGame">
+                <span>贪吃蛇</span>
+            </div>
+            <div id="overGame">
+                <span id="message"></span>
+                <span>GAME OVER!</span>
+            </div>
+        </div>
+<!--        记分牌-->
+        <div id="score-panel">
+            <button id="begin">开始游戏</button>
+            <div>
+                SCORE:<span id="score"></span>
+            </div>
+            <div>
+                level:<span id="level"></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

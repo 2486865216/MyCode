@@ -1,0 +1,3 @@
+person:
+  name: "hello spring boot"
+  age: 18

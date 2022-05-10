@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h1>人员列表</h1>
+        <input type="text" placeholder="请输入名字" v-model="keyword">
+        <ul>
+            <li v-for="(p,index) in filperson" :key="p.id">
+                {{p.id}}-{{p.name}}-{{p.sex}}
+            </li>
+        </ul>
+    </div>
+</body>
+    <script>
+        Vue.config.productionTip = false;
+        // watch实现
+        // #region
+        /* new Vue({
+            el:'#root',
+            data:{
+                keyword:'',
+                person:[
+                    {id:1,name:'马冬梅',sex:"女"},
+                    {id:2,name:'周冬雨',sex:"女"},
+                    {id:3,name:'周杰伦',sex:"男"},
+                    {id:4,name:'温兆伦',sex:"男"},
+                ],
+                filperson:[]
+            },
+            watch:{
+                keyword:{
+                    immediate:true,
+                    handler(val){
+                        this.filperson = this.person.filter((p)=>{
+                            return p.name.indexOf(val)!=-1;
+                        })
+                    }
+                }
+            }
+        }) */
+        // #endregion
+        // computed实现
+        new Vue({
+            el:'#root',
+            data:{
+                keyword:'',
+                person:[
+                    {id:1,name:'马冬梅',sex:"女"},
+                    {id:2,name:'周冬雨',sex:"女"},
+                    {id:3,name:'周杰伦',sex:"男"},
+                    {id:4,name:'温兆伦',sex:"男"},
+                ]
+            },
+            computed:{
+                filperson(){
+                    return this.person.filter((p)=>{
+                        return p.name.indexOf(this.keyword)!=-1;
+                    })
+                }
+            }
+        })
+    </script>
+</html>

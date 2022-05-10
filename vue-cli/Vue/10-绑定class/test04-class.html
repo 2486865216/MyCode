@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(28, 9, 49);
+        }
+        
+        #box3{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(28, 69, 158);
+        }
+        .active{
+            color:chartreuse;
+        }
+        .active2{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" v-bind:class="{active:istrue , active2:istrue2}">
+        hello word!
+    </div>
+    <div id="box2" :class="[active,active2]">
+        hello word!
+    </div>
+    <div id="box3" :class="classobject">
+        hello word!
+    </div>
+</body>
+    <script>
+        Vue.config.productionTip = false;
+        let vm = new Vue({
+            el:'#box',
+            data:{
+                istrue:true,
+                istrue2:true
+            },
+        })
+        let vm2 = new Vue({
+            el:"#box2",
+            data:{
+                active:'active',
+                active2:'active2'
+            },
+        })
+        let vm3 = new Vue({
+            el:'#box3',
+            data:{
+                classobject:{
+                    active:true,
+                    active2:true
+                }
+            }
+        })
+    </script>
+</html>

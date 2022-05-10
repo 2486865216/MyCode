@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const p = new Promise((resolve,reject) => {
+            setTimeout(()=>{
+                resolve("success-1!")
+            },1000)
+        })
+        const p2 = new Promise((resolve,reject) => {
+            setTimeout(()=>{
+                reject("fail-2!")
+            },1000)
+        })
+        //allSettled返回每个的状态
+        // const result = Promise.allSettled([p,p2])
+        //all所有的成功才会成功
+        const result = Promise.all([p,p2])
+        console.log(result)
+    </script>
+</body>
+</html>
