@@ -192,8 +192,13 @@ RabbitMQ是一个消息中间件：它接受并转发消息。你可以把它当
 ```
 $ sudo firewall-cmd --permanent --add-port=5672/tcp
 $ sudo firewall-cmd --permanent --add-port=15672/tcp
+<<<<<<< HEAD
 sudo firewall-cmd --reload
 sudo firewall-cmd --list-all
+=======
+$ sudo firewall-cmd --reload
+$ sudo firewall-cmd --list-all
+>>>>>>> d462db19460f044daaa6857d51e28d908b9bbfe0
 
 ```
 

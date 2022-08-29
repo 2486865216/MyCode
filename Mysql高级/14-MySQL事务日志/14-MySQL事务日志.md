@@ -16,7 +16,11 @@
 
 InoDB存储引擎是以**页为单位**来管理存储空间的。在真正访问页面之前，需要把在**磁盘上**的页缓存到内存中的**Buffer Pool**之后才可以访问。所有的变更都必须**先更新缓冲池中**的数据，然后缓冲池中的**脏页**会以一定的频率被刷入磁盘(**checkPoint机制**)，通过缓冲池来优化CPU和磁盘之间的鸿沟，这样就可以保证整体的性能不会下降太快。
 
+<<<<<<< HEAD
 ### 1.1为什么需要REDO日志
+=======
+### 1.1为什么需要RED0日志
+>>>>>>> d462db19460f044daaa6857d51e28d908b9bbfe0
 
 一方面，缓冲池可以帮助我们消除CPU和磁盘之间的鸿沟，checkpoint机制可以保证数据的最终落盘，然而由于checkpoint**并不是每次变更的时候就触发的，**而是master线程隔一段时间去处理的。所以最坏的情况就是事务提交后，刚写完缓冲池，数据库宕机了，那么这段数据就是丢失的，无法恢复。
 
@@ -36,6 +40,11 @@ InoDB存储引擎是以**页为单位**来管理存储空间的。在真正访�
 
 InnoDBi引擎的事务采用了WAL技术(Write-Ahead Logging),这种技术的思想就是先写日志，再写磁盘，只有日志写入成功，才算事务提交成功，这里的日志就是redo log。当发生宕机且数据未刷到磁盘的时候，可以通过redo log来恢复，保证ACID中的D,这就是redo log的作用。
 
+<<<<<<< HEAD
+=======
+![image-20220407122521535](C:/Users/YQ/AppData/Roaming/Typora/typora-user-images/image-20220407122521535.png)
+
+>>>>>>> d462db19460f044daaa6857d51e28d908b9bbfe0
 ### 1.2 REDO日志的好处、特点
 
 #### 1.好处
@@ -65,7 +74,11 @@ Redo log可以简单分为以下两个部分：
 
 ![image-20220407122908091](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407122908091.png)
 
+<<<<<<< HEAD
 参数设置：innodb_log_buffer_size:
+=======
+参数设置：innodb_log_buffer_.size:
+>>>>>>> d462db19460f044daaa6857d51e28d908b9bbfe0
 
 ```mysql
 mysql> show variables like '%innodb_log_buffer_size%';
@@ -151,7 +164,11 @@ mysql> show variables like '%innodb_flush_log_at_trx_commit%';
 
 ![image-20220407124801988](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407124801988.png)
 
+<<<<<<< HEAD
 > 小结innodb_flush_log_at_trx_commit=2
+=======
+> 小结innodb_flush_.log_at_trx_commit=2
+>>>>>>> d462db19460f044daaa6857d51e28d908b9bbfe0
 >
 > 为2时，只要事务提交成功，redo log buffer中的内容只写入文件系统缓存（page cache)。
 >
@@ -277,7 +294,11 @@ innodb_log_file_size=200M
 
 从上边的描述中可以看到，磁盘上的rdo日志文件不只一个，而是以一个日志文件组的形式出现的。这些文件以ib_logfile[数字]（数字可以是0、1、2.)的形式进行命名，每个的redo日志文件大小都是一样的。
 
+<<<<<<< HEAD
 在将redo日志写入日志文件组时，是从ib_logfile0开始写，如果ib_logfile0写满了，就接着ib_logfile1写。同理，ib_logfile1写满了就去写ib_logfile2,依此类推。如果写到最后一个文件该咋办？那就重新转到ib_logfile0继续写，所以整个过程如下图所示：
+=======
+在将redo日志写入日志文件组时，是从ib_logfile0开始写，如果ib_logfile0写满了，就接着ib_logfile1写。同理，ib_1ogfi1e1写满了就去写ib_logfile2,依此类推。如果写到最后一个文件该咋办？那就重新转到ib_logfile0继续写，所以整个过程如下图所示：
+>>>>>>> d462db19460f044daaa6857d51e28d908b9bbfe0
 
 ![image-20220407131549519](https://zhangyuyetypora.oss-cn-guangzhou.aliyuncs.com/typora-user-images/image-20220407131549519.png)
 
@@ -406,7 +427,11 @@ undo log相关参数一般很少改动。
 
 - update undo log
 
+<<<<<<< HEAD
 	update undo log记录的是对delete和update操作产生的undo log。该undo log可能需要提供MVCC机制，因此不能在事务提交时就进行删除。提交时放入undo log链表，等待purge线程进行最后的删除。
+=======
+	update undo log记录的是对delete和update操作产生的undo log。.该undo log可能需要提供MVCC机制，因此不能在事务提交时就进行删除。提交时放入undo log链表，等待purge线程进行最后的删除。
+>>>>>>> d462db19460f044daaa6857d51e28d908b9bbfe0
 
 ### 2.5 undo log的生命周期
 
@@ -504,7 +529,11 @@ UPDATE user SET id=2 WHERE id=1;
 
 **针对于update undo log**
 
+<<<<<<< HEAD
 该undo log可能需要提供MVCC机制，因此不能在事务提交时就进行删除。提交时放入undo log链表，等待purge线程进行最后的删除。
+=======
+该undo log可能需要提供MVC机制，因此不能在事务提交时就进行删除。提交时放入undo log链表，等待purge线程进行最后的删除。
+>>>>>>> d462db19460f044daaa6857d51e28d908b9bbfe0
 
 > 补充：
 >
