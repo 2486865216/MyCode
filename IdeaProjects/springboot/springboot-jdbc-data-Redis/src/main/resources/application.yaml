@@ -1,0 +1,8 @@
+#user:password@example.com:6379
+spring:
+  redis:
+#    url: root:123456@192.168.229.131:6379
+    host: 192.168.229.131
+    port: 6379
+    client-type: lettuce
+#    client-type: jedis

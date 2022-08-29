@@ -1,0 +1,16 @@
+buildscript {
+    repositories {
+        //先从本地加载
+        mavenLocal()
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+    }     
+}
+allprojects {
+    repositories {
+        mavenLocal() //需要配置环境变量M2_HOME  C:\Users\YQ\IdeaProjects\apache-maven-3.8.4
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        mavenCentral()
+    }
+}

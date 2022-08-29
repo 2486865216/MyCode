@@ -1,0 +1,35 @@
+server:
+  port: 3355
+#手动刷新
+#curl -X POST http://localhost:3344/actuator/refresh
+
+#curl -X POST http://localhost:3344/actuator/bus-refresh
+#定点通知
+#curl -X POST http://localhost:3344/actuator/bus-refresh/config-client:3355
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: main #分支名称
+      name: config #配置文件名称
+      profile: dev #读取后缀名称 #  上述3个综合：main.分支上config-dev.yml的配置文件被读取http://localhost:3344/main/config-dev.yml
+      uri: http://localhost:3344 #配置中心地k
+
+  rabbitmq:
+    host: 120.24.204.157
+    port: 5672
+    username: admin
+    password: 123
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+
+#暴露监控的端口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

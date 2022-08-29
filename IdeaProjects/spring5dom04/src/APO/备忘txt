@@ -1,0 +1,57 @@
+1.连接点
+    类里面那些方法可以被增强，这些方法称为连接点
+2.切入点
+    实际被真正增强的方法，称为切入点
+3.通知
+    （1）.实际增强的逻辑部分称为通知（增强）
+    （2）.通知有多种类型
+        *前置
+        *后置
+        *环绕
+        *异常
+        *最终
+4.切面
+    是动作
+        把通知应用到切入点的过程
+
+1、Spring框架一般都是通过Aspect实现AOP
+.
+（1）什么是Aspect。
+* AspectJ不是Spring组成部分，独立AOP框架，
+一般把Aspect 和Sping一起使用，进行 AOP 操作。
+2、基于AspectJ实现AOP操作。
+（1）基于 xml 配置文件
+（2）基于注解方式实现
+
+3.引入依赖
+4、切入点表达式。
+（1）切入点表达式作用：知道对哪个类里面的哪个方法进行增强。
+（2）语法结构：
+execution([权限修饰符][返回类型][类全路径][方法名称]（[参数列表]）)
+1.增强UserDaoImp 中的 add 方法
+execution(*AOP.UserDaoImp.add(..)
+
+2.增强UserDaoImp 中的所有方法
+execution(*AOP.UserDaoImp.*(..)
+
+3.增强APO包中的所有类，所有方法
+execution(*AOP.*.*(..)
+
+
+//相同切入点抽取
+    @Pointcut(value = "execution(* APO.AnnotationTest.User.add(..))")
+    public void Point(){}
+    //前置通知
+    //@Before表示作为前置通知
+    @Before(value = "Point()")
+    public void before(){
+        System.out.println("before......");
+    }
+    //后置通知
+    @AfterReturning(value = "execution(* APO.AnnotationTest.User.add(..))")
+    public void AfterReturning(){
+        System.out.println("AfterReturning......");
+    }
+
+    有多个增强类对同一方法进行增强，设置增强类优先级
+    在增强类上面添加注解@Order(数字类型值)    值越小，优先级越高

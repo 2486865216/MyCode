@@ -1,0 +1,136 @@
+2022-07-31 07:31:37,643 INFO SPI service [com.alipay.sofa.jraft.JRaftServiceFactory - com.alipay.sofa.jraft.core.DefaultJRaftServiceFactory] loading.
+
+2022-07-31 07:31:37,722 INFO SPI service [com.alipay.sofa.jraft.rpc.RaftRpcFactory - com.alipay.sofa.jraft.rpc.impl.GrpcRaftRpcFactory] loading.
+
+2022-07-31 07:31:38,081 INFO SPI service [com.alipay.sofa.jraft.util.timer.RaftTimerFactory - com.alipay.sofa.jraft.util.timer.DefaultRaftTimerFactory] loading.
+
+2022-07-31 07:31:38,097 INFO The number of active nodes increment to 1.
+
+2022-07-31 07:31:38,347 INFO Starts FSMCaller successfully.
+
+2022-07-31 07:31:38,378 INFO Loading snapshot, meta=last_included_index: 5
+last_included_term: 5
+peers: "192.168.0.103:7848"
+.
+
+2022-07-31 07:31:38,487 INFO Node <naming_persistent_service_v2/192.168.0.103:7848> onSnapshotLoadDone, last_included_index: 5
+last_included_term: 5
+peers: "192.168.0.103:7848"
+
+
+2022-07-31 07:31:38,487 INFO Node <naming_persistent_service_v2/192.168.0.103:7848> target priority value has changed from: 0, to: -1.
+
+2022-07-31 07:31:38,518 INFO Node <naming_persistent_service_v2/192.168.0.103:7848> init, term=5, lastLogId=LogId [index=5, term=5], conf=192.168.0.103:7848, oldConf=.
+
+2022-07-31 07:31:38,518 INFO Node <naming_persistent_service_v2/192.168.0.103:7848> start vote and grant vote self, term=5.
+
+2022-07-31 07:31:38,534 WARN Unable to fsync directory C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data on windows.
+
+2022-07-31 07:31:38,534 INFO Save raft meta, path=C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data, term=6, votedFor=192.168.0.103:7848, cost time=18 ms
+
+2022-07-31 07:31:38,534 INFO Node <naming_persistent_service_v2/192.168.0.103:7848> become leader of group, term=6, conf=192.168.0.103:7848, oldConf=.
+
+2022-07-31 07:31:38,534 INFO -Djraft.recyclers.maxCapacityPerThread: 4096.
+
+2022-07-31 07:31:38,550 WARN RPC server is not started in RaftGroupService.
+
+2022-07-31 07:31:38,550 INFO Start the RaftGroupService successfully.
+
+2022-07-31 07:31:38,581 INFO onLeaderStart: term=6.
+
+2022-07-31 07:31:38,597 INFO The number of active nodes increment to 2.
+
+2022-07-31 07:31:38,722 WARN Channel in TRANSIENT_FAILURE state: 192.168.0.103:7848.
+
+2022-07-31 07:31:38,722 WARN Channel in SHUTDOWN state: 192.168.0.103:7848.
+
+2022-07-31 07:31:38,737 INFO Starts FSMCaller successfully.
+
+2022-07-31 07:31:38,753 INFO Loading snapshot, meta=last_included_index: 5
+last_included_term: 5
+peers: "192.168.0.103:7848"
+.
+
+2022-07-31 07:31:38,753 INFO Node <naming_instance_metadata/192.168.0.103:7848> onSnapshotLoadDone, last_included_index: 5
+last_included_term: 5
+peers: "192.168.0.103:7848"
+
+
+2022-07-31 07:31:38,753 INFO Node <naming_instance_metadata/192.168.0.103:7848> target priority value has changed from: 0, to: -1.
+
+2022-07-31 07:31:38,753 INFO Node <naming_instance_metadata/192.168.0.103:7848> init, term=5, lastLogId=LogId [index=5, term=5], conf=192.168.0.103:7848, oldConf=.
+
+2022-07-31 07:31:38,753 INFO Node <naming_instance_metadata/192.168.0.103:7848> start vote and grant vote self, term=5.
+
+2022-07-31 07:31:38,768 WARN Unable to fsync directory C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_instance_metadata\meta-data on windows.
+
+2022-07-31 07:31:38,768 INFO Save raft meta, path=C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_instance_metadata\meta-data, term=6, votedFor=192.168.0.103:7848, cost time=8 ms
+
+2022-07-31 07:31:38,768 INFO Node <naming_instance_metadata/192.168.0.103:7848> become leader of group, term=6, conf=192.168.0.103:7848, oldConf=.
+
+2022-07-31 07:31:38,768 WARN RPC server is not started in RaftGroupService.
+
+2022-07-31 07:31:38,768 INFO Start the RaftGroupService successfully.
+
+2022-07-31 07:31:38,768 INFO onLeaderStart: term=6.
+
+2022-07-31 07:31:38,768 INFO The number of active nodes increment to 3.
+
+2022-07-31 07:31:38,909 INFO Starts FSMCaller successfully.
+
+2022-07-31 07:31:38,909 INFO Loading snapshot, meta=last_included_index: 5
+last_included_term: 5
+peers: "192.168.0.103:7848"
+.
+
+2022-07-31 07:31:38,909 INFO Node <naming_service_metadata/192.168.0.103:7848> onSnapshotLoadDone, last_included_index: 5
+last_included_term: 5
+peers: "192.168.0.103:7848"
+
+
+2022-07-31 07:31:38,909 INFO Node <naming_service_metadata/192.168.0.103:7848> target priority value has changed from: 0, to: -1.
+
+2022-07-31 07:31:38,909 INFO Node <naming_service_metadata/192.168.0.103:7848> init, term=5, lastLogId=LogId [index=5, term=5], conf=192.168.0.103:7848, oldConf=.
+
+2022-07-31 07:31:38,909 INFO Node <naming_service_metadata/192.168.0.103:7848> start vote and grant vote self, term=5.
+
+2022-07-31 07:31:38,940 WARN Unable to fsync directory C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_service_metadata\meta-data on windows.
+
+2022-07-31 07:31:38,940 INFO Save raft meta, path=C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_service_metadata\meta-data, term=6, votedFor=192.168.0.103:7848, cost time=21 ms
+
+2022-07-31 07:31:38,940 INFO Node <naming_service_metadata/192.168.0.103:7848> become leader of group, term=6, conf=192.168.0.103:7848, oldConf=.
+
+2022-07-31 07:31:38,940 WARN RPC server is not started in RaftGroupService.
+
+2022-07-31 07:31:38,940 INFO Start the RaftGroupService successfully.
+
+2022-07-31 07:31:38,940 INFO onLeaderStart: term=6.
+
+2022-07-31 07:31:39,972 ERROR Fail to connect 192.168.0.103:7848, remoting exception: java.util.concurrent.TimeoutException.
+
+2022-07-31 07:31:39,987 ERROR Fail to connect peer 192.168.0.103:7848 to get leader for group naming_persistent_service_v2.
+
+2022-07-31 07:50:07,075 WARN Unable to fsync directory C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_instance_metadata\snapshot\temp on windows.
+
+2022-07-31 07:50:07,075 INFO Deleting snapshot C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_instance_metadata\snapshot\snapshot_6.
+
+2022-07-31 07:50:07,075 INFO Renaming C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_instance_metadata\snapshot\temp to C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_instance_metadata\snapshot\snapshot_6.
+
+2022-07-31 07:50:07,075 INFO Deleting snapshot C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_instance_metadata\snapshot\snapshot_5.
+
+2022-07-31 07:54:19,174 WARN Unable to fsync directory C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_service_metadata\snapshot\temp on windows.
+
+2022-07-31 07:54:19,174 INFO Deleting snapshot C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_service_metadata\snapshot\snapshot_6.
+
+2022-07-31 07:54:19,174 INFO Renaming C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_service_metadata\snapshot\temp to C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_service_metadata\snapshot\snapshot_6.
+
+2022-07-31 07:54:19,174 INFO Deleting snapshot C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_service_metadata\snapshot\snapshot_5.
+
+2022-07-31 07:58:06,043 WARN Unable to fsync directory C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot\temp on windows.
+
+2022-07-31 07:58:06,043 INFO Deleting snapshot C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot\snapshot_6.
+
+2022-07-31 07:58:06,043 INFO Renaming C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot\temp to C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot\snapshot_6.
+
+2022-07-31 07:58:06,043 INFO Deleting snapshot C:\Users\YQ\IdeaProjects\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot\snapshot_5.
+

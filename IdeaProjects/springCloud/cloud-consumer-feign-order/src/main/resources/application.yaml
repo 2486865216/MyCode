@@ -1,0 +1,27 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+
+
+#connectTimeout prevents blocking the caller due to the long server processing time.
+#防止由于服务器处理时间长而阻塞调用者
+#指的是建立连接后从服务器读取到可用资源所用的时间
+
+#readTimeout is applied from the time of connection establishment and is triggered when returning the response takes too long.
+#从连接建立时开始应用，当返回响应时间过长时触发
+#指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+logging.level.project.user.UserClient: DEBUG
+logging:
+  level:
+    com.example.cloudConsumerFeignOrder.service.PaymentFeignService: debug

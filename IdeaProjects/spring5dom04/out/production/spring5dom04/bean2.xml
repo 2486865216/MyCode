@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:apo="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+        <bean id="user" class="APO.Zhujie.Userbuy"></bean>
+        <bean id="userProxy" class="APO.Zhujie.UserProxy"></bean>
+        <apo:config>
+            <apo:pointcut id="b" expression="execution(* APO.Zhujie.Userbuy.buy(..))"/>
+            <apo:aspect ref="userProxy">
+                <apo:before method="Before" pointcut-ref="b"></apo:before>
+            </apo:aspect>
+        </apo:config>
+</beans>

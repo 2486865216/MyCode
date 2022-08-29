@@ -1,0 +1,4 @@
+2022-07-31 08:36:15,468 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=1}
+
+2022-07-31 08:36:16,312 INFO [PUSH-SUCC] 437ms, all delay time 937ms, SLA 844ms, Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=1}, DataSize=1, target=192.168.0.103
+

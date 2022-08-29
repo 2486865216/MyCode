@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数</title>
+    <script>
+        let test = (a,b) => {
+            return a+b;
+        }
+        console.log(test(1,2))
+        // 1.this是静态的。this始终指向函数声明是所在作用域下的this值
+        function getname(){
+            console.log(this)
+        }
+        getname2 = () =>{
+            console.log(this)
+        }
+        window.name = "hello"
+        const school = {
+            name:"word"
+        }
+        getname()
+        getname2()
+
+        getname.call(school)
+        getname2.call(school)
+        // 2.不能作为构造函数实例化对象
+        // 3.不能使用argments变量
+        //4.箭头函数的简写
+        //1) 省略小括号，当形参有且只有一个的时候
+            //letadd=n=>{
+            // return n + n;
+            // }
+            // console. log(add(9));
+        //2) 省略花括号，当代码体只有一一条语句的时候，此时return 必须省略
+        //而且语句的执行结果就是函数的返回值
+        let pow = n => n * n;
+        console . log(pow(9));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

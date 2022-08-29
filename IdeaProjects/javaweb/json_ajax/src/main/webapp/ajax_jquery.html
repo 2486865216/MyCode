@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.js">
+    </script>
+    <script>
+        $(function (){
+            $('#ajax').click(()=>{
+                $.ajax({
+                    url:"http://localhost:8080/json_ajax_war_exploded/ajaxServlet",
+                    // data:"action=jqueryAjax",
+                    data:{action:"jqueryAjax"},
+                    type:"GET",
+                    success:(data)=>{
+                        console.log(data)
+                        // let json = JSON.parse(data)
+                        // $('#div1').innerText = "id:"+json.id+"name:"+json.name
+                        $('#div1').html("id:"+data.id+"     name:"+data.name)
+                    },
+                    // dataType:"text"
+                    dataType:"json"
+                })
+            })
+            $('#get').click(()=>{
+                $.get("http://localhost:8080/json_ajax_war_exploded/ajaxServlet","action=jqueryAjax",
+                    (data)=>{
+                        $('#div1').html("get  id:"+data.id+"     name:"+data.name)
+                    },"json")
+            })
+            $('#post').click(()=>{
+                $.get("http://localhost:8080/json_ajax_war_exploded/ajaxServlet","action=jqueryAjax",
+                    (data)=>{
+                        $('#div1').html("post  id:"+data.id+"     name:"+data.name)
+                    },"json")
+            })
+            $('#getjson').click(()=>{
+                $.getJSON("http://localhost:8080/json_ajax_war_exploded/ajaxServlet","action=jqueryAjax",
+                    (data)=>{
+                        $('#div1').html("getjson  id:"+data.id+"     name:"+data.name)
+                    })
+            })
+            $('#submitbtn').click(() => {
+                $.getJSON("http://localhost:8080/json_ajax_war_exploded/ajaxServlet", "action=ajaxSerialize&" + $('#form1').serialize(),
+                    (data) => {
+                        $('#div1').html("getjson  id:" + data.id + "     name:" + data.name)
+                    })
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="ajax">ajax</button>
+    <button id="get">get</button>
+    <button id="post">post</button>
+    <button id="getjson">post</button>
+    <div id="div1"></div>
+    <form id="form1">
+        user<input type="text" name="user"><br>
+        password<input type="password" name="password"><br>
+        <button id="submitbtn">submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+2022-08-01 21:00:41,670 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=1}
+
+2022-08-01 21:00:42,167 INFO [PUSH-SUCC] 72ms, all delay time 611ms, SLA 496ms, Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=1}, DataSize=1, target=192.168.0.103
+
+2022-08-01 21:19:08,214 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=3}
+
+2022-08-01 21:19:08,712 INFO [PUSH-SUCC] 43ms, all delay time 604ms, SLA 498ms, Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=3}, DataSize=1, target=192.168.0.103
+
+2022-08-01 21:21:29,720 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=5}
+
+2022-08-01 21:21:30,215 INFO [PUSH-SUCC] 20ms, all delay time 556ms, SLA 496ms, Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=5}, DataSize=1, target=192.168.0.103
+
+2022-08-01 21:27:18,993 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=7}
+
+2022-08-01 21:27:19,477 INFO [PUSH-SUCC] 28ms, all delay time 554ms, SLA 485ms, Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=7}, DataSize=1, target=192.168.0.103
+
+2022-08-01 21:29:07,049 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=9}
+
+2022-08-01 21:29:07,484 INFO [PUSH-SUCC] 31ms, all delay time 531ms, SLA 435ms, Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=9}, DataSize=1, target=192.168.0.103
+
+2022-08-01 21:33:12,401 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=11}
+
+2022-08-01 21:33:12,920 INFO [PUSH-SUCC] 31ms, all delay time 602ms, SLA 520ms, Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=11}, DataSize=1, target=192.168.0.103
+
+2022-08-01 21:38:28,351 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=1}
+
+2022-08-01 21:38:28,857 INFO [PUSH-SUCC] 26ms, all delay time 586ms, SLA 506ms, Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=1}, DataSize=1, target=192.168.0.103
+
+2022-08-01 21:41:23,001 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=3}
+
+2022-08-01 21:41:23,458 INFO [PUSH-SUCC] 24ms, all delay time 549ms, SLA 459ms, Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=3}, DataSize=1, target=192.168.0.103
+
+2022-08-01 21:44:10,358 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=5}
+
+2022-08-01 21:44:10,873 INFO [PUSH-SUCC] 24ms, all delay time 568ms, SLA 515ms, Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=5}, DataSize=1, target=192.168.0.103
+

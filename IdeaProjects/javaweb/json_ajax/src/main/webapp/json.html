@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+    <script>
+      let json = {
+        "key1":1,
+        "key2":"hello",
+        "key3":true,
+        "key4":[1,2,3],
+        "key5":{
+          "key5-1":"word"
+        }
+      }
+      console.log(json.key1)
+      console.log(json.key2)
+      console.log(json.key3)
+      console.log(json.key4)
+      console.log(json.key5)
+
+      let jsonString = JSON.stringify(json)
+      console.log(jsonString)
+
+      let json1 = JSON.parse(jsonString)
+      console.log(json1)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

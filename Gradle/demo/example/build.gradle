@@ -1,0 +1,71 @@
+buildscript {
+    repositories {
+        maven {
+            url "$rootDir/lib/releasse"
+        }
+    }
+    dependencies {
+        classpath "com.example.plugin:library:1.1"
+    }
+}
+
+
+plugins {
+    id 'java'
+    id 'com.example.plugin'
+    id 'maven-publish'
+    id 'groovy'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+//带源码和javadoc的发布：需要'java-library'插件支持：它是java的升级版，java插件的功能java-library都有
+//jayadoc.options.encoding="UTF-8"
+//java {
+//    withJavadocJar()
+//    withSourcesJar()
+//}
+publishing {
+    publications {
+        myLibrary(MavenPublication) {
+            groupId = 'org.gradle.sample' // 指定GAV坐标信息
+            artifactId = 'library'
+            version = '1.1'
+            from components.java // 发布jar包
+            //from components.web // 引入war插件 发布war包
+        }
+    }
+    repositories {
+        //本地仓库位于USER_HOME/.m2/repository
+        mavenLocal()
+        //发布项目到私服中
+        maven {
+            name = 'myRepo'//name属性可选，表示仓库名称, url必填
+            //发布地址：可以是本地仓库或者maven私服
+            //url=layout.buildDirectory.dir("repo")
+            //change URLs to point to your repos,e.g.http://my.org/repo
+            def releasesRepoUrl = layout.buildDirectory.dir('repos/releases')
+            def snapshotsRepoUrl = layout.buildDirectory.dir('repos/snapshots')
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            //认证信息：用户名和密码
+//            credentials {
+//                username = 'joe'
+//                password = 'secret'
+//            }
+        }
+    }
+}

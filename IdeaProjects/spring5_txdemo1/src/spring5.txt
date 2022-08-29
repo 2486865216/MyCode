@@ -1,0 +1,36 @@
+1.spring5核心容器支持@Nullable注解
+    @Nullable可以加在属性，方法，参数上面，表示方法返回可以为空，属性值可以为空，参数可以为空。
+
+
+2.spring5核心容器支持函数式风格
+
+
+3spring5支持整合Junit5
+    整合Junit4
+        引入依赖spring-test-5.2.6.RELEASE.jar
+        创建测试类,使用注解完成
+        @RunWith(SpringJUnit4ClassRunner.class)
+        @ContextConfiguration("classpath:bean.xml")//加载配置文件
+        public class Test304 {
+            @Autowired
+            private UserService userService;
+            @Test
+            public void test(){
+                userService.accontMoney();
+            }
+        }
+    整合Junit5
+        引入Junit5 jar包
+        @ExtendWith(SpringExtension.class)
+        @ContextConfiguration("classpath:bean.xml")//加载配置文件
+        public class Test305 {
+            @Autowired
+            private UserService userService;
+            @Test
+            public void test(){
+                userService.accontMoney();
+            }
+        }
+
+        使用一个复合注解整合上面两个注解
+        @SpringJUnitConfig(locations = "classpath:bean.xml")

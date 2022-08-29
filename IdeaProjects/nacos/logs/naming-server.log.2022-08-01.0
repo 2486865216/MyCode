@@ -1,0 +1,148 @@
+2022-08-01 19:04:37,830 WARN naming.distro config will be removed, please use core.protocol.distro replace.
+
+2022-08-01 19:04:37,830 WARN Using naming.distro config to replace core.distro config
+
+2022-08-01 19:04:38,055 INFO open empty service auto clean job, initialDelay : 50000 ms, period : 30000 ms
+
+2022-08-01 19:04:38,056 INFO listen for service meta change
+
+2022-08-01 19:04:40,960 INFO [SelectorManager] Load SelectorContextBuilder(class com.alibaba.nacos.naming.selector.context.CmdbSelectorContextBuilder) contextType(CMDB) successfully.
+
+2022-08-01 19:04:40,960 INFO [SelectorManager] Load SelectorContextBuilder(class com.alibaba.nacos.naming.selector.context.NoneSelectorContextBuilder) contextType(NONE) successfully.
+
+2022-08-01 19:04:40,962 INFO [SelectorManager] Load Selector(class com.alibaba.nacos.naming.selector.LabelSelector) type(label) contextType(CMDB) successfully.
+
+2022-08-01 19:04:40,962 INFO [SelectorManager] Load Selector(class com.alibaba.nacos.naming.selector.NoneSelector) type(none) contextType(NONE) successfully.
+
+2022-08-01 19:04:42,933 INFO Load instance extension handler []
+
+2022-08-01 21:00:40,237 INFO Client connection 1659358839446_127.0.0.1_62728 connect
+
+2022-08-01 21:00:41,669 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=0}, 1659358839446_127.0.0.1_62728
+
+2022-08-01 21:03:15,237 INFO Client connection 192.168.0.103:8091#true connect
+
+2022-08-01 21:03:15,276 INFO Client change for service Service{namespace='public', group='SEATA_GROUP', name='seata-server', ephemeral=true, revision=0}, 192.168.0.103:8091#true
+
+2022-08-01 21:04:10,412 INFO [AUTO-DELETE-IP] service: Service{namespace='public', group='SEATA_GROUP', name='seata-server', ephemeral=true, revision=1}, ip: {"ip":"192.168.0.103","port":8091,"healthy":false,"cluster":"default","extendDatum":{"customInstanceId":"192.168.0.103#8091#default#SEATA_GROUP@@seata-server"},"lastHeartBeatTime":1659359020276,"metadataId":"192.168.0.103:8091:default"}
+
+2022-08-01 21:04:10,412 INFO Client remove for service Service{namespace='public', group='SEATA_GROUP', name='seata-server', ephemeral=true, revision=1}, 192.168.0.103:8091#true
+
+2022-08-01 21:04:13,312 INFO Client connection 192.168.0.103:8091#true disconnect, remove instances and subscribers
+
+2022-08-01 21:04:37,143 INFO Client connection 192.168.0.103:8091#true connect
+
+2022-08-01 21:04:37,143 INFO Client change for service Service{namespace='public', group='SEATA_GROUP', name='seata-server', ephemeral=true, revision=2}, 192.168.0.103:8091#true
+
+2022-08-01 21:04:45,893 INFO Client remove for service Service{namespace='public', group='SEATA_GROUP', name='seata-server', ephemeral=true, revision=3}, 192.168.0.103:8091#true
+
+2022-08-01 21:05:18,429 INFO Client connection 192.168.0.103:8091#true disconnect, remove instances and subscribers
+
+2022-08-01 21:05:42,969 INFO Client connection 192.168.0.103:8091#true connect
+
+2022-08-01 21:05:42,969 INFO Client change for service Service{namespace='public', group='SEATA_GROUP', name='seata-server', ephemeral=true, revision=4}, 192.168.0.103:8091#true
+
+2022-08-01 21:06:33,037 INFO Client change for service Service{namespace='public', group='SEATA_GROUP', name='seata-server', ephemeral=true, revision=5}, 192.168.0.103:8091#true
+
+2022-08-01 21:07:08,165 INFO [AUTO-DELETE-IP] service: Service{namespace='public', group='SEATA_GROUP', name='seata-server', ephemeral=true, revision=6}, ip: {"ip":"192.168.0.103","port":8091,"healthy":false,"cluster":"default","extendDatum":{"customInstanceId":"192.168.0.103#8091#default#SEATA_GROUP@@seata-server"},"lastHeartBeatTime":1659359198066,"metadataId":"192.168.0.103:8091:default"}
+
+2022-08-01 21:07:08,166 INFO Client remove for service Service{namespace='public', group='SEATA_GROUP', name='seata-server', ephemeral=true, revision=6}, 192.168.0.103:8091#true
+
+2022-08-01 21:07:08,585 INFO Client connection 192.168.0.103:8091#true disconnect, remove instances and subscribers
+
+2022-08-01 21:07:35,038 INFO Client connection 192.168.0.103:8091#true connect
+
+2022-08-01 21:07:35,039 INFO Client change for service Service{namespace='public', group='SEATA_GROUP', name='seata-server', ephemeral=true, revision=7}, 192.168.0.103:8091#true
+
+2022-08-01 21:08:30,152 INFO [AUTO-DELETE-IP] service: Service{namespace='public', group='SEATA_GROUP', name='seata-server', ephemeral=true, revision=8}, ip: {"ip":"192.168.0.103","port":8091,"healthy":false,"cluster":"default","extendDatum":{"customInstanceId":"192.168.0.103#8091#default#SEATA_GROUP@@seata-server"},"lastHeartBeatTime":1659359280131,"metadataId":"192.168.0.103:8091:default"}
+
+2022-08-01 21:08:30,152 INFO Client remove for service Service{namespace='public', group='SEATA_GROUP', name='seata-server', ephemeral=true, revision=8}, 192.168.0.103:8091#true
+
+2022-08-01 21:08:33,772 INFO Client connection 192.168.0.103:8091#true disconnect, remove instances and subscribers
+
+2022-08-01 21:09:11,460 INFO Client connection 192.168.0.103:8091#true connect
+
+2022-08-01 21:09:11,461 INFO Client change for service Service{namespace='public', group='SEATA_GROUP', name='seata-server', ephemeral=true, revision=9}, 192.168.0.103:8091#true
+
+2022-08-01 21:10:21,609 INFO [AUTO-DELETE-IP] service: Service{namespace='public', group='SEATA_GROUP', name='seata-server', ephemeral=true, revision=10}, ip: {"ip":"192.168.0.103","port":8091,"healthy":false,"cluster":"default","extendDatum":{"customInstanceId":"192.168.0.103#8091#default#SEATA_GROUP@@seata-server"},"lastHeartBeatTime":1659359391604,"metadataId":"192.168.0.103:8091:default"}
+
+2022-08-01 21:10:21,609 INFO Client remove for service Service{namespace='public', group='SEATA_GROUP', name='seata-server', ephemeral=true, revision=10}, 192.168.0.103:8091#true
+
+2022-08-01 21:10:23,959 INFO Client connection 192.168.0.103:8091#true disconnect, remove instances and subscribers
+
+2022-08-01 21:12:14,220 WARN namespace : public, [SEATA_GROUP@@seata-server] services are automatically cleaned
+
+2022-08-01 21:18:11,148 INFO Client connection 192.168.0.103:8091#true connect
+
+2022-08-01 21:18:11,148 INFO Client change for service Service{namespace='public', group='SEATA_GROUP', name='seata-server', ephemeral=true, revision=0}, 192.168.0.103:8091#true
+
+2022-08-01 21:18:28,267 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=1}, 1659358839446_127.0.0.1_62728
+
+2022-08-01 21:18:28,648 INFO Client connection 1659358839446_127.0.0.1_62728 disconnect, remove instances and subscribers
+
+2022-08-01 21:19:05,989 INFO Client connection 1659359945180_127.0.0.1_63282 connect
+
+2022-08-01 21:19:08,214 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=2}, 1659359945180_127.0.0.1_63282
+
+2022-08-01 21:21:10,176 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=3}, 1659359945180_127.0.0.1_63282
+
+2022-08-01 21:21:10,522 INFO Client connection 1659359945180_127.0.0.1_63282 disconnect, remove instances and subscribers
+
+2022-08-01 21:21:28,604 INFO Client connection 1659360088373_127.0.0.1_63429 connect
+
+2022-08-01 21:21:29,719 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=4}, 1659360088373_127.0.0.1_63429
+
+2022-08-01 21:26:52,614 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=5}, 1659360088373_127.0.0.1_63429
+
+2022-08-01 21:26:52,987 INFO Client connection 1659360088373_127.0.0.1_63429 disconnect, remove instances and subscribers
+
+2022-08-01 21:27:17,668 INFO Client connection 1659360437488_127.0.0.1_63699 connect
+
+2022-08-01 21:27:18,992 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=6}, 1659360437488_127.0.0.1_63699
+
+2022-08-01 21:28:44,950 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=7}, 1659360437488_127.0.0.1_63699
+
+2022-08-01 21:28:45,291 INFO Client connection 1659360437488_127.0.0.1_63699 disconnect, remove instances and subscribers
+
+2022-08-01 21:29:05,617 INFO Client connection 1659360545482_127.0.0.1_63764 connect
+
+2022-08-01 21:29:07,049 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=8}, 1659360545482_127.0.0.1_63764
+
+2022-08-01 21:32:52,997 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=9}, 1659360545482_127.0.0.1_63764
+
+2022-08-01 21:32:53,344 INFO Client connection 1659360545482_127.0.0.1_63764 disconnect, remove instances and subscribers
+
+2022-08-01 21:33:11,009 INFO Client connection 1659360790885_127.0.0.1_63922 connect
+
+2022-08-01 21:33:12,396 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=10}, 1659360790885_127.0.0.1_63922
+
+2022-08-01 21:35:09,344 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=11}, 1659360790885_127.0.0.1_63922
+
+2022-08-01 21:35:09,700 INFO Client connection 1659360790885_127.0.0.1_63922 disconnect, remove instances and subscribers
+
+2022-08-01 21:36:14,700 WARN namespace : public, [DEFAULT_GROUP@@seata-order-service] services are automatically cleaned
+
+2022-08-01 21:38:27,243 INFO Client connection 1659361107142_127.0.0.1_64129 connect
+
+2022-08-01 21:38:28,351 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=0}, 1659361107142_127.0.0.1_64129
+
+2022-08-01 21:41:03,159 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=1}, 1659361107142_127.0.0.1_64129
+
+2022-08-01 21:41:03,507 INFO Client connection 1659361107142_127.0.0.1_64129 disconnect, remove instances and subscribers
+
+2022-08-01 21:41:21,558 INFO Client connection 1659361281464_127.0.0.1_64221 connect
+
+2022-08-01 21:41:22,999 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=2}, 1659361281464_127.0.0.1_64221
+
+2022-08-01 21:43:55,262 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=3}, 1659361281464_127.0.0.1_64221
+
+2022-08-01 21:43:55,596 INFO Client connection 1659361281464_127.0.0.1_64221 disconnect, remove instances and subscribers
+
+2022-08-01 21:44:09,305 INFO Client connection 1659361449219_127.0.0.1_64361 connect
+
+2022-08-01 21:44:10,358 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=4}, 1659361449219_127.0.0.1_64361
+
+2022-08-01 21:45:54,329 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='seata-order-service', ephemeral=true, revision=5}, 1659361449219_127.0.0.1_64361
+
+2022-08-01 21:45:54,683 INFO Client connection 1659361449219_127.0.0.1_64361 disconnect, remove instances and subscribers
+

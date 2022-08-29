@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        //?.
+        function main(config){
+            // const dbHost = config && config.db && config.db.host
+            const dbHost = config?.db?.host
+            console.log(dbHost)
+            console.log(dbHost)
+            console.log(dbHost)
+        }
+        main({
+            db:{
+                host:'1234546789',
+                username:'hello word!'
+            },
+            cache:{
+                host:'1564865155',
+                username:'hello javascript!'
+            }
+        })
+    </script>
+</body>
+</html>

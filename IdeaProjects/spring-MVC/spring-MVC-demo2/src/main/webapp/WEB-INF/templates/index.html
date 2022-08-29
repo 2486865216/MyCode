@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>首页</h1>
+    <a th:href="@{/testsuccess}">测试RequestMapping注解的位置1</a><br>
+    <a th:href="@{/hello/testsuccess}">测试RequestMapping注解的位置2</a><br>
+    <a th:href="@{/testsuccess}">测试RequestMapping注解的value</a><br>
+    <a th:href="@{/test}">测试RequestMapping注解的value</a><br>
+    <a th:href="@{/test}">测试RequestMapping注解的methods--GET</a><br>
+    <form th:action="@{/test}" method="post">
+        <input type="submit" value="method属性">
+    </form>
+    <a th:href="@{/testGetmapping}">测试RequestMapping注解的@GetMapping</a><br>
+    <a th:href="@{/testparemsandHeaders(username='admin',password=123456)}">测试RequestMapping注解的params属性</a><br>
+<!--    <a th:href="@{/aaa/testAnt}">测试testAnt ?</a>-->
+<!--    <a th:href="@{/aaa/testAnt}">测试testAnt *</a>-->
+    <a th:href="@{/aaa/testAnt}">测试testAnt **</a><br>
+    <a th:href="@{/test/1/admin}">测试RequestMapping支持路径中的占位符-->/testPath</a>
+</body>
+</html>

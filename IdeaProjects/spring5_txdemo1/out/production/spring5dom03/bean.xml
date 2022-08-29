@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<!--    开启组件扫描
+            1，扫描多个包，包之间用逗号隔开 或 扫描上层目录
+-->
+    <context:component-scan base-package="Test,Test1"></context:component-scan>
+
+    <!--示例1
+    use-default-filters="false"表示现在不使用默认filter，自己配置filter
+    context:include-filter ，设置扫描哪些内容-->
+<!--    <context:component-scan base-package="Test" use-default-filters="false">-->
+<!--    <context:include-filter type="annotation"-->
+<!--                            expression="org.springframework.stereotype.Controller"/>-->
+<!--    </context:component-scan>-->
+    <!--示例2
+        context:exclude-filter ，设置不扫描哪些内容
+    -->
+<!--    <context:component-scan base-package="Test">-->
+<!--        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+<!--    </context:component-scan>-->
+</beans>

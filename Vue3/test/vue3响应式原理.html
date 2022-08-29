@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let person = {
+            name:'hello',
+            age:18
+        }
+        const p = new Proxy(person, {
+            //读取
+            get(target,propName){
+                console.log(target);
+                console.log(propName)
+                console.log(`有人读取了${propName}`)
+                return target[propName]
+            },
+            //修改,追加
+            set(target,propName,value){
+                console.log(target);
+                console.log(propName);
+                console.log(value);
+                console.log(`有人修改了${propName}`);
+                target[propName] = value
+            },
+            //删除
+            deleteProperty(target,propName){
+                console.log(`有人删除了${propName}`);
+                delete target[propName]
+            }
+        })
+    </script>
+</body>
+</html>

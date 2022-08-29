@@ -1,0 +1,170 @@
+2022-07-29 19:03:45,616 INFO Starting Nacos v2.0.4 on DESKTOP-HKUFB43 with PID 10928 (C:\Users\YQ\IdeaProjects\nacos\target\nacos-server.jar started by 烨 in C:\Users\YQ\IdeaProjects\nacos\bin)
+
+2022-07-29 19:03:45,681 INFO The following profiles are active: standalone
+
+2022-07-29 19:03:54,959 INFO Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@f31c0c6' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+2022-07-29 19:03:55,877 INFO Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+2022-07-29 19:03:59,930 INFO Tomcat initialized with port(s): 8848 (http)
+
+2022-07-29 19:04:00,186 INFO Starting service [Tomcat]
+
+2022-07-29 19:04:00,245 INFO Starting Servlet engine: [Apache Tomcat/9.0.38]
+
+2022-07-29 19:04:01,462 INFO At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+
+2022-07-29 19:04:01,550 INFO Initializing Spring embedded WebApplicationContext
+
+2022-07-29 19:04:01,551 INFO Root WebApplicationContext: initialization completed in 15759 ms
+
+2022-07-29 19:04:03,455 INFO HikariPool-1 - Starting...
+
+2022-07-29 19:04:04,043 INFO HikariPool-1 - Start completed.
+
+2022-07-29 19:04:06,408 INFO Nacos-related cluster resource initialization
+
+2022-07-29 19:04:06,422 INFO Load com.alibaba.nacos.core.ability.RemoteAbilityInitializer for ServerAbilityInitializer
+
+2022-07-29 19:04:06,422 INFO Load com.alibaba.nacos.naming.ability.NamingAbilityInitializer for ServerAbilityInitializer
+
+2022-07-29 19:04:06,462 INFO The cluster resource is initialized
+
+2022-07-29 19:04:06,549 INFO Get Distro config from env, DistroConfig{syncDelayMillis=1000, syncTimeoutMillis=3000, syncRetryDelayMillis=3000, verifyIntervalMillis=5000, verifyTimeoutMillis=3000, loadDataRetryDelayMillis=30000}
+
+2022-07-29 19:04:08,498 INFO Reflections took 70 ms to scan 1 urls, producing 5 keys and 16 values 
+
+2022-07-29 19:04:08,622 INFO Reflections took 12 ms to scan 1 urls, producing 4 keys and 28 values 
+
+2022-07-29 19:04:08,715 INFO Reflections took 44 ms to scan 1 urls, producing 5 keys and 19 values 
+
+2022-07-29 19:04:08,740 INFO Reflections took 3 ms to scan 1 urls, producing 2 keys and 12 values 
+
+2022-07-29 19:04:12,837 INFO Reflections took 122 ms to scan 2 urls, producing 3 keys and 6 values 
+
+2022-07-29 19:04:13,041 INFO Reflections took 185 ms to scan 2 urls, producing 4 keys and 9 values 
+
+2022-07-29 19:04:13,204 INFO Reflections took 161 ms to scan 2 urls, producing 3 keys and 10 values 
+
+2022-07-29 19:04:13,215 INFO Reflections took 8 ms to scan 1 urls, producing 2 keys and 2 values 
+
+2022-07-29 19:04:13,374 INFO Reflections took 155 ms to scan 2 urls, producing 1 keys and 5 values 
+
+2022-07-29 19:04:13,510 INFO Reflections took 129 ms to scan 2 urls, producing 1 keys and 7 values 
+
+2022-07-29 19:04:13,640 INFO Reflections took 122 ms to scan 2 urls, producing 2 keys and 8 values 
+
+2022-07-29 19:04:13,653 INFO Reflections took 10 ms to scan 1 urls, producing 1 keys and 1 values 
+
+2022-07-29 19:04:18,198 INFO Initializing ExecutorService 'applicationTaskExecutor'
+
+2022-07-29 19:04:18,469 INFO Adding welcome page: class path resource [static/index.html]
+
+2022-07-29 19:04:19,311 INFO Creating filter chain: Ant [pattern='/**'], []
+
+2022-07-29 19:04:19,367 INFO Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@45e22def, org.springframework.security.web.context.SecurityContextPersistenceFilter@b174a73, org.springframework.security.web.header.HeaderWriterFilter@74db12c2, org.springframework.security.web.csrf.CsrfFilter@4b1a43d8, org.springframework.security.web.authentication.logout.LogoutFilter@2cc04358, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1460c81d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67594471, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6ae3fb94, org.springframework.security.web.session.SessionManagementFilter@7ea899a9, org.springframework.security.web.access.ExceptionTranslationFilter@73545b80]
+
+2022-07-29 19:04:19,529 INFO Initializing ExecutorService 'taskScheduler'
+
+2022-07-29 19:04:19,561 INFO Exposing 16 endpoint(s) beneath base path '/actuator'
+
+2022-07-29 19:04:19,742 INFO Tomcat started on port(s): 8848 (http) with context path '/nacos'
+
+2022-07-29 19:04:19,756 INFO Started Nacos in 37.442 seconds (JVM running for 39.11)
+
+2022-07-29 19:04:19,756 INFO Nacos started successfully in stand alone mode. use external storage
+
+2022-07-29 19:05:30,127 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+
+2022-07-29 19:05:30,128 INFO Initializing Servlet 'dispatcherServlet'
+
+2022-07-29 19:05:30,146 INFO Completed initialization in 18 ms
+
+2022-07-29 19:14:12,132 WARN clearConfigHistory start
+
+2022-07-29 19:14:12,144 WARN clearConfigHistory, getBeforeStamp:2022-06-29 19:14:12.0, pageSize:1000
+
+2022-07-29 19:14:12,294 INFO [capacityManagement] start correct usage
+
+2022-07-29 19:14:12,310 INFO [capacityManagement] end correct usage, cost: 0.016s
+
+2022-07-29 19:19:39,282 INFO Get Push config from env, PushConfig{pushTaskDelay=500, pushTaskTimeout=5000, pushTaskRetryDelay=1000}
+
+2022-07-29 19:24:12,185 WARN clearConfigHistory start
+
+2022-07-29 19:24:12,185 WARN clearConfigHistory, getBeforeStamp:2022-06-29 19:24:12.0, pageSize:1000
+
+2022-07-29 19:24:12,326 INFO [capacityManagement] start correct usage
+
+2022-07-29 19:24:12,329 INFO [capacityManagement] end correct usage, cost: 0.003s
+
+2022-07-29 19:30:54,420 INFO Transport failed
+
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:378)
+	at io.grpc.netty.shaded.io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:247)
+	at io.grpc.netty.shaded.io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1140)
+	at io.grpc.netty.shaded.io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.grpc.netty.shaded.io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:697)
+	at io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:632)
+	at io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:549)
+	at io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:511)
+	at io.grpc.netty.shaded.io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:918)
+	at io.grpc.netty.shaded.io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.grpc.netty.shaded.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2022-07-29 19:34:12,197 WARN clearConfigHistory start
+
+2022-07-29 19:34:12,197 WARN clearConfigHistory, getBeforeStamp:2022-06-29 19:34:12.0, pageSize:1000
+
+2022-07-29 19:34:12,342 INFO [capacityManagement] start correct usage
+
+2022-07-29 19:34:12,353 INFO [capacityManagement] end correct usage, cost: 0.01s
+
+2022-07-29 19:44:12,202 WARN clearConfigHistory start
+
+2022-07-29 19:44:12,205 WARN clearConfigHistory, getBeforeStamp:2022-06-29 19:44:12.0, pageSize:1000
+
+2022-07-29 19:44:12,361 INFO [capacityManagement] start correct usage
+
+2022-07-29 19:44:12,368 INFO [capacityManagement] end correct usage, cost: 0.007s
+
+2022-07-29 19:54:12,219 WARN clearConfigHistory start
+
+2022-07-29 19:54:12,220 WARN clearConfigHistory, getBeforeStamp:2022-06-29 19:54:12.0, pageSize:1000
+
+2022-07-29 19:54:12,376 INFO [capacityManagement] start correct usage
+
+2022-07-29 19:54:12,378 INFO [capacityManagement] end correct usage, cost: 0.002s
+
+2022-07-29 20:04:12,228 WARN clearConfigHistory start
+
+2022-07-29 20:04:12,230 WARN clearConfigHistory, getBeforeStamp:2022-06-29 20:04:12.0, pageSize:1000
+
+2022-07-29 20:04:12,382 INFO [capacityManagement] start correct usage
+
+2022-07-29 20:04:12,390 INFO [capacityManagement] end correct usage, cost: 0.008s
+
+2022-07-29 20:10:11,009 INFO Get NamingClient config from env, ClientConfig{clientExpiredTime=180000}
+
+2022-07-29 20:14:12,253 WARN clearConfigHistory start
+
+2022-07-29 20:14:12,253 WARN clearConfigHistory, getBeforeStamp:2022-06-29 20:14:12.0, pageSize:1000
+
+2022-07-29 20:14:12,408 INFO [capacityManagement] start correct usage
+
+2022-07-29 20:14:12,415 INFO [capacityManagement] end correct usage, cost: 0.007s
+
+2022-07-29 20:24:12,270 WARN clearConfigHistory start
+
+2022-07-29 20:24:12,273 WARN clearConfigHistory, getBeforeStamp:2022-06-29 20:24:12.0, pageSize:1000
+
+2022-07-29 20:24:12,425 INFO [capacityManagement] start correct usage
+
+2022-07-29 20:24:12,430 INFO [capacityManagement] end correct usage, cost: 0.004s
+

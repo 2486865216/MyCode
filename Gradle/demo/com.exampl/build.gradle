@@ -1,0 +1,228 @@
+import java.time.Duration
+
+//plugins {
+//    id 'java'
+//    id 'application'
+//    id 'java-library'
+//}
+//apply plugin:org.gradle.api.plugins.JavaPlugin
+apply plugin:JavaPlugin
+//apply plugin: 'java'
+//apply{
+//    plugin: 'java'
+//}
+
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    //本地依赖的方式：文件集合和文件树完成
+    implementation files('lib/mysql.jar', 'lib/log4j.jar')
+    implementation fileTree('dir': 'lib', includes: ['*.jar'], excludes: [''])
+    //项目依赖：
+    implementation project('subProject01')
+    //直接依赖：
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.27'
+//    implementation 'mysql:mysql-connector-java:8.0.27'
+    implementation('org.hibernate:hibernate-core:3.6.3.Final') {
+//        exclude('group': 'org.slf4j')
+//        exclude('module': 'slf4j-api')
+//        exclude('group': 'org.slf4j','module': 'slf4j-api')
+//        transitive(false) //不建议使用
+    }
+    implementation 'org.slf4j:slf4j-api:1.4.0'
+//    implementation('org.slf4j:slf4j-api:1.4.0') {
+//        version {
+//            strictly('1.4.0')
+//        }
+//    }
+}
+
+//下面我们配置，当Grad1e构建遇到依赖冲突时，就立即构建失败
+//configurations.all() {
+//    Configuration configuration ->
+//        //当遇到版本冲突时直接构建失败
+//        configuration.resolutionStrategy.failOnVersionConflict()
+//}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding('utf-8')
+}
+
+task("task1", {
+    //任务的配置段：在配置阶段执行
+    println "这是最简单的任务"
+
+    //任务的行为：在执行阶段执行，doFirst会在doLast执行之前执行
+    doFirst({
+        println "task1 doFirst"
+    })
+    doLast({
+        println "task1 doLast"
+    })
+})
+//外部定义
+task1.doFirst({
+    println "task1 doFirst outer"
+})
+task1.doLast({
+    println "task1 doLast outer"
+})
+
+task task2 {
+    dependsOn = ['task1']
+}
+
+task task3 {
+    dependsOn(':subProject01:A')
+    println "task3"
+}
+
+task('A', {//任务名称，闭包都作为参数
+    println "taskA..."
+})
+
+task('B') {//闭包作为最后一个参数可以直接从括号中拿出来
+    println "taskB..."
+}
+task C {//groovy语法支持省略方法括号上面三种本质是一种
+    println "taskC..."
+}
+
+def map = new HashMap<String, Object>()
+map.put("action") { println "task" } //actionh属性可以设置为闭包
+task(map, "D")
+tasks.create('E') {//使用tasks的create方法
+    println "taskE.."
+}
+tasks.register('f') {//注：register执行的是延迟创建。
+// 也即只有当task被需要使用的时候才会被创建。
+    println "taskE...."
+}
+
+//①.F是任务名，前面通过具名参数给map的属性赋值，以参数方式指定任务的属性信息
+task(group: "atguigu", description: "this is task B", "F")
+//@.H是任务名，定义任务的同时，在内部直接指定属性信息
+task("H") {
+    group("atguigu")
+    description("this is the task H")
+    enabled(false)
+}
+
+//③.Y是任务名，给已有的任务在外部直接指定属性信息
+task "y" {}
+y.group = "atguigu"
+//clean.group("atguigu")//案例：给已有的clean任务重新指定组信息
+
+4.times { counter ->
+    tasks.register("taskA$counter") {
+        doLast {
+            println "I'm stack$counter"
+        }
+        timeout = Duration.ofMillis(500)
+    }
+}
+
+task atguigu {
+    doLast {
+        println "让天下没有难学的技术：尚硅谷"
+    }
+}
+//根据任务名查找
+tasks.findByName("atguigu").doFirst({ println "尚硅谷校区1：北京" })
+tasks.getByName("atguigu").doFirst({ println "尚硅谷校区2：深圳" })
+//根据任务路径查找【相对璐径】
+tasks.findByPath(":atguigu").doFirst({ println "尚硅谷校区s:上海" })
+tasks.getByPath(":atguigu").doFirst({ println "尚硅谷校区4：武汉" })
+
+
+//使用相对路径
+File configFile = file('src/conf.xml')
+configFile.createNewFile()
+//使用绝对路径
+configFile = file('C:\\Users\\YQ\\Gradle\\demo\\com.exampl\\conf.xml')
+configFile.createNewFile()
+//使用一个文件对象
+configFile = new File('src/config.xml')
+println(configFile.exists())
+
+FileCollection collection = files('src/conf.xml', ['src/test.txt', 'src/test1.txt'])
+collection.forEach(item -> {
+//    println item.name
+    item.createNewFile()
+})
+
+//转换为Set集合
+//Set set = collection.files
+Set set = collection as Set
+//List list = collection as List
+for (final def i in set) {
+    println i.exists()
+}
+
+//添加或删除一个
+def union = collection + files('src/test2.txt')
+def minus = collection - files('src/test.txt')
+
+union.forEach(item -> {
+    println item.name
+})
+println ""
+minus.forEach(item -> {
+    println item.name
+})
+println ""
+//文件树
+def tree = fileTree('src/main')
+tree.include('**/*.java').forEach(item -> {
+    println item.name
+})
+tree.exclude('**/*.java').forEach(item -> {
+    println item.name
+})
+
+//复制
+task copyTask(type: Copy) {
+    from 'src/main/java'
+    into 'src/test/java'
+}
+
+//task copyTask(type: Copy) {
+//    //拷贝src/main/java目录下所有的文件
+//    from 'sre/main/java'
+//    include('**/*.java')
+//    rename { String fileName ->
+//        fileName.replace('string', '')
+//    }
+//    //拷贝单独的一个文件
+//    from 'src/staging/index.html'
+//    //从Zip压缩文件中拷贝内容
+//    from zipTree('src/main/assets.zip')
+//    //拷贝到的目标目录
+//    into 'build/explodedWar'
+//}
+//
+//copy {
+//    //相对路径或者绝对路径
+//    from file('src/main/resources/ddd.txt')//file也可以换成new File()
+//    into this.buildDir.absolutePath
+//}
+
+task myZip(type: Zip) {
+    from 'src/main/java'
+    into 'build'
+    baseName('testZip')
+}
+
+

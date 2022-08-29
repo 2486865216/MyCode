@@ -1,0 +1,33 @@
+#private String name;
+#private Boolean boss;
+#private Integer age;
+#private Date birthday;
+#private Pet pet;
+#private String[] interests;
+#private List<String> animals;
+#private Map<String, Object> score;
+#private Map<String, List<Pet>> allPets;
+person:
+  name: zhangsan
+  boss: true
+  age: 18
+  birthday: 2020/01/16
+  pet:
+    name: cat
+    age: 2
+#  interests: [篮球，足球]
+  interests:
+    - 篮球
+    - 足球
+  animals: [阿猫，阿狗]
+#  score:
+#    English: 80
+#    math: 80
+  score: {English: 80,math: 20}
+  allPets:
+    sick:
+      - {name: 阿猫,age: 1}
+      - name: 阿狗
+        age: 3
+    health:
+      - {name: 阿花,age: 4}

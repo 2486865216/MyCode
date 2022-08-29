@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+    //        dot . 元字符 除换行以外的任意单个字符
+    let str = `
+        <ul>
+            <li>
+                <p>
+                    hello word!
+                </p>
+            </li>
+        </ul>
+    `;
+    const reg = /<li>.*?<p>(.*?)<\/p>/s
+    console.log(reg.exec(str))
+    </script>
+</body>
+</html>

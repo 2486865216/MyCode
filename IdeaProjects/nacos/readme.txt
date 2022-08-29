@@ -1,0 +1,1 @@
+startup.cmd -m standalone 单机启动  默认集群

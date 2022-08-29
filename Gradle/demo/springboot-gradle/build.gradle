@@ -1,0 +1,49 @@
+//buildscript {
+//    repositories{
+//        maven{ url 'https://maven.aliyun.com/repository/public'}
+//    }
+//    dependencies{
+//        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.7.2'
+//    }
+//}
+plugins {
+    id 'org.springframework.boot' version '2.6.10'
+}
+//plugins {
+//    id 'java'
+//    id 'org.springframework.boot' version '2.7.2' //维护springboot版本号，不单独使用，和下面两个插件一起用
+//    id 'io.spring.dependency-management' version '1.0.10.RELEASE' //进行依赖管理，在引入其它boot依赖时省略版本号、解决jar包冲突问题
+//}
+apply plugin: 'java'
+//apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+apply from: 'version.gradle'
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+subprojects{
+    dependencyManagement{
+        dependencies{
+            for (depJar in rootProject.ext.dependencies){
+                dependency depJar.value
+            }
+        }
+    }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation rootProject.ext.dependencies["mysqlJava"]
+}
+
+test {
+    useJUnitPlatform()
+}

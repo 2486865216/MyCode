@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function connect({name,...user}){
+            console.log(name)
+            console.log(user)
+        }
+        connect({name:"hello word",age:18,no:2021})
+
+        const test1 = {
+            test1:"test1"
+        }
+        const test2 = {
+            test2:"test2"
+        }
+        const test3 = {
+            test3:"test3"
+        }
+        const test4 = {
+            test4:"test4"
+        }
+
+        const testAll = {...test1,...test2,...test3,...test4}
+        console.log(testAll)
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+2022-07-28 19:18:46,244 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='sentinel-service', ephemeral=true, revision=1}
+
+2022-07-28 19:18:47,544 INFO [PUSH-SUCC] 815ms, all delay time 1383ms, SLA 1300ms, Service{namespace='public', group='DEFAULT_GROUP', name='sentinel-service', ephemeral=true, revision=1}, DataSize=1, target=192.168.0.103
+
+2022-07-28 19:22:28,318 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='sentinel-service', ephemeral=true, revision=3}
+
+2022-07-28 19:22:28,846 INFO [PUSH-SUCC] 17ms, all delay time 590ms, SLA 530ms, Service{namespace='public', group='DEFAULT_GROUP', name='sentinel-service', ephemeral=true, revision=3}, DataSize=1, target=192.168.0.103
+
+2022-07-28 19:32:11,091 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='sentinel-service', ephemeral=true, revision=5}
+
+2022-07-28 19:32:11,433 INFO [PUSH-SUCC] 64ms, all delay time 591ms, SLA 344ms, Service{namespace='public', group='DEFAULT_GROUP', name='sentinel-service', ephemeral=true, revision=5}, DataSize=1, target=192.168.0.103
+
+2022-07-28 19:50:05,539 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='provider-payment', ephemeral=true, revision=1}
+
+2022-07-28 19:50:05,992 INFO [PUSH-SUCC] 27ms, all delay time 565ms, SLA 453ms, Service{namespace='public', group='DEFAULT_GROUP', name='provider-payment', ephemeral=true, revision=1}, DataSize=1, target=192.168.0.103
+
+2022-07-28 19:50:08,597 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='provider-payment', ephemeral=true, revision=2}
+
+2022-07-28 19:50:09,149 INFO [PUSH-SUCC] 6ms, all delay time 611ms, SLA 552ms, Service{namespace='public', group='DEFAULT_GROUP', name='provider-payment', ephemeral=true, revision=2}, DataSize=2, target=192.168.0.103
+
+2022-07-28 19:50:09,158 INFO [PUSH-SUCC] 16ms, all delay time 620ms, SLA 561ms, Service{namespace='public', group='DEFAULT_GROUP', name='provider-payment', ephemeral=true, revision=2}, DataSize=2, target=192.168.0.103
+
+2022-07-28 20:09:19,422 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=1}
+
+2022-07-28 20:09:19,911 INFO [PUSH-SUCC] 56ms, all delay time 657ms, SLA 489ms, Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=1}, DataSize=1, target=192.168.0.103
+
+2022-07-28 20:10:16,268 INFO [PUSH-SUCC] 5ms, all delay time 553ms for subscriber 192.168.0.103, Service{namespace='public', group='DEFAULT_GROUP', name='provider-payment', ephemeral=true, revision=2}, DataSize=2
+
+2022-07-28 20:13:26,801 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=3}
+
+2022-07-28 20:13:27,315 INFO [PUSH-SUCC] 17ms, all delay time 570ms, SLA 514ms, Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=3}, DataSize=1, target=192.168.0.103
+
+2022-07-28 20:15:28,604 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=5}
+
+2022-07-28 20:15:29,108 INFO [PUSH-SUCC] 25ms, all delay time 569ms, SLA 503ms, Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=5}, DataSize=1, target=192.168.0.103
+
+2022-07-28 20:16:28,580 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=7}
+
+2022-07-28 20:16:29,073 INFO [PUSH-SUCC] 15ms, all delay time 551ms, SLA 493ms, Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=7}, DataSize=1, target=192.168.0.103
+
+2022-07-28 20:17:21,868 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=9}
+
+2022-07-28 20:17:22,337 INFO [PUSH-SUCC] 19ms, all delay time 528ms, SLA 469ms, Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=9}, DataSize=1, target=192.168.0.103
+
+2022-07-28 20:18:11,397 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=11}
+
+2022-07-28 20:18:11,962 INFO [PUSH-SUCC] 17ms, all delay time 624ms, SLA 565ms, Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=11}, DataSize=1, target=192.168.0.103
+
+2022-07-28 20:18:24,050 INFO [PUSH-SUCC] 5ms, all delay time 556ms for subscriber 192.168.0.103, Service{namespace='public', group='DEFAULT_GROUP', name='provider-payment', ephemeral=true, revision=2}, DataSize=2
+
+2022-07-28 20:20:31,489 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=13}
+
+2022-07-28 20:20:31,948 INFO [PUSH-SUCC] 23ms, all delay time 526ms, SLA 459ms, Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=13}, DataSize=1, target=192.168.0.103
+
+2022-07-28 20:21:12,387 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=15}
+
+2022-07-28 20:21:12,935 INFO [PUSH-SUCC] 27ms, all delay time 619ms, SLA 548ms, Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=15}, DataSize=1, target=192.168.0.103
+
+2022-07-28 21:03:25,263 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='provider-payment', ephemeral=true, revision=4}
+

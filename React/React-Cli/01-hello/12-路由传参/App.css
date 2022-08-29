@@ -1,0 +1,25 @@
+#app{
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    border: 1px solid black;
+    background-color:antiquewhite;
+}
+#body{
+    display: flex;
+}
+#left{
+    width: 150px;
+    font-size: 30px;
+    height: 405px;
+    background-color:rgb(255, 255, 255);
+}
+#right{
+    width: 350px;
+    height: 405px;
+    background-color: azure;
+}
+.active{
+    color: brown;
+    background-color: blue;
+}

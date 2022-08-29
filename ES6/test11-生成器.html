@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 生成器就是一个特殊的函数
+        function * gen(){
+            console.log("hello")
+            yield '1';
+            console.log("hello")
+            yield '2';
+            console.log("hello")
+            yield '3';
+            console.log("hello")  
+        }
+        let iterator = gen()
+        for ( let i of gen()){
+            console.log(i)
+        }
+        function * gen1(args){
+            console.log(args)
+            let one = yield '1';
+            console.log(one)
+            let two = yield '2';
+            console.log(two)
+            let three = yield '3';
+            console.log(three)  
+        }
+        let iterator1 = gen1('hello')
+
+        console.log(iterator1.next())
+        console.log(iterator1.next("AAA"))
+        console.log(iterator1.next("BBB"))
+        console.log(iterator1.next("CCC"))
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "spring.swagger2",
+      "type": "java.lang.String",
+      "description": "Description for spring.swagger2."
+    },
+    {
+      "name": "spring.swagger.enabled",
+      "type": "java.lang.String",
+      "description": "Description for spring.swagger.enabled."
+    }
+  ] }

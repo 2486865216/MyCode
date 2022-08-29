@@ -1,0 +1,19 @@
+spring:
+  mvc:
+#    static-path-pattern: /res/**
+#  web:
+#    resources:
+#      static-locations: classpath:/haha/
+    hiddenmethod:
+      filter:
+        enabled: true #开启表单的REST功能
+#   开启请求参数内容协商
+#   http://localhost:8080/test/User?format=json
+#   http://localhost:8080/test/User?format=xml
+    #   <dependency>
+    #        <groupId>com.fasterxml.jackson.dataformat</groupId>
+    #        <artifactId>jackson-dataformat-xml</artifactId>
+    #        <version>2.13.1</version>
+    #    </dependency>
+    contentnegotiation:
+      favor-parameter: true

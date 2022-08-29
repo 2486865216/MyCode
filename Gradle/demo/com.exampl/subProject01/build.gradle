@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task A {
+    doLast {
+        println "A"
+    }
+}
+
+task hello {
+    doLast {
+        println "hello world"
+    }
+}
+
+defaultTasks("A")
+
+tasks.addRule("对规则的一个描述，便于调试", {
+    String taskName -> task(taskName) {
+        println "the ${taskName} is not exist"
+    }
+})

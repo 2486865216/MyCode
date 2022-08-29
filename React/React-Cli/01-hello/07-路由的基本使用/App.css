@@ -1,0 +1,21 @@
+#app{
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    border: 1px solid black;
+    background-color:antiquewhite;
+}
+#body{
+    display: flex;
+}
+#left{
+    width: 150px;
+    font-size: 30px;
+    height: 405px;
+    background-color:aqua;
+}
+#right{
+    width: 350px;
+    height: 405px;
+    background-color: azure;
+}

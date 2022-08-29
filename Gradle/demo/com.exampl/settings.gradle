@@ -1,0 +1,5 @@
+rootProject.name = 'com.exampl'
+include 'subProject01'
+include 'subProject02'
+include 'subProject03'
+

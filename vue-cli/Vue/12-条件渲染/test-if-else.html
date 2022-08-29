@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <p v-if="ok">hello word! true</p>
+        <p v-if="ok1">hello word! false</p> 
+    <div v-if="Math.random() > 0.5">
+        Now you see me
+      </div>
+    <div v-else>
+        Now you don't
+    </div>
+
+    <div v-if="type === 'A'">
+        A
+      </div>
+      <div v-else-if="type === 'B'">
+        B
+      </div>
+      <div v-else-if="type === 'C'">
+        C
+      </div>
+      <div v-else>
+        Not A/B/C
+      </div>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false;
+    let vm = new Vue({
+        el:'#box',
+        data:{
+            ok:true,
+            ok1:false,
+            type:"a"
+        }
+    })
+</script>
+</html>

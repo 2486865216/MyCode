@@ -1,0 +1,4 @@
+1)
+使用第三方开源的redis库：github.com/gomodule/redigo/redis
+2)在使用Redis前，先安装第三方Redis库，在GOPATH路径下执行安装指令：
+go get github.com/gomodule/redigo/redis

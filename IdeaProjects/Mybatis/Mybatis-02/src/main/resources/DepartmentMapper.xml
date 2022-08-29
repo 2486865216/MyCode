@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qiqi.Mybatis.DepartmentMapper">
+    <select id="getDeptById" resultType="com.qiqi.Mybatis.Department">
+        select id,dept_name DepartmentName from tbl_dept where id = #{id}
+    </select>
+
+    <resultMap id="MyDept" type="com.qiqi.Mybatis.Department">
+        <id column="did" property="id"/>
+        <result column="dept_name" property="DepartmentName"/>
+<!--        嵌套结果集的方式-->
+<!--        collection定义关联集合类型的属性的封装规则-->
+<!--        ofType定义集合里面的数据类型-->
+        <collection property="emps" ofType="com.qiqi.Mybatis.Employee">
+            <id column="id" property="id"/>
+            <result column="lastname" property="lastname"/>
+            <result column="gender" property="gender"/>
+            <result column="email" property="email"/>
+        </collection>
+    </resultMap>
+    <select id="getDeptByIdPlus" resultMap="MyDept">
+        select d.id did,d.dept_name dept_name,e.id id,e.lastname lastname
+             ,e.gender gender,e.email email from tbl_dept d
+             left join employee e
+             on d.id = e.d_id where d.id=#{id}
+    </select>
+    <resultMap id="MyStep" type="com.qiqi.Mybatis.Department">
+        <id column="did" property="id"/>
+        <result column="dept_name" property="DepartmentName"/>
+        <collection property="emps"
+                    select="com.qiqi.Mybatis.EmployeeMapperPlus.getEmpsByDeptId"
+         column="{deptid=id}" fetchType="eager">
+        </collection>
+    </resultMap>
+    <select id="getDeptByIdStep" resultMap="MyStep">
+        select id,dept_name DepartmentName from tbl_dept where id = #{id}
+    </select>
+<!--    扩展：将多列的值传递过去
+            将多列的值封装map
+            column="{key1=column,key2=column}"
+
+            fetchType="eager"立即加载
+            fetchType="lazy"延迟加载
+-->
+</mapper>

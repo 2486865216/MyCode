@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qiqi.mybatis.">
+<!--    if:判断
+        choose:分支选择
+        trim:字符串截取(where ,set)
+        foreach
+-->
+
+<!--    查询员工，要求，携带了哪个字段就带上这个字段的值-->
+    <select id="getEmpByConditionIf" resultType="com.qiqi.mybatis.Employee">
+        select * from employee
+--             where标签将所有查询条件包括在内，mybatis会将where标签中拼接的sql
+--                 多出来的and或者or去掉
+--             and,or 要放在开头
+        <where>
+            <!--if test：判断表达式（OGNL）></if>
+                    OGNL表达式  官方文档  和EL一样
+              -->
+            <if test="id!=null">
+                id=#{id}
+            </if>
+            <!--特殊字符要用转义字符-->
+            <if test="lastname!=null">
+                and lastname like #{lastname}
+            </if>
+            <if test="email!=null and email.trim()!=&quot;&quot;">
+                and email=#{email}
+            </if>
+            <!--dgnl会进行字符串与数字的转换判断 "0"==0-->
+            <if test="gender==0 or gender==1">
+                and gender=#{gender}
+            </if>
+        </where>
+    </select>
+    <select id="getEmpByConditionTrim" resultType="com.qiqi.mybatis.Employee">
+<!--    后面多出的and，or where标签不能解决
+        prefix="":前缀
+        prefixOverrides="":前缀覆盖，去掉字符串前面多余的字符
+        suffix="":后缀
+        suffixOverrides="":后缀覆盖，去掉字符串前面多余的字符
+-->
+        select * from employee
+        <trim prefix="where" suffixOverrides="and">
+            <if test="id!=null">
+                id=#{id} and
+            </if>
+            <if test="lastname!=null">
+                lastname like #{lastname} and
+            </if>
+            <if test="email!=null and email.trim()!=&quot;&quot;">
+                email=#{email} and
+            </if>
+            <if test="gender==0 or gender==1">
+                gender=#{gender}
+            </if>
+        </trim>
+    </select>
+<!--    choose:分支选择：swtich case
+                如果带了id就用id查，带了lastname就用lastname查;
+                只会进入其中一个
+-->
+    <select id="getEmpByConditionChoose" resultType="com.qiqi.mybatis.Employee">
+        select * from employee
+        <where>
+            <choose>
+                <when test="id!=null">
+                    id = #{id}
+                </when>
+                <when test="lastname!=null">
+                    lastname like #{lastname}
+                </when>
+                <when test="email!=null">
+                    email = #{email}
+                </when>
+                <otherwise>
+                    gender = 0
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+    <select id="updateEmp" resultType="com.qiqi.mybatis.Employee">
+        update employee
+        <set>
+            <if test="id!=null">
+                id = #{id},
+            </if>
+            <if test="lastname!=null">
+                lastname = #{lastname},
+            </if>
+            <if test="email!=null">
+                email = #{email},
+            </if>
+            <if test="gender!=null">
+                gender = #{gender}
+            </if>
+        </set>
+        where id = #{id}
+    </select>
+    <select id="getEmpByConditionForeach" resultType="com.qiqi.mybatis.Employee">
+        <!--
+            collection:指定要遍历的集合
+                list类型的参数会特殊处理封装在map中，map的key就叫list
+                item：将当前遍历出的元素赋值给指定的变量
+                #{变量名}就能取出当前遍历的元素
+
+                separator：每个元素之间的分隔符
+                open：遍历出所有结果拼接一个开始的字符
+                close：遍历出所有结果拼接一个结束的字符
+                index：遍历list的时候是索引
+                        遍历map的时候，index是key，item是value
+        -->
+         select * from employee where id in
+        <foreach collection="ids" item="item_id"
+                 separator="," open="(" close=")">
+            #{item_id}
+        </foreach>
+    </select>
+<!--    批量保存-->
+    <insert id="addEmp">
+        insert into employee(<include refid="insert">
+            <property name="id" value="d_id"/>
+        </include>)
+        values
+        <foreach collection="emps" item="emp" separator=",">
+            (#{emp.lastname},#{emp.email},#{emp.gender},#{emp.dept.id})
+        </foreach>
+    </insert>
+<!--    这种方式需要数据库连接属性allowMultiQueries=true支持-->
+    <!--<insert id="addEmp">
+        <foreach collection="emps" item="emp" separator=";">
+            insert into employee(lastname, email, gender, d_id)
+            values (#{emp.lastname},#{emp.email},#{emp.gender},#{emp.dept.id})
+        </foreach>
+    </insert>-->
+
+<!--    mybatis两个内置参数
+            _parameter:代表整个参数
+                单个参数：_parameter就是这个参数
+                多个参数：封装成map，_parameter就是这个map
+            _databaseId:
+                代表当前数据库别名
+-->
+    <select id="getEmpTestInneerParameter" resultType="com.qiqi.mybatis.Employee">
+        <!--bind<可以将OGNL表达式的值绑定到一个变量中，方便后来引用这个变量的值-->
+        <bind name="_lastName" value="'%'+lastname+'%'"/>
+        <if test="_databaseId=='mysql'">
+            select * from employee
+            where lastname like #{_lastName}
+            <!--<if test="_parameter!=null">
+                where lastname = #{_parameter.lastname}
+            </if>-->
+        </if>
+    </select>
+
+<!--    sql抽取可重用的sql片段
+        include引用以抽取的片段
+        include 可以自定义一些property，sql标签内部就能使用自定义的属性${属性名} , 不能用#{}
+-->
+    <sql id="insert">
+        lastname,email,gender,${id}
+    </sql>
+</mapper>

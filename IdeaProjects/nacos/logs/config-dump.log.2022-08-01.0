@@ -1,0 +1,20 @@
+2022-08-01 19:04:39,207 INFO [dump-all-ok] nacos-config-client-dev.yml+DEFAULT_GROUP, 1658624253000, length=31, md5=e54ca0cd9d91f261c403792503657782
+
+2022-08-01 19:04:39,212 INFO [dump-all-ok] sentinel-service+DEFAULT_GROUP, 1659094223000, length=198, md5=1aefcf28afaa330c23f82f33390cf3e3
+
+2022-08-01 19:33:47,254 INFO [dump-task] add task. groupKey=seataServer.properties+SEATA_GROUP, taskKey=seataServer.properties+SEATA_GROUP++false+null
+
+2022-08-01 19:34:28,027 INFO [dump-task] add task. groupKey=service.vgroupMapping.default_tx_group+SEATA_GROUP, taskKey=service.vgroupMapping.default_tx_group+SEATA_GROUP++false+null
+
+2022-08-01 19:34:38,314 INFO [dump-task] add task. groupKey=seataServer.properties+SEATA_GROUP, taskKey=seataServer.properties+SEATA_GROUP++false+null
+
+2022-08-01 21:12:30,021 INFO [dump-task] add task. groupKey=seataServer.properties+SEATA_GROUP, taskKey=seataServer.properties+SEATA_GROUP++false+null
+
+2022-08-01 21:13:01,004 INFO [dump-task] add task. groupKey=seataServer.properties+SEATA_GROUP, taskKey=seataServer.properties+SEATA_GROUP++false+null
+
+2022-08-01 21:40:57,632 INFO [dump-task] add task. groupKey=service.vgroupMapping.default_tx_group+SEATA_GROUP, taskKey=service.vgroupMapping.default_tx_group+SEATA_GROUP++false+null
+
+2022-08-01 21:42:54,514 INFO [dump-task] add task. groupKey=service.vgroupMapping.default_tx_group+SEATA_GROUP, taskKey=service.vgroupMapping.default_tx_group+SEATA_GROUP++false+null
+
+2022-08-01 21:43:31,660 INFO [dump-task] add task. groupKey=service.vgroupMapping.default_tx_group+DEFAULT_GROUP, taskKey=service.vgroupMapping.default_tx_group+DEFAULT_GROUP++false+null
+

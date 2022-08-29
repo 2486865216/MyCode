@@ -1,0 +1,16 @@
+2022-07-29 19:19:39,418 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=1}
+
+2022-07-29 19:19:40,859 INFO [PUSH-SUCC] 1005ms, all delay time 1575ms, SLA 1441ms, Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=1}, DataSize=1, target=192.168.0.101
+
+2022-07-29 19:22:18,074 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='sentinel-service', ephemeral=true, revision=1}
+
+2022-07-29 19:22:18,509 INFO [PUSH-SUCC] 38ms, all delay time 600ms, SLA 436ms, Service{namespace='public', group='DEFAULT_GROUP', name='sentinel-service', ephemeral=true, revision=1}, DataSize=1, target=192.168.0.101
+
+2022-07-29 19:28:25,748 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='sentinel-service', ephemeral=true, revision=3}
+
+2022-07-29 19:28:26,232 INFO [PUSH-SUCC] 22ms, all delay time 532ms, SLA 484ms, Service{namespace='public', group='DEFAULT_GROUP', name='sentinel-service', ephemeral=true, revision=3}, DataSize=1, target=192.168.0.101
+
+2022-07-29 19:31:41,860 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='sentinel-service', ephemeral=true, revision=5}
+
+2022-07-29 19:31:42,401 INFO [PUSH-SUCC] 35ms, all delay time 591ms, SLA 542ms, Service{namespace='public', group='DEFAULT_GROUP', name='sentinel-service', ephemeral=true, revision=5}, DataSize=1, target=192.168.0.103
+

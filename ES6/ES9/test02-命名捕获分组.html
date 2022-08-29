@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // let str = '<a href="https://www.atguigu.com">尚硅谷</a>'
+        // const reg = /<a href="(.*)"(.*)<\/a>/
+        //
+        // console.log(reg.exec(str))
+
+        let str = '<a href="https://www.atguigu.com">尚硅谷</a>'
+        const reg = /<a href="(?<url>.*)"(?<text>.*)<\/a>/
+
+        console.log(reg.exec(str))
+
+    </script>
+</body>
+</html>

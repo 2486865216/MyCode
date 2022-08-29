@@ -1,0 +1,4 @@
+2022-08-01 19:04:36,798 WARN [master-db] jdbc:mysql://127.0.0.1:3306/nacos_config?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
+
+2022-08-01 19:04:39,108 WARN isQuickStart:false
+

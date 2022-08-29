@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function Phone(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        Phone.prototype.call = function (){
+            console.log("call")
+        }
+        function SmartPhone(name,age,no,sex){
+            Phone.call(this,name,age);
+            this.no = no;
+            this.sex = sex;
+        }
+        SmartPhone.prototype = new Phone;
+        SmartPhone.prototype.consttuctor = SmartPhone;
+
+        SmartPhone.prototype.photo = function (){
+            console.log("photo")
+        }
+
+        const test = new SmartPhone('hello',18,20,true);
+        console.log(test)
+    </script>
+</body>
+</html>

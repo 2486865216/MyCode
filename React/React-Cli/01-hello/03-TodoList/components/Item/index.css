@@ -1,0 +1,11 @@
+.li{
+    text-align: left;
+    border: 1px solid black;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.button{
+    background-color: red;
+}

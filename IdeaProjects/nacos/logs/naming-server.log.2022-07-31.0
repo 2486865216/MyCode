@@ -1,0 +1,44 @@
+2022-07-31 07:31:34,237 WARN naming.distro config will be removed, please use core.protocol.distro replace.
+
+2022-07-31 07:31:34,237 WARN Using naming.distro config to replace core.distro config
+
+2022-07-31 07:31:34,409 INFO open empty service auto clean job, initialDelay : 50000 ms, period : 30000 ms
+
+2022-07-31 07:31:34,409 INFO listen for service meta change
+
+2022-07-31 07:31:37,237 INFO [SelectorManager] Load SelectorContextBuilder(class com.alibaba.nacos.naming.selector.context.CmdbSelectorContextBuilder) contextType(CMDB) successfully.
+
+2022-07-31 07:31:37,237 INFO [SelectorManager] Load SelectorContextBuilder(class com.alibaba.nacos.naming.selector.context.NoneSelectorContextBuilder) contextType(NONE) successfully.
+
+2022-07-31 07:31:37,237 INFO [SelectorManager] Load Selector(class com.alibaba.nacos.naming.selector.LabelSelector) type(label) contextType(CMDB) successfully.
+
+2022-07-31 07:31:37,237 INFO [SelectorManager] Load Selector(class com.alibaba.nacos.naming.selector.NoneSelector) type(none) contextType(NONE) successfully.
+
+2022-07-31 07:31:39,550 INFO Load instance extension handler []
+
+2022-07-31 07:33:45,202 INFO Client connection 1659224025046_127.0.0.1_56394 connect
+
+2022-07-31 07:33:46,390 INFO Client connection 1659224025046_127.0.0.1_56394 disconnect, remove instances and subscribers
+
+2022-07-31 07:36:09,337 INFO Client connection 1659224169243_127.0.0.1_56461 connect
+
+2022-07-31 07:36:10,477 INFO Client connection 1659224169243_127.0.0.1_56461 disconnect, remove instances and subscribers
+
+2022-07-31 07:58:17,379 INFO Client connection 1659225497301_127.0.0.1_56795 connect
+
+2022-07-31 07:58:18,535 INFO Client connection 1659225497301_127.0.0.1_56795 disconnect, remove instances and subscribers
+
+2022-07-31 08:19:27,946 INFO Client connection 1659226767852_127.0.0.1_56955 connect
+
+2022-07-31 08:19:29,118 INFO Client connection 1659226767852_127.0.0.1_56955 disconnect, remove instances and subscribers
+
+2022-07-31 08:36:14,453 INFO Client connection 1659227774359_127.0.0.1_57427 connect
+
+2022-07-31 08:36:15,468 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=0}, 1659227774359_127.0.0.1_57427
+
+2022-07-31 08:36:23,533 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='order84', ephemeral=true, revision=1}, 1659227774359_127.0.0.1_57427
+
+2022-07-31 08:36:23,877 INFO Client connection 1659227774359_127.0.0.1_57427 disconnect, remove instances and subscribers
+
+2022-07-31 08:38:09,138 WARN namespace : public, [DEFAULT_GROUP@@order84] services are automatically cleaned
+

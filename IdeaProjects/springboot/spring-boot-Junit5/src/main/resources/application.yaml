@@ -1,0 +1,25 @@
+management:
+  endpoints:
+    enabled-by-default: true #??????????true
+    web:
+      exposure:
+        include: "*" #?web??????
+  # endpoint+???+xxx ??????????
+  endpoint:
+    health:
+      show-details: always
+info:
+  name: zhansan
+  version: 1.1.0
+  mavenName: @project.artifactId@
+  mavenVersion: @project.version@
+
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:8081
+        instance:
+          prefer-ip: true
+  application:
+    name: spring-boot-Junit5
